@@ -9,54 +9,54 @@ using System.Text.RegularExpressions;
 namespace Program
 {
     /// <summary>
-    /// Inheritance Contact and contains phone number as 10-digit string.
+    /// Inheritance Contact and contains Skype name.
     /// </summary>
-    public class PhoneContact : Contact, IFileManager
+    public class SkypeContact : Contact, IFileManager
     {
         /// <summary>
-        /// Represents a number of PhoneContact
+        /// Represents a Skype name
         /// </summary>
-        private string number;
+        private string skype;
 
         /// <summary>
         /// Сonstructor without parameters
         /// </summary>
-        public PhoneContact() : base()
+        public SkypeContact() : base()
         {
-            this.number = string.Empty;
+            this.skype = string.Empty;
         }
 
         /// <summary>
         /// Сonstructor with parameters
         /// </summary>
         /// <param name="nameP">Initializes the field of name of base class</param>
-        /// <param name="numberP">Initializes the field of number</param>
-        public PhoneContact(string nameP, string numberP) : base(nameP)
+        /// <param name="skypeP">Initializes the field of email</param>
+        public SkypeContact(string nameP, string skypeP) : base(nameP)
         {
-            this.Number = numberP;
+            this.Skype = skypeP;
         }
 
         /// <summary>
-        /// Gets or sets number to PhoneContact
+        /// Gets or sets Skype name
         /// </summary>
         /// <value> The property value must be string and match the template</value>
-        public string Number
+        private string Skype
         {
             get
             {
-                return this.Number;
+                return this.skype;
             }
 
             set
             {
-                Regex regex = new Regex(@"\d{10}");
+                Regex regex = new Regex(@"[A-Z]\D+");
                 if (regex.IsMatch(value))
                 {
-                    this.number = value;
+                    this.skype = value;
                 }
                 else
                 {
-                    throw new ArgumentException("PhoneNumber: Warning! " + value);
+                    throw new ArgumentException("SkypeContact: Warning! " + value);
                 }
             }
         }
@@ -72,7 +72,7 @@ namespace Program
             string[] line = reader.ReadLine().Split(' ');
             if (line.Length == 1)
             {
-                this.Number = line[0];
+                this.Skype = line[0];
             }
         }
 
@@ -84,7 +84,7 @@ namespace Program
         public new void Write(StreamWriter writer)
         {
             base.Write(writer);
-            writer.WriteLine($"{this.Number}");
+            writer.WriteLine($"{this.Skype}");
         }
     }
 }

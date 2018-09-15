@@ -45,6 +45,7 @@
     <Compile Include="Contact.cs" />
     <Compile Include="ContactIOManager.cs" />
     <Compile Include="IFileManager.cs" />
+    <Compile Include="MailContact.cs" />
     <Compile Include="PhoneContact.cs" />
     <Compile Include="Program.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
@@ -52,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
+    <Compile Include="SkypeContact.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
