@@ -11,7 +11,7 @@ namespace Program
     /// <summary>
     /// Inheritance Contact and contains phone number as 10-digit string.
     /// </summary>
-    class PhoneContact : Contact, IFileManager
+    public class PhoneContact : Contact, IFileManager
     {
         /// <summary>
         /// Represents a number of PhoneContact

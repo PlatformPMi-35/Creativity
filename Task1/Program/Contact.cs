@@ -37,7 +37,7 @@ namespace Program
                 }
                 else
                 {
-                    throw new ArgumentException("Contact: Warning! "+value);
+                    throw new ArgumentException("Contact: Warning! " + value);
                 }
             }
         }
