@@ -52,7 +52,7 @@
   <sourcecode name="IFileManager.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2018.09.14 10:30:15.107</styleCop>
-      <settingsFile>2018.09.15 17:41:31.639</settingsFile>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
       <sourceFile>2018.09.15 20:56:37.544</sourceFile>
       <parser>2018.09.14 10:30:15.107</parser>
       <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
@@ -93,11 +93,11 @@
       </violation>
     </violations>
   </sourcecode>
-  <sourcecode name="PhoneContact.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="MailContact.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2018.09.14 10:30:15.107</styleCop>
-      <settingsFile>2018.09.15 17:41:31.639</settingsFile>
-      <sourceFile>2018.09.15 21:01:57.963</sourceFile>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
+      <sourceFile>2018.09.15 23:31:56.161</sourceFile>
       <parser>2018.09.14 10:30:15.107</parser>
       <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -125,19 +125,14 @@
         <line>6</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="AccessModifierMustBeDeclared" ruleCheckId="SA1400">
-        <context>The class must have an access modifier.</context>
-        <line>14</line>
-        <warning>False</warning>
-      </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ConstructorSummaryDocumentationMustBeginWithStandardText" ruleCheckId="SA1642">
-        <context>The documentation text within the constructor's summary tag must begin with the text: Initializes a new instance of the &lt;see cref="PhoneContact" /&gt; class.</context>
+        <context>The documentation text within the constructor's summary tag must begin with the text: Initializes a new instance of the &lt;see cref="MailContact" /&gt; class.</context>
         <line>24</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ConstructorSummaryDocumentationMustBeginWithStandardText" ruleCheckId="SA1642">
-        <context>The documentation text within the constructor's summary tag must begin with the text: Initializes a new instance of the &lt;see cref="PhoneContact" /&gt; class.</context>
-        <line>35</line>
+        <context>The documentation text within the constructor's summary tag must begin with the text: Initializes a new instance of the &lt;see cref="MailContact" /&gt; class.</context>
+        <line>34</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -148,8 +143,8 @@
   <sourcecode name="Contact.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2018.09.14 10:30:15.107</styleCop>
-      <settingsFile>2018.09.15 17:41:31.639</settingsFile>
-      <sourceFile>2018.09.15 21:02:14.464</sourceFile>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
+      <sourceFile>2018.09.15 23:33:33.845</sourceFile>
       <parser>2018.09.14 10:30:15.107</parser>
       <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -174,23 +169,105 @@
       </violation>
       <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
         <context>Using directives must be sorted alphabetically by the namespaces.</context>
-        <line>5</line>
+        <line>6</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
-        <context>The spacing around the symbol '+' is invalid.</context>
-        <line>40</line>
-        <index>1062</index>
-        <endIndex>1062</endIndex>
-        <startLine>40</startLine>
-        <startColumn>69</startColumn>
-        <endLine>40</endLine>
-        <endColumn>69</endColumn>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ConstructorSummaryDocumentationMustBeginWithStandardText" ruleCheckId="SA1642">
+        <context>The documentation text within the constructor's summary tag must begin with the text: Initializes a new instance of the &lt;see cref="Contact" /&gt; class.</context>
+        <line>24</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
-        <context>The spacing around the symbol '+' is invalid.</context>
-        <line>40</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ConstructorSummaryDocumentationMustBeginWithStandardText" ruleCheckId="SA1642">
+        <context>The documentation text within the constructor's summary tag must begin with the text: Initializes a new instance of the &lt;see cref="Contact" /&gt; class.</context>
+        <line>33</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="PhoneContact.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.09.14 10:30:15.107</styleCop>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
+      <sourceFile>2018.09.15 23:33:33.658</sourceFile>
+      <parser>2018.09.14 10:30:15.107</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.09.14 10:30:15.107</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
+        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
+        <context>Using directives must be sorted alphabetically by the namespaces.</context>
+        <line>6</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ConstructorSummaryDocumentationMustBeginWithStandardText" ruleCheckId="SA1642">
+        <context>The documentation text within the constructor's summary tag must begin with the text: Initializes a new instance of the &lt;see cref="PhoneContact" /&gt; class.</context>
+        <line>24</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ConstructorSummaryDocumentationMustBeginWithStandardText" ruleCheckId="SA1642">
+        <context>The documentation text within the constructor's summary tag must begin with the text: Initializes a new instance of the &lt;see cref="PhoneContact" /&gt; class.</context>
+        <line>34</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="SkypeContact.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.09.14 10:30:15.107</styleCop>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
+      <sourceFile>2018.09.15 23:33:33.908</sourceFile>
+      <parser>2018.09.14 10:30:15.107</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.09.14 10:30:15.107</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
+        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
+        <context>Using directives must be sorted alphabetically by the namespaces.</context>
+        <line>6</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ConstructorSummaryDocumentationMustBeginWithStandardText" ruleCheckId="SA1642">
+        <context>The documentation text within the constructor's summary tag must begin with the text: Initializes a new instance of the &lt;see cref="SkypeContact" /&gt; class.</context>
+        <line>24</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ConstructorSummaryDocumentationMustBeginWithStandardText" ruleCheckId="SA1642">
+        <context>The documentation text within the constructor's summary tag must begin with the text: Initializes a new instance of the &lt;see cref="SkypeContact" /&gt; class.</context>
+        <line>34</line>
         <warning>False</warning>
       </violation>
     </violations>

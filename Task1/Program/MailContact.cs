@@ -9,54 +9,54 @@ using System.Text.RegularExpressions;
 namespace Program
 {
     /// <summary>
-    /// Inheritance Contact and contains phone number as 10-digit string.
+    /// Inheritance Contact and containse e-mail in the following format: username@domain.
     /// </summary>
-    public class PhoneContact : Contact, IFileManager
+    public class MailContact : Contact, IFileManager
     {
         /// <summary>
-        /// Represents a number of PhoneContact
+        /// Represents a e-mail adress
         /// </summary>
-        private string number;
+        private string email;
 
         /// <summary>
         /// Сonstructor without parameters
         /// </summary>
-        public PhoneContact() : base()
+        public MailContact() : base()
         {
-            this.number = string.Empty;
+            this.email = string.Empty;
         }
 
         /// <summary>
         /// Сonstructor with parameters
         /// </summary>
         /// <param name="nameP">Initializes the field of name of base class</param>
-        /// <param name="numberP">Initializes the field of number</param>
-        public PhoneContact(string nameP, string numberP) : base(nameP)
+        /// <param name="emailP">Initializes the field of email</param>
+        public MailContact(string nameP, string emailP) : base(nameP)
         {
-            this.Number = numberP;
+            this.Email = emailP;
         }
 
         /// <summary>
-        /// Gets or sets number to PhoneContact
+        /// Gets or sets e-mail
         /// </summary>
         /// <value> The property value must be string and match the template</value>
-        public string Number
+        public string Email
         {
             get
             {
-                return this.Number;
+                return this.email;
             }
 
             set
             {
-                Regex regex = new Regex(@"\d{10}");
+                Regex regex = new Regex(@"([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)");
                 if (regex.IsMatch(value))
                 {
-                    this.number = value;
+                    this.email = value;
                 }
                 else
                 {
-                    throw new ArgumentException("PhoneNumber: Warning! " + value);
+                    throw new ArgumentException("MailContact: Warning! " + value);
                 }
             }
         }
@@ -72,7 +72,7 @@ namespace Program
             string[] line = reader.ReadLine().Split(' ');
             if (line.Length == 1)
             {
-                this.Number = line[0];
+                this.Email = line[0];
             }
         }
 
@@ -84,7 +84,7 @@ namespace Program
         public new void Write(StreamWriter writer)
         {
             base.Write(writer);
-            writer.WriteLine($"{this.Number}");
+            writer.WriteLine($"{this.Email}");
         }
     }
 }
