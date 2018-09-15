@@ -1,10 +1,15 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="SkypeContact.cs" company="Creativity Team">
+// Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Program
 {
@@ -19,6 +24,7 @@ namespace Program
         private string skype;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref = "SkypeContact" /> class.
         /// Сonstructor without parameters
         /// </summary>
         public SkypeContact() : base()
@@ -27,6 +33,7 @@ namespace Program
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref = "SkypeContact" /> class.
         /// Сonstructor with parameters
         /// </summary>
         /// <param name="nameP">Initializes the field of name of base class</param>

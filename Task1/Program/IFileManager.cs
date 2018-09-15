@@ -1,9 +1,14 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="IFileManager.cs" company="Creativity Team">
+// Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace Program
 {

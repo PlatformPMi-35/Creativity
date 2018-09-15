@@ -1,10 +1,15 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Contact.cs" company="Creativity Team">
+// Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Program
 {
@@ -14,11 +19,12 @@ namespace Program
     public abstract class Contact : IFileManager
     {
         /// <summary>
-        /// Represents a name of Contact
+        /// Represents a name of <see cref = "Contact" />
         /// </summary>
         private string name;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref = "Contact" /> class.
         /// Сonstructor without parameters
         /// </summary>
         public Contact()
@@ -27,6 +33,7 @@ namespace Program
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref = "Contact" /> class.
         /// Сonstructor with parameters
         /// </summary>
         /// <param name="nameP">Initializes the field of name</param>
@@ -36,9 +43,9 @@ namespace Program
         }
 
         /// <summary>
-        /// Gets or sets name to Contact
+        /// Gets or sets name to <see cref = "Contact" />
         /// </summary>
-        /// <value> The property value must be string and match the template</value>
+        /// <value>The property value must be string and match the template</value>
         public string Name
         {
             get

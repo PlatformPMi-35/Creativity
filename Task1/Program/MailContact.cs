@@ -1,10 +1,15 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="MailContact.cs" company="Creativity Team">
+// Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Program
 {
@@ -19,7 +24,8 @@ namespace Program
         private string email;
 
         /// <summary>
-        /// Сonstructor without parameters
+        /// Initializes a new instance of the <see cref = "MailContact" /> class.
+        /// Constructor without parameters
         /// </summary>
         public MailContact() : base()
         {
@@ -27,6 +33,7 @@ namespace Program
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref = "MailContact" /> class.
         /// Сonstructor with parameters
         /// </summary>
         /// <param name="nameP">Initializes the field of name of base class</param>
