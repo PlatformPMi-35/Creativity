@@ -65,7 +65,7 @@ namespace Program
         /// Method for load information from file.
         /// </summary>
         /// <param name="reader">A stream to read information</param>
-        public void Read(StreamReader reader)
+        public virtual void Read(StreamReader reader)
         {
             string[] line = reader.ReadLine().Split(' ');
             if (line.Length == 1)
@@ -79,7 +79,7 @@ namespace Program
         /// Save information in file.
         /// </summary>
         /// <param name="writer">A stream to write information</param>
-        public void Write(StreamWriter writer)
+        public virtual void Write(StreamWriter writer)
         {
             writer.WriteLine($"{this.Name}");
         }
