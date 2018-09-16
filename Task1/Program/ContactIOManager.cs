@@ -55,7 +55,8 @@ namespace Program
         /// <returns>Contact which was read</returns>
         public static Contact Read(StreamReader stream)
         {
-            if (Factories.TryGetValue(stream.ReadLine(), out ContactFactory factory))
+            string str = stream.ReadLine();
+            if (Factories.TryGetValue(str, out ContactFactory factory))
             {
                 Contact contact = factory();
                 try
