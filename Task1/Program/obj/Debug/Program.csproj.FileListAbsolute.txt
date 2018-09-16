@@ -12,3 +12,10 @@ C:\Навчання\Новая папка\Task1\Program\obj\Debug\Program.csproj
 C:\Навчання\Новая папка\Task1\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
 C:\Навчання\Новая папка\Task1\Program\obj\Debug\Program.exe
 C:\Навчання\Новая папка\Task1\Program\obj\Debug\Program.pdb
+C:\Users\Dell\Source\Repos\Creativity\Task1\Program\bin\Debug\Program.exe.config
+C:\Users\Dell\Source\Repos\Creativity\Task1\Program\bin\Debug\Program.exe
+C:\Users\Dell\Source\Repos\Creativity\Task1\Program\bin\Debug\Program.pdb
+C:\Users\Dell\Source\Repos\Creativity\Task1\Program\obj\Debug\Program.csprojAssemblyReference.cache
+C:\Users\Dell\Source\Repos\Creativity\Task1\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Source\Repos\Creativity\Task1\Program\obj\Debug\Program.exe
+C:\Users\Dell\Source\Repos\Creativity\Task1\Program\obj\Debug\Program.pdb
