@@ -1,3 +1,0 @@
-Program.MailContact
-Borys
-borys@gmail.com

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
@@ -11,14 +12,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Contact contact = new MailContact("Borys", "borys@gmail.com");
-            FileInfo stream = new FileInfo("../../file.txt");
-            StreamWriter writer = new StreamWriter(stream.Open(FileMode.OpenOrCreate | FileMode.Truncate));
-            ContactIOManager.Write(contact, writer);
-            writer.Close();
-            StreamReader reader = new StreamReader(stream.Open(FileMode.Open));
-            contact = ContactIOManager.Read(reader);
-            Console.WriteLine($"Read: {(contact as MailContact).ToString()}");
+            ArrayList contacts = ContactExtentions.ReadFile();
             Console.ReadKey();
         }
     }

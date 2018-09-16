@@ -5,3 +5,10 @@ D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\obj\Debug\Program.csp
 D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
 D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\obj\Debug\Program.exe
 D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\obj\Debug\Program.pdb
+C:\Навчання\Новая папка\Task1\Program\bin\Debug\Program.exe.config
+C:\Навчання\Новая папка\Task1\Program\bin\Debug\Program.exe
+C:\Навчання\Новая папка\Task1\Program\bin\Debug\Program.pdb
+C:\Навчання\Новая папка\Task1\Program\obj\Debug\Program.csprojAssemblyReference.cache
+C:\Навчання\Новая папка\Task1\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
+C:\Навчання\Новая папка\Task1\Program\obj\Debug\Program.exe
+C:\Навчання\Новая папка\Task1\Program\obj\Debug\Program.pdb

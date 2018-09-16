@@ -73,7 +73,7 @@ namespace Program
         /// Method for load information from file.
         /// </summary>
         /// <param name="reader">A stream to read information</param>
-        override public void Read(StreamReader reader)
+        public new void Read(StreamReader reader)
         {
             base.Read(reader);
             string[] line = reader.ReadLine().Split(' ');
@@ -88,7 +88,7 @@ namespace Program
         /// Save information in file.
         /// </summary>
         /// <param name="writer">A stream to write information</param>
-        override public void Write(StreamWriter writer)
+        public new void Write(StreamWriter writer)
         {
             base.Write(writer);
             writer.WriteLine($"{this.Skype}");
