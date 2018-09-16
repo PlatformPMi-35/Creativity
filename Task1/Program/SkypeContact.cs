@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="SkypeContact.cs" company="Creativity Team">
-// Company copyright tag.
+// (c) <T> inc.
 // </copyright>
 //-----------------------------------------------------------------------
 using System;
@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Program
 {
     /// <summary>
-    /// Inheritance Contact and contains Skype name.
+    /// Inherits Contact and contains Skype name.
     /// </summary>
     public class SkypeContact : Contact, IFileManager
     {

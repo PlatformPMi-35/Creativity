@@ -1,0 +1,7 @@
+D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\bin\Debug\Program.exe.config
+D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\bin\Debug\Program.exe
+D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\bin\Debug\Program.pdb
+D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\obj\Debug\Program.csprojAssemblyReference.cache
+D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
+D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\obj\Debug\Program.exe
+D:\Deo_AMI\C# Projects\Creativity\Creativity\Task1\Program\obj\Debug\Program.pdb
