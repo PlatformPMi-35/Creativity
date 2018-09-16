@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="ContactTest.cs" company="Creativity Team">
-// Company copyright tag.
+// (c) <T> inc.
 // </copyright>
 //-----------------------------------------------------------------------
 namespace UnitTest
