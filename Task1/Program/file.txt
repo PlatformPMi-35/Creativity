@@ -1,2 +1,3 @@
-Program.MailContact 
+Program.MailContact
 Borys
+borys@gmail.com
