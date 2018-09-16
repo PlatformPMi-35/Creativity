@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
@@ -12,8 +11,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            ArrayList contacts = ContactExtentions.ReadFile();
-            Console.ReadKey();
+            
         }
     }
 }
