@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ContactIOManager.cs" company="Creativity Team">
+// <copyright file="ContactExtentions.cs" company="Creativity Team">
 // (c) <T> inc.
 // </copyright>
 //-----------------------------------------------------------------------

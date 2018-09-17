@@ -49,100 +49,31 @@
       </violation>
     </violations>
   </sourcecode>
-  <project key="-1455805800">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
-  <sourcecode name="IFileManager.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2018/09/13 07:29:16.460</styleCop>
-      <settingsFile>2018/09/15 21:29:24.172</settingsFile>
-      <sourceFile>2018/09/16 00:30:50.556</sourceFile>
-      <parser>2018/09/13 07:29:16.460</parser>
-      <StyleCop.CSharp.DocumentationRules>2018/09/13 07:29:16.460</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2018/09/13 07:29:16.460</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2018/09/13 07:29:16.460</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2018/09/13 07:29:16.460</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2018/09/13 07:29:16.460</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2018/09/13 07:29:16.460</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2018/09/13 07:29:16.460</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="PhoneContact.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2018/09/13 07:29:16.460</styleCop>
-      <settingsFile>2018/09/15 21:29:24.172</settingsFile>
-      <sourceFile>2018/09/16 00:34:32.533</sourceFile>
-      <parser>2018/09/13 07:29:16.460</parser>
-      <StyleCop.CSharp.DocumentationRules>2018/09/13 07:29:16.460</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2018/09/13 07:29:16.460</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2018/09/13 07:29:16.460</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2018/09/13 07:29:16.460</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2018/09/13 07:29:16.460</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2018/09/13 07:29:16.460</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2018/09/13 07:29:16.460</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
-  <sourcecode name="SkypeContact.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2018/09/13 07:29:16.460</styleCop>
-      <settingsFile>2018/09/15 21:29:24.172</settingsFile>
-      <sourceFile>2018/09/16 00:34:32.544</sourceFile>
-      <parser>2018/09/13 07:29:16.460</parser>
-      <StyleCop.CSharp.DocumentationRules>2018/09/13 07:29:16.460</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2018/09/13 07:29:16.460</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2018/09/13 07:29:16.460</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2018/09/13 07:29:16.460</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2018/09/13 07:29:16.460</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2018/09/13 07:29:16.460</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2018/09/13 07:29:16.460</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
   <project key="-2087675505">
     <configuration>DEBUG;TRACE</configuration>
   </project>
-  <sourcecode name="MailContact.cs" parser="StyleCop.CSharp.CsParser">
+  <project key="-829205807">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="ContactIOManager.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
-      <styleCop>2018.09.14 21:19:48.038</styleCop>
-      <settingsFile>2018.09.16 12:33:57.560</settingsFile>
-      <sourceFile>2018.09.16 12:33:57.555</sourceFile>
-      <parser>2018.09.14 21:19:48.038</parser>
-      <StyleCop.CSharp.DocumentationRules>2018.09.14 21:19:48.038</StyleCop.CSharp.DocumentationRules>
+      <styleCop>2018.09.14 10:30:15.107</styleCop>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
+      <sourceFile>2018.09.17 20:32:58.109</sourceFile>
+      <parser>2018.09.14 10:30:15.107</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2018.09.14 21:19:48.038</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules>2018.09.14 10:30:15.107</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 21:19:48.038</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.MaintainabilityRules>
       <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2018.09.14 21:19:48.038</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.NamingRules>
       <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2018.09.14 21:19:48.038</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.OrderingRules>
       <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2018.09.14 21:19:48.038</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.ReadabilityRules>
       <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2018.09.14 21:19:48.038</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.SpacingRules>
       <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
     </timestamps>
     <violations>
@@ -155,46 +86,46 @@
   </sourcecode>
   <sourcecode name="Contact.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
-      <styleCop>2018.09.14 21:19:48.038</styleCop>
-      <settingsFile>2018.09.16 12:33:57.560</settingsFile>
-      <sourceFile>2018.09.16 12:33:57.552</sourceFile>
-      <parser>2018.09.14 21:19:48.038</parser>
-      <StyleCop.CSharp.DocumentationRules>2018.09.14 21:19:48.038</StyleCop.CSharp.DocumentationRules>
+      <styleCop>2018.09.14 10:30:15.107</styleCop>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
+      <sourceFile>2018.09.17 20:52:51.506</sourceFile>
+      <parser>2018.09.14 10:30:15.107</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2018.09.14 21:19:48.038</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules>2018.09.14 10:30:15.107</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 21:19:48.038</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.MaintainabilityRules>
       <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2018.09.14 21:19:48.038</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.NamingRules>
       <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2018.09.14 21:19:48.038</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.OrderingRules>
       <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2018.09.14 21:19:48.038</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.ReadabilityRules>
       <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2018.09.14 21:19:48.038</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.SpacingRules>
       <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
     </timestamps>
     <violations />
   </sourcecode>
-  <sourcecode name="ContactIOManager.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="ContactExtentions.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
-      <styleCop>2018.09.14 21:19:48.038</styleCop>
-      <settingsFile>2018.09.16 12:33:57.560</settingsFile>
-      <sourceFile>2018.09.16 12:33:57.553</sourceFile>
-      <parser>2018.09.14 21:19:48.038</parser>
-      <StyleCop.CSharp.DocumentationRules>2018.09.14 21:19:48.038</StyleCop.CSharp.DocumentationRules>
+      <styleCop>2018.09.14 10:30:15.107</styleCop>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
+      <sourceFile>2018.09.17 20:56:23.591</sourceFile>
+      <parser>2018.09.14 10:30:15.107</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2018.09.14 21:19:48.038</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules>2018.09.14 10:30:15.107</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 21:19:48.038</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.MaintainabilityRules>
       <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2018.09.14 21:19:48.038</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.NamingRules>
       <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2018.09.14 21:19:48.038</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.OrderingRules>
       <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2018.09.14 21:19:48.038</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.ReadabilityRules>
       <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2018.09.14 21:19:48.038</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.SpacingRules>
       <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
     </timestamps>
     <violations>
@@ -205,10 +136,97 @@
       </violation>
     </violations>
   </sourcecode>
-  <project key="-829205807">
+  <sourcecode name="MailContact.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.09.14 10:30:15.107</styleCop>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
+      <sourceFile>2018.09.17 20:56:23.574</sourceFile>
+      <parser>2018.09.14 10:30:15.107</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.09.14 10:30:15.107</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
+        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="PhoneContact.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.09.14 10:30:15.107</styleCop>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
+      <sourceFile>2018.09.17 20:56:23.376</sourceFile>
+      <parser>2018.09.14 10:30:15.107</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.09.14 10:30:15.107</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
+        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="SkypeContact.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.09.14 10:30:15.107</styleCop>
+      <settingsFile>2018.09.15 23:28:33.381</settingsFile>
+      <sourceFile>2018.09.17 20:56:23.520</sourceFile>
+      <parser>2018.09.14 10:30:15.107</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.09.14 10:30:15.107</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.09.14 10:30:15.107</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.09.14 10:30:15.107</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.09.14 10:30:15.107</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
+        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <project key="-1455805800">
     <configuration>DEBUG;TRACE</configuration>
   </project>
-  <sourcecode name="ContactExtentions.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="IFileManager.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2018.09.14 22:33:39.262</styleCop>
       <settingsFile>2018.09.17 00:28:53.525</settingsFile>

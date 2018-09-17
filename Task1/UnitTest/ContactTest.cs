@@ -15,7 +15,6 @@ namespace UnitTest
     [TestClass]
     public class ContactTest
     {
-
         /// <summary>
         /// Conveniet function to write string data to file. 
         /// Usually used to write data right before reading it in test methods.
