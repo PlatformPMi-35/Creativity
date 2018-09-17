@@ -1,15 +1,20 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="SkypeContact.cs" company="Creativity Team">
+// (c) <T> inc.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Program
 {
     /// <summary>
-    /// Inheritance Contact and contains Skype name.
+    /// Inherits Contact and contains Skype name.
     /// </summary>
     public class SkypeContact : Contact, IFileManager
     {
@@ -19,6 +24,7 @@ namespace Program
         private string skype;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref = "SkypeContact" /> class.
         /// Сonstructor without parameters
         /// </summary>
         public SkypeContact() : base()
@@ -27,6 +33,7 @@ namespace Program
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref = "SkypeContact" /> class.
         /// Сonstructor with parameters
         /// </summary>
         /// <param name="nameP">Initializes the field of name of base class</param>
@@ -66,7 +73,7 @@ namespace Program
         /// Method for load information from file.
         /// </summary>
         /// <param name="reader">A stream to read information</param>
-        public override void Read(StreamReader reader)
+        override public void Read(StreamReader reader)
         {
             base.Read(reader);
             string[] line = reader.ReadLine().Split(' ');
@@ -81,7 +88,7 @@ namespace Program
         /// Save information in file.
         /// </summary>
         /// <param name="writer">A stream to write information</param>
-        public override void Write(StreamWriter writer)
+        override public void Write(StreamWriter writer)
         {
             base.Write(writer);
             writer.WriteLine($"{this.Skype}");
