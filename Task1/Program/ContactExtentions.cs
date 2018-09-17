@@ -50,5 +50,62 @@ namespace Program
 
             return contacts;
         }
+
+        /// <summary>
+        /// Create pairs of contacts 
+        /// </summary>
+        /// <param name="listOfContacts">Contacts which will be written to dictionary</param>
+        /// <returns>Dictionary with key - name, and value - phone number, skype name or mail</returns>
+        public static Dictionary<string, List<Contact>> CreatePairsOfContacts(ArrayList listOfContacts)
+        {
+            Dictionary<string, List<Contact>> newPairs = new Dictionary<string, List<Contact>>();
+            for (int i = 0; i < listOfContacts.Count; ++i)
+            {
+                Contact cont = listOfContacts[i] as Contact;
+                if (newPairs.ContainsKey(cont.Name) == false)
+                {
+                    if (listOfContacts[i] is PhoneContact)
+                    {
+                        PhoneContact pc = listOfContacts[i] as PhoneContact;
+                        newPairs.Add(pc.Name, new List<Contact> { pc });
+                    }
+                    else if (listOfContacts[i] is SkypeContact)
+                    {
+                        SkypeContact sc = listOfContacts[i] as SkypeContact;
+                        newPairs.Add(sc.Name, new List<Contact> { sc });
+                    }
+                    else 
+                    {
+                        MailContact mc = listOfContacts[i] as MailContact;
+                        newPairs.Add(mc.Name, new List<Contact> { mc });
+                    }
+                }
+                else
+                {
+                    if (listOfContacts[i] is PhoneContact)
+                    {
+                        PhoneContact pc = listOfContacts[i] as PhoneContact;
+                        newPairs[pc.Name].Add(pc);
+                    }
+                    else if (listOfContacts[i] is SkypeContact)
+                    {
+                        SkypeContact sc = listOfContacts[i] as SkypeContact;
+                        newPairs[sc.Name].Add(sc);
+                    }
+                    else 
+                    {
+                        MailContact mc = listOfContacts[i] as MailContact;
+                        newPairs[mc.Name].Add(mc);
+                    }
+                }
+            }
+
+            return newPairs;
+        }
+
+        
+
+
+
     }
 }

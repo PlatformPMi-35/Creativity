@@ -13,6 +13,7 @@ namespace Program
         static void Main(string[] args)
         {
             ArrayList contacts = ContactExtentions.ReadFile();
+            Dictionary<string, List<Contact>> pairs = ContactExtentions.CreatePairsOfContacts(contacts);
             Console.ReadKey();
         }
     }
