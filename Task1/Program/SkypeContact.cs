@@ -47,7 +47,7 @@ namespace Program
         /// Gets or sets Skype name
         /// </summary>
         /// <value> The property value must be string and match the template</value>
-        private string Skype
+        public string Skype
         {
             get
             {
