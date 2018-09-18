@@ -91,6 +91,13 @@ namespace Program
             writer.WriteLine($"{this.Name}");
         }
 
-
+        /// <summary>
+        /// Return contact information as a string
+        /// </summary>
+        /// <returns>string</returns>
+        virtual public string GetData()
+        {
+            return this.name;
+        }
     }
 }

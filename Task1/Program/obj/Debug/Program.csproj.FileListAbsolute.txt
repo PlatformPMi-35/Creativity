@@ -19,3 +19,10 @@ C:\Users\Dell\Source\Repos\Creativity\Task1\Program\obj\Debug\Program.csprojAsse
 C:\Users\Dell\Source\Repos\Creativity\Task1\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
 C:\Users\Dell\Source\Repos\Creativity\Task1\Program\obj\Debug\Program.exe
 C:\Users\Dell\Source\Repos\Creativity\Task1\Program\obj\Debug\Program.pdb
+E:\studing\Creativity\Task1\Program\obj\Debug\Program.csprojAssemblyReference.cache
+E:\studing\Creativity\Task1\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
+E:\studing\Creativity\Task1\Program\obj\Debug\Program.exe
+E:\studing\Creativity\Task1\Program\obj\Debug\Program.pdb
+E:\studing\Creativity\Task1\Program\bin\Debug\Program.exe.config
+E:\studing\Creativity\Task1\Program\bin\Debug\Program.exe
+E:\studing\Creativity\Task1\Program\bin\Debug\Program.pdb

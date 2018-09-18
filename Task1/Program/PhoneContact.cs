@@ -93,5 +93,14 @@ namespace Program
             base.Write(writer);
             writer.WriteLine($"{this.Number}");
         }
+
+        /// <summary>
+        /// Return contact information as a string
+        /// </summary>
+        /// <returns>string</returns>
+        public override string GetData()
+        {
+            return this.number;
+        }
     }
 }

@@ -103,9 +103,40 @@ namespace Program
             return newPairs;
         }
 
-        
+        /// <summary>
+        /// Write contacts to file
+        /// </summary>
+        /// <param name="pairs">The contact information that will be written to the file</param>
+        public static void WriteToFile(Dictionary<string, List<Contact>> pairs)
+        {
+            using (StreamWriter file = new StreamWriter("File2.txt"))
+            {
+                foreach (var p in pairs)
+                {
+                    file.Write(p.Key + " - ");
+                    foreach (Contact c in p.Value)
+                    {
+                        file.WriteLine(c.GetData() + " ");
+                    }
 
+                    file.Write(file.NewLine);
+                }
+            }
+        }
 
-
+        /// <summary>
+        /// Find contacts only with the phone number and write them on the screen
+        /// </summary>
+        /// <param name="pairs">The contact information that will be used to find contacts only with the phone number</param>
+        public static void SelectAndWriteContactsOnlyWithNumber(Dictionary<string, List<Contact>> pairs)
+        {
+            var cont = from r in pairs
+                       where (r.Value.Count == 1 && r.Value[0] is PhoneContact)
+                       select r;
+            foreach (var c in cont)
+            {
+                Console.WriteLine(c.Key);
+            }
+        }
     }
 }

@@ -14,6 +14,8 @@ namespace Program
         {
             ArrayList contacts = ContactExtentions.ReadFile();
             Dictionary<string, List<Contact>> pairs = ContactExtentions.CreatePairsOfContacts(contacts);
+            ContactExtentions.WriteToFile(pairs);
+            ContactExtentions.SelectAndWriteContactsOnlyWithNumber(pairs);
             Console.ReadKey();
         }
     }
