@@ -52,7 +52,7 @@ namespace Program
 
             return contacts;
         }
-
+  
         /// <summary>
         /// Create pairs of contacts 
         /// </summary>
@@ -66,34 +66,12 @@ namespace Program
                 Contact cont = listOfContacts[i] as Contact;
                 if (newPairs.ContainsKey(cont.Name) == false)
                 {
-                    if (listOfContacts[i] is PhoneContact)
-                    {
-                        newPairs.Add(cont.Name, new List<Contact> { cont });
-                    }
-                    else if (listOfContacts[i] is SkypeContact)
-                    {
-                        newPairs.Add(cont.Name, new List<Contact> { cont });
-                    }
-                    else 
-                    {
-                        newPairs.Add(cont.Name, new List<Contact> { cont });
-                    }
+                    newPairs.Add(cont.Name, new List<Contact> { cont });
                 }
                 else
                 {
-                    if (listOfContacts[i] is PhoneContact)
-                    {
-                        newPairs[cont.Name].Add(cont);
-                    }
-                    else if (listOfContacts[i] is SkypeContact)
-                    {
-                        newPairs[cont.Name].Add(cont);
-                    }
-                    else 
-                    {
-                        newPairs[cont.Name].Add(cont);
-                    }
-                }
+                    newPairs[cont.Name].Add(cont);
+                }                
             }
 
             return newPairs;
