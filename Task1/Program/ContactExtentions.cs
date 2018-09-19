@@ -68,36 +68,30 @@ namespace Program
                 {
                     if (listOfContacts[i] is PhoneContact)
                     {
-                        PhoneContact pc = listOfContacts[i] as PhoneContact;
-                        newPairs.Add(pc.Name, new List<Contact> { pc });
+                        newPairs.Add(cont.Name, new List<Contact> { cont });
                     }
                     else if (listOfContacts[i] is SkypeContact)
                     {
-                        SkypeContact sc = listOfContacts[i] as SkypeContact;
-                        newPairs.Add(sc.Name, new List<Contact> { sc });
+                        newPairs.Add(cont.Name, new List<Contact> { cont });
                     }
                     else 
                     {
-                        MailContact mc = listOfContacts[i] as MailContact;
-                        newPairs.Add(mc.Name, new List<Contact> { mc });
+                        newPairs.Add(cont.Name, new List<Contact> { cont });
                     }
                 }
                 else
                 {
                     if (listOfContacts[i] is PhoneContact)
                     {
-                        PhoneContact pc = listOfContacts[i] as PhoneContact;
-                        newPairs[pc.Name].Add(pc);
+                        newPairs[cont.Name].Add(cont);
                     }
                     else if (listOfContacts[i] is SkypeContact)
                     {
-                        SkypeContact sc = listOfContacts[i] as SkypeContact;
-                        newPairs[sc.Name].Add(sc);
+                        newPairs[cont.Name].Add(cont);
                     }
                     else 
                     {
-                        MailContact mc = listOfContacts[i] as MailContact;
-                        newPairs[mc.Name].Add(mc);
+                        newPairs[cont.Name].Add(cont);
                     }
                 }
             }
