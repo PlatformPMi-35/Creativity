@@ -51,7 +51,7 @@ namespace Program
         {
             get
             {
-                return this.Number;
+                return this.number;
             }
 
             set
