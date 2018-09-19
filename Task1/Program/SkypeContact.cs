@@ -40,7 +40,7 @@ namespace Program
         /// <param name="skypeP">Initializes the field of email</param>
         public SkypeContact(string nameP, string skypeP) : base(nameP)
         {
-            this.Data= skypeP;
+            this.Data = skypeP;
         }
 
         /// <summary>

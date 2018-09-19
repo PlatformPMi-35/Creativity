@@ -6,9 +6,9 @@
 namespace UnitTest
 {
     using System;
-    using Program;
     using System.IO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Program;
 
     /// <summary>
     /// Tests methods of contact hierarchy, using polymorphism
@@ -16,7 +16,6 @@ namespace UnitTest
     [TestClass]
     public class ContactTest
     {
-
         /// <summary>
         /// Corect input data
         /// </summary>
@@ -36,6 +35,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(mailContact.Name, name);
             Assert.AreEqual(mailContact.Data, email);
             Assert.AreEqual(exceptionMes, string.Empty);
@@ -58,6 +58,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(mailContact.Name, string.Empty);
             Assert.AreNotEqual(exceptionMes, string.Empty);
         }
@@ -79,6 +80,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(mailContact.Data, string.Empty);
             Assert.AreNotEqual(exceptionMes, string.Empty);
         }
@@ -103,6 +105,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(mailContact.Name, standard.Name);
             Assert.AreEqual(mailContact.Data, standard.Data);
             Assert.AreEqual(exceptionMes, string.Empty);
@@ -138,8 +141,7 @@ namespace UnitTest
             Assert.AreEqual(mailContact.Data, standard.Data);
             Assert.AreEqual(exceptionMes, string.Empty);
         }
-
-
+        
         /// <summary>
         /// Corect input data
         /// </summary>
@@ -159,6 +161,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(phoneContact.Name, name);
             Assert.AreEqual(phoneContact.Data, phone);
             Assert.AreEqual(exceptionMes, string.Empty);
@@ -171,7 +174,8 @@ namespace UnitTest
         public void PropertiesPhoneContactInputIncorrectName()
         {
             Contact phoneContact = new PhoneContact();
-            //changed o to 0
+
+            // Changed o to 0
             string name = "Kamil0chka";
             string exceptionMes = string.Empty;
             try
@@ -182,6 +186,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(phoneContact.Name, string.Empty);
             Assert.AreNotEqual(exceptionMes, string.Empty);
         }
@@ -203,6 +208,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(phoneContact.Data, string.Empty);
             Assert.AreNotEqual(exceptionMes, string.Empty);
         }
@@ -227,6 +233,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(phoneContact.Name, standard.Name);
             Assert.AreEqual(phoneContact.Data, standard.Data);
             Assert.AreEqual(exceptionMes, string.Empty);
@@ -262,8 +269,7 @@ namespace UnitTest
             Assert.AreEqual(phoneContact.Data, standard.Data);
             Assert.AreEqual(exceptionMes, string.Empty);
         }
-
-
+        
         /// <summary>
         /// Corect input data
         /// </summary>
@@ -283,6 +289,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(phoneContact.Name, name);
             Assert.AreEqual(phoneContact.Data, skype);
             Assert.AreEqual(exceptionMes, string.Empty);
@@ -305,6 +312,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(skypeContact.Name, string.Empty);
             Assert.AreNotEqual(exceptionMes, string.Empty);
         }
@@ -326,6 +334,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(skypeContact.Data, string.Empty);
             Assert.AreNotEqual(exceptionMes, string.Empty);
         }
@@ -350,6 +359,7 @@ namespace UnitTest
             {
                 exceptionMes = mes.Message;
             }
+
             Assert.AreEqual(skypeContact.Name, standard.Name);
             Assert.AreEqual(skypeContact.Data, standard.Data);
             Assert.AreEqual(exceptionMes, string.Empty);

@@ -23,7 +23,6 @@ namespace Program
         /// </summary>
         private string name;
 
-        public abstract string Data { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref = "Contact" /> class.
         /// Сonstructor without parameters
@@ -67,6 +66,11 @@ namespace Program
                 }
             }
         }
+
+        /// <summary>
+        /// Gets or sets contact information
+        /// </summary>
+        public abstract string Data { get; set; }
 
         /// <summary>
         /// Implementation of the interface.
