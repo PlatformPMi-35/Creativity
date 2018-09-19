@@ -140,5 +140,29 @@ namespace Program
                 Console.WriteLine(c.Key);
             }
         }
+
+        /// <summary>
+        /// Sorts collection of Contacts in lexicographical order by name
+        /// </summary>
+        /// <param name="collection">Collection to sort</param>
+        /// <returns>Sorted collection</returns>
+        public static IEnumerable<Contact> Sort(IEnumerable<Contact> collection)
+        {
+            IEnumerable<Contact> sortedCollection;
+            sortedCollection = collection.OrderBy(x => x.Name);
+            return sortedCollection;
+        }
+
+        /// <summary>
+        /// Transforms nongeneric container into generic type
+        /// </summary>
+        /// <param name="collection">Collection to transform</param>
+        /// <returns>Generic collection</returns>
+        public static IEnumerable<Contact> TransformContainerToGeneric(IEnumerable collection)
+        {
+            IEnumerable<Contact> genericCollection;
+            genericCollection = collection.OfType<Contact>();
+            return genericCollection;
+        }
     }
 }
