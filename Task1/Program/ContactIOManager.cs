@@ -43,7 +43,7 @@ namespace Program
         /// <param name="stream">StreamWriter to write to.</param>
         public static void Write(Contact contact, StreamWriter stream)
         {
-            stream.WriteLine($"{ contact.GetType().ToString() }");
+            stream.WriteLine($"{ contact.GetType() }");
             contact.Write(stream);
         }
 
@@ -55,8 +55,7 @@ namespace Program
         /// <returns>Contact which was read</returns>
         public static Contact Read(StreamReader stream)
         {
-            string str = stream.ReadLine();
-            if (Factories.TryGetValue(str, out ContactFactory factory))
+            if (Factories.TryGetValue(stream.ReadLine(), out ContactFactory factory))
             {
                 Contact contact = factory();
                 try

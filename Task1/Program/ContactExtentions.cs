@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ContactIOManager.cs" company="Creativity Team">
+// <copyright file="ContactExtentions.cs" company="Creativity Team">
 // (c) <T> inc.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -51,6 +51,94 @@ namespace Program
             }
 
             return contacts;
+        }
+
+        /// <summary>
+        /// Create pairs of contacts 
+        /// </summary>
+        /// <param name="listOfContacts">Contacts which will be written to dictionary</param>
+        /// <returns>Dictionary with key - name, and value - phone number, skype name or mail</returns>
+        public static Dictionary<string, List<Contact>> CreatePairsOfContacts(ArrayList listOfContacts)
+        {
+            Dictionary<string, List<Contact>> newPairs = new Dictionary<string, List<Contact>>();
+            for (int i = 0; i < listOfContacts.Count; ++i)
+            {
+                Contact cont = listOfContacts[i] as Contact;
+                if (newPairs.ContainsKey(cont.Name) == false)
+                {
+                    if (listOfContacts[i] is PhoneContact)
+                    {
+                        PhoneContact pc = listOfContacts[i] as PhoneContact;
+                        newPairs.Add(pc.Name, new List<Contact> { pc });
+                    }
+                    else if (listOfContacts[i] is SkypeContact)
+                    {
+                        SkypeContact sc = listOfContacts[i] as SkypeContact;
+                        newPairs.Add(sc.Name, new List<Contact> { sc });
+                    }
+                    else 
+                    {
+                        MailContact mc = listOfContacts[i] as MailContact;
+                        newPairs.Add(mc.Name, new List<Contact> { mc });
+                    }
+                }
+                else
+                {
+                    if (listOfContacts[i] is PhoneContact)
+                    {
+                        PhoneContact pc = listOfContacts[i] as PhoneContact;
+                        newPairs[pc.Name].Add(pc);
+                    }
+                    else if (listOfContacts[i] is SkypeContact)
+                    {
+                        SkypeContact sc = listOfContacts[i] as SkypeContact;
+                        newPairs[sc.Name].Add(sc);
+                    }
+                    else 
+                    {
+                        MailContact mc = listOfContacts[i] as MailContact;
+                        newPairs[mc.Name].Add(mc);
+                    }
+                }
+            }
+
+            return newPairs;
+        }
+
+        /// <summary>
+        /// Write contacts to file
+        /// </summary>
+        /// <param name="pairs">The contact information that will be written to the file</param>
+        public static void WriteToFile(Dictionary<string, List<Contact>> pairs)
+        {
+            using (StreamWriter file = new StreamWriter("File2.txt"))
+            {
+                foreach (var p in pairs)
+                {
+                    file.Write(p.Key + " - ");
+                    foreach (Contact c in p.Value)
+                    {
+                        file.WriteLine(c.GetData() + " ");
+                    }
+
+                    file.Write(file.NewLine);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Find contacts only with the phone number and write them on the screen
+        /// </summary>
+        /// <param name="pairs">The contact information that will be used to find contacts only with the phone number</param>
+        public static void SelectAndWriteContactsOnlyWithNumber(Dictionary<string, List<Contact>> pairs)
+        {
+            var cont = from r in pairs
+                       where (r.Value.Count == 1 && r.Value[0] is PhoneContact)
+                       select r;
+            foreach (var c in cont)
+            {
+                Console.WriteLine(c.Key);
+            }
         }
     }
 }
