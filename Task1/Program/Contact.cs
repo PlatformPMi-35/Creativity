@@ -23,6 +23,7 @@ namespace Program
         /// </summary>
         private string name;
 
+        public abstract string Data { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref = "Contact" /> class.
         /// Сonstructor without parameters
@@ -89,15 +90,6 @@ namespace Program
         public virtual void Write(StreamWriter writer)
         {
             writer.WriteLine($"{this.Name}");
-        }
-
-        /// <summary>
-        /// Return contact information as a string
-        /// </summary>
-        /// <returns>string</returns>
-        virtual public string GetData()
-        {
-            return this.name;
         }
     }
 }

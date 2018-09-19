@@ -40,14 +40,14 @@ namespace Program
         /// <param name="skypeP">Initializes the field of email</param>
         public SkypeContact(string nameP, string skypeP) : base(nameP)
         {
-            this.Skype = skypeP;
+            this.Data= skypeP;
         }
 
         /// <summary>
         /// Gets or sets Skype name
         /// </summary>
         /// <value> The property value must be string and match the template</value>
-        public string Skype
+        public override string Data
         {
             get
             {
@@ -79,7 +79,7 @@ namespace Program
             string[] line = reader.ReadLine().Split(' ');
             if (line.Length == 1)
             {
-                this.Skype = line[0];
+                this.Data = line[0];
             }
         }
 
@@ -91,16 +91,7 @@ namespace Program
         public override void Write(StreamWriter writer)
         {
             base.Write(writer);
-            writer.WriteLine($"{this.Skype}");
-        }
-
-        /// <summary>
-        /// Return contact information as a string
-        /// </summary>
-        /// <returns>string</returns>
-        public override string GetData()
-        {
-            return this.skype;
+            writer.WriteLine($"{this.Data}");
         }
     }
 }
