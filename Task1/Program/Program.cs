@@ -12,13 +12,75 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            ArrayList contacts = ContactExtentions.ReadFile();
-            var sortedContacts = ContactExtentions.Sort(ContactExtentions.TransformContainerToGeneric(contacts));
-            ContactExtentions.SaveSortedContactsToFile(sortedContacts);
-            Dictionary<string, List<Contact>> pairs = ContactExtentions.CreatePairsOfContacts(contacts);
-            ContactExtentions.WriteToFile(pairs);
-            ContactExtentions.SelectAndWriteContactsOnlyWithNumber(pairs);
-            Console.ReadKey();
+            ArrayList contacts = new ArrayList();
+            Dictionary<string, List<Contact>> pairs = new Dictionary<string, List<Contact>>();
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("1 - Read the contacts from the file in ArrayList;");
+                Console.WriteLine("2 - Sort collection in alphabetical order and write it to a File1.txt;");
+                Console.WriteLine("3 - Rewrite contacts from ArrayList to the container of pairs and save it in File2.txt;");
+                Console.WriteLine("4 - Show the names of people who only have phone number;");
+                Console.WriteLine("0 - Вихiд;");
+                Console.Write("\nMake your choice: ");
+                string s = Console.ReadLine();
+                int sel = Convert.ToInt32(s);
+                switch (sel)
+                {
+                    case 1:
+                        {
+                            contacts = ContactExtentions.ReadFile();
+                            Console.WriteLine("The contacts were recorded in ArrayList;");
+                            Console.ReadKey();
+                            break;
+                        }
+                    case 2:
+                        {
+                            if (contacts.Count != 0)
+                            {
+                                var sortedContacts = ContactExtentions.Sort(ContactExtentions.TransformContainerToGeneric(contacts));
+                                ContactExtentions.SaveSortedContactsToFile(sortedContacts);
+                                Console.WriteLine("The contacts were sorted out and recorded in File1.txt;");
+                            }
+                            else
+                                Console.WriteLine("ArrayList is empty so it is not possible;");
+                            Console.ReadKey();
+                            break;
+                        }
+                    case 3:
+                        {
+                            if (contacts.Count != 0)
+                            {
+                                pairs = ContactExtentions.CreatePairsOfContacts(contacts);
+                                ContactExtentions.WriteToFile(pairs);
+                                Console.WriteLine("The contacts were rewritten from ArrayList in Dictionary;");
+                            }
+                            else
+                                Console.WriteLine("ArrayList is empty so it is not possible;");
+                            Console.ReadKey();
+                            break;
+                        }
+                    case 4:
+                        {
+                            Console.WriteLine("Names of people who have only phone number:");
+                            ContactExtentions.SelectAndWriteContactsOnlyWithNumber(pairs);
+                            Console.ReadKey();
+                            break;
+                        }
+                    case 0:
+                        {
+                            Environment.Exit(0);
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Input 1, 2, 3 or 4!");
+                            Console.ReadKey();
+                            break;
+                        }
+                }
+            }
         }
     }
 }
+
