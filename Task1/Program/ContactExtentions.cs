@@ -21,7 +21,9 @@ namespace Program
         /// <summary>
         /// Reads Contacts from file
         /// </summary>
-        /// <returns>ArrayList of Contacts</returns>
+        /// <returns>ArrayList of <see cref = "Contact" /></returns>
+        /// <exception cref="System.Exception">Thrown when invalid input occurs.</exception>
+        /// <exception cref="System.IO.IOException">Thrown when an I/O error occurs.</exception>
         public static ArrayList ReadFile()
         {
             ArrayList contacts = new ArrayList();
@@ -30,7 +32,7 @@ namespace Program
             {
                 using (StreamReader stream = new StreamReader(path))
                 {
-                    while (!stream.EndOfStream)
+                    while (stream.EndOfStream == false)
                     {
                         try
                         {

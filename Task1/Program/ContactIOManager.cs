@@ -25,9 +25,9 @@ namespace Program
         private static readonly Dictionary<string, ContactFactory> Factories 
             = new Dictionary<string, ContactFactory>
         {
-            { nameof(PhoneContact), () => { return new PhoneContact(); } },
-            { nameof(MailContact), () => { return new MailContact(); } },
-            { nameof(SkypeContact), () => { return new SkypeContact(); } }
+            { typeof(PhoneContact).ToString(), () => { return new PhoneContact(); } },
+            { typeof(MailContact).ToString(), () => { return new MailContact(); } },
+            { typeof(SkypeContact).ToString(), () => { return new SkypeContact(); } }
         };
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Program
         /// <param name="stream">StreamWriter to write to.</param>
         public static void Write(Contact contact, StreamWriter stream)
         {
-            stream.WriteLine($"{ contact.GetType() } ");
+            stream.WriteLine($"{ contact.GetType().ToString() }");
             contact.Write(stream);
         }
 
@@ -55,7 +55,8 @@ namespace Program
         /// <returns>Contact which was read</returns>
         public static Contact Read(StreamReader stream)
         {
-            if (Factories.TryGetValue(stream.ReadLine(), out ContactFactory factory))
+            string str = stream.ReadLine();
+            if (Factories.TryGetValue(str, out ContactFactory factory))
             {
                 Contact contact = factory();
                 try
