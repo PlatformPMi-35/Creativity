@@ -16,7 +16,7 @@ namespace Program
     /// <summary>
     /// Contains methods to work with Contact hierarchy
     /// </summary>
-    public static class ContactExtentions
+    public static class ContactExtensions
     {
         /// <summary>
         /// Reads Contacts from file
@@ -24,10 +24,9 @@ namespace Program
         /// <returns>ArrayList of <see cref = "Contact" /></returns>
         /// <exception cref="System.Exception">Thrown when invalid input occurs.</exception>
         /// <exception cref="System.IO.IOException">Thrown when an I/O error occurs.</exception>
-        public static ArrayList ReadFile()
+        public static ArrayList ReadFile(string path)
         {
             ArrayList contacts = new ArrayList();
-            string path = "..//..//ContactsInfo.txt";
             try
             {
                 using (StreamReader stream = new StreamReader(path))
@@ -57,9 +56,9 @@ namespace Program
         /// Saves collection of contacts to file
         /// </summary>
         /// <param name="collection">Collection to save</param>
-        public static void SaveSortedContactsToFile(IEnumerable<Contact> collection)
+        public static void SaveSortedContactsToFile(IEnumerable<Contact> collection, string filepath)
         {
-            using (StreamWriter writer = new StreamWriter("File1.txt"))
+            using (StreamWriter writer = new StreamWriter(filepath))
             {
                 foreach (Contact c in collection)
                 {
@@ -96,9 +95,9 @@ namespace Program
         /// Write contacts to file
         /// </summary>
         /// <param name="pairs">The contact information that will be written to the file</param>
-        public static void WriteToFile(Dictionary<string, List<Contact>> pairs)
+        public static void WriteToFile(Dictionary<string, List<Contact>> pairs, string filepath)
         {
-            using (StreamWriter file = new StreamWriter("File2.txt"))
+            using (StreamWriter file = new StreamWriter(filepath))
             {
                 foreach (var p in pairs)
                 {

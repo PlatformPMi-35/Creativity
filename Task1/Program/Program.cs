@@ -12,12 +12,12 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            ArrayList contacts = ContactExtentions.ReadFile();
-            var sortedContacts = ContactExtentions.Sort(ContactExtentions.TransformContainerToGeneric(contacts));
-            ContactExtentions.SaveSortedContactsToFile(sortedContacts);
-            Dictionary<string, List<Contact>> pairs = ContactExtentions.CreatePairsOfContacts(contacts);
-            ContactExtentions.WriteToFile(pairs);
-            ContactExtentions.SelectAndWriteContactsOnlyWithNumber(pairs);
+            ArrayList contacts = ContactExtensions.ReadFile();
+            var sortedContacts = ContactExtensions.Sort(ContactExtensions.TransformContainerToGeneric(contacts));
+            ContactExtensions.SaveSortedContactsToFile(sortedContacts);
+            Dictionary<string, List<Contact>> pairs = ContactExtensions.CreatePairsOfContacts(contacts);
+            ContactExtensions.WriteToFile(pairs);
+            ContactExtensions.SelectAndWriteContactsOnlyWithNumber(pairs);
             Console.ReadKey();
         }
     }
