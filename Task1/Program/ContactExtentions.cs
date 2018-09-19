@@ -54,6 +54,21 @@ namespace Program
         }
   
         /// <summary>
+        /// Saves collection of contacts to file
+        /// </summary>
+        /// <param name="collection">Collection to save</param>
+        public static void SaveSortedContactsToFile(IEnumerable<Contact> collection)
+        {
+            using (StreamWriter writer = new StreamWriter("File1.txt"))
+            {
+                foreach (Contact c in collection)
+                {
+                    ContactIOManager.Write(c, writer);
+                }
+            }
+        }
+
+        /// <summary>
         /// Create pairs of contacts 
         /// </summary>
         /// <param name="listOfContacts">Contacts which will be written to dictionary</param>
