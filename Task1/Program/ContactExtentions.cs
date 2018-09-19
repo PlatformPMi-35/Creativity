@@ -52,7 +52,7 @@ namespace Program
 
             return contacts;
         }
-
+  
         /// <summary>
         /// Saves collection of contacts to file
         /// </summary>
@@ -81,40 +81,12 @@ namespace Program
                 Contact cont = listOfContacts[i] as Contact;
                 if (newPairs.ContainsKey(cont.Name) == false)
                 {
-                    if (listOfContacts[i] is PhoneContact)
-                    {
-                        PhoneContact pc = listOfContacts[i] as PhoneContact;
-                        newPairs.Add(pc.Name, new List<Contact> { pc });
-                    }
-                    else if (listOfContacts[i] is SkypeContact)
-                    {
-                        SkypeContact sc = listOfContacts[i] as SkypeContact;
-                        newPairs.Add(sc.Name, new List<Contact> { sc });
-                    }
-                    else 
-                    {
-                        MailContact mc = listOfContacts[i] as MailContact;
-                        newPairs.Add(mc.Name, new List<Contact> { mc });
-                    }
+                    newPairs.Add(cont.Name, new List<Contact> { cont });
                 }
                 else
                 {
-                    if (listOfContacts[i] is PhoneContact)
-                    {
-                        PhoneContact pc = listOfContacts[i] as PhoneContact;
-                        newPairs[pc.Name].Add(pc);
-                    }
-                    else if (listOfContacts[i] is SkypeContact)
-                    {
-                        SkypeContact sc = listOfContacts[i] as SkypeContact;
-                        newPairs[sc.Name].Add(sc);
-                    }
-                    else 
-                    {
-                        MailContact mc = listOfContacts[i] as MailContact;
-                        newPairs[mc.Name].Add(mc);
-                    }
-                }
+                    newPairs[cont.Name].Add(cont);
+                }                
             }
 
             return newPairs;
