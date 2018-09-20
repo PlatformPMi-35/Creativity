@@ -94,9 +94,10 @@ namespace UnitTest
                     Helpers.MaxStringLength,
                     Helpers.NameAllowed);
                 toret.Add(GenerateContactWithName(name));
+                ++i;
                 while (
-                    (Helpers.random.Next() % probabilityDenominator) == probabilityNumerator
-                    && i < toret.Capacity)
+                  (Helpers.random.Next() % probabilityDenominator) == probabilityNumerator
+                  && i < toret.Capacity)
                 {
                     toret.Add(GenerateContactWithName(name));
                     ++i;
@@ -167,22 +168,36 @@ namespace UnitTest
         [TestMethod]
         public void TestCreatePairsOfContacts()
         {
-            var contacts = new ArrayList(GenerateContactsWithCollidingNames(
+            var contacts = GenerateContactsWithCollidingNames(
                 Helpers.MinListLength,
-                Helpers.MaxListLength));
-           
-            var dictionary = ContactExtensions.CreatePairsOfContacts(contacts);
+                Helpers.MaxListLength);
 
-
+            var dictionary = ContactExtensions.CreatePairsOfContacts(new ArrayList(contacts));
+            int count = 0;
+            string name;
+            for (int i = 0; i < contacts.Count;)
+            {
+                name = contacts[i].Name;
+                count = 1;
+                ++i;
+                while (i < contacts.Count)
+                {
+                    if (name == contacts[i].Name)
+                    {
+                        ++i;
+                        ++count;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                Assert.AreEqual(dictionary[name].Count, count);
+            }
         }
 
         [TestMethod]
-        public void TestWriteToFile()
-        {
-        }
-
-        [TestMethod]
-        public void TestSelectAndWriteContactsOnlyWithNumber()
+        public void TestSelectContactsOnlyWithNumber()
         {
             var contacts = GenerateContactsWithCollidingNames(
                 Helpers.MinListLength,
@@ -191,8 +206,14 @@ namespace UnitTest
             var uniqueNumberNames = groups
                 .Where(grp => grp.Count() == 1 && grp.First() is PhoneContact)
                 .Select(grp => grp.First().Name).ToList();
-            //ContactExtensions.SelectAndWriteContactsOnlyWithNumber(contacts);
 
+            var testedContacts = ContactExtensions.SelectContactsOnlyWithNumber(
+                ContactExtensions.CreatePairsOfContacts(new ArrayList(contacts)));
+            Assert.AreEqual(uniqueNumberNames.Count, testedContacts.Count);
+            foreach (var c in uniqueNumberNames)
+            {
+                Assert.IsTrue(testedContacts.Exists(cont => cont.Name == c));
+            }
         }
 
         [TestMethod]
@@ -220,7 +241,17 @@ namespace UnitTest
         [TestMethod]
         public void TestTransformContainerToGeneric()
         {
-
+            List<Contact> contacts = Helpers.GenerateContactList(
+                Helpers.MinListLength,
+                Helpers.MaxListLength);
+            var generic = ContactExtensions.TransformContainerToGeneric(contacts);
+            Assert.IsTrue(generic.Count() == contacts.Count);
+            int i = 0;
+            foreach (object c in generic)
+            {
+                Assert.IsTrue(c.Equals(contacts[i]));
+                ++i;
+            }
         }
     }
 
