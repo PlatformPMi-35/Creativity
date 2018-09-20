@@ -40,7 +40,7 @@ namespace UnitTest
         /// <summary>
         /// Generates list of contact. Some values may have same name.
         /// It is guaranteed that values with the same name are located consequently.
-        /// Containce not less than <paramref name="minLength"/> and less than <paramref name="maxLength"/> elements.
+        /// Contains not less than <paramref name="minLength"/> and less than <paramref name="maxLength"/> elements.
         /// </summary>
         /// <param name="minLength">Minimum number of objects in list</param>
         /// <param name="maxLength">Maximum number of objects in list (won't be reached)</param>
