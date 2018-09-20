@@ -102,5 +102,19 @@ namespace Program
         {
             return this.email;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is MailContact)
+            {
+                return base.Equals(obj) && (obj as MailContact).Email == this.Email;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

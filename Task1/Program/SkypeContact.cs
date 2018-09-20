@@ -102,5 +102,19 @@ namespace Program
         {
             return this.skype;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is SkypeContact)
+            {
+                return base.Equals(obj) && (obj as SkypeContact).Skype == this.Skype;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

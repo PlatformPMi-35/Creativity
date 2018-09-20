@@ -102,5 +102,19 @@ namespace Program
         {
             return this.number;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is PhoneContact)
+            {
+                return base.Equals(obj) && (obj as PhoneContact).Number == this.Number;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

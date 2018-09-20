@@ -99,5 +99,19 @@ namespace Program
         {
             return this.name;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Contact)
+            {
+                return this.Name == (obj as Contact).Name;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Name.GetHashCode() + this.GetData().GetHashCode();
+        }
     }
 }
