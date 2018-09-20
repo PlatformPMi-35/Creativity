@@ -18,9 +18,9 @@ namespace Program
     /// </summary>
     public class Program
     {
-        private static readonly string ReadFilePath = "ContactsInfo.txt";
-        private static readonly string WriteSortedPath = "Task1.txt";
-        private static readonly string RewritePath = "Task2.txt";
+        private static readonly string ReadFilePath = "../../ContactsInfo.txt";
+        private static readonly string WriteSortedPath = "../../Task1.txt";
+        private static readonly string RewritePath = "../../Task2.txt";
         
         /// <summary>
         /// Defines the entry point for application
