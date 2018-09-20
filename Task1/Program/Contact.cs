@@ -68,6 +68,11 @@ namespace Program
         }
 
         /// <summary>
+        /// Gets or sets contact information
+        /// </summary>
+        public abstract string Data { get; set; }
+
+        /// <summary>
         /// Implementation of the interface.
         /// Method for load information from file.
         /// </summary>
@@ -89,29 +94,7 @@ namespace Program
         public virtual void Write(StreamWriter writer)
         {
             writer.WriteLine($"{this.Name}");
-        }
 
-        /// <summary>
-        /// Return contact information as a string
-        /// </summary>
-        /// <returns>string</returns>
-        virtual public string GetData()
-        {
-            return this.name;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (obj is Contact)
-            {
-                return this.Name == (obj as Contact).Name;
-            }
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return this.Name.GetHashCode() + this.GetData().GetHashCode();
-        }
+        
     }
 }

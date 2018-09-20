@@ -91,7 +91,7 @@ namespace Program
                     file.Write(p.Key + " - ");
                     foreach (Contact c in p.Value)
                     {
-                        file.WriteLine(c.GetData() + " ");
+                        file.WriteLine(c.Data + " ");
                     }
 
                     file.Write(file.NewLine);

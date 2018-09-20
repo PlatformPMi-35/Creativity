@@ -40,14 +40,14 @@ namespace Program
         /// <param name="numberP">Initializes the field of number</param>
         public PhoneContact(string nameP, string numberP) : base(nameP)
         {
-            this.Number = numberP;
+            this.Data = numberP;
         }
 
         /// <summary>
         /// Gets or sets number to PhoneContact
         /// </summary>
         /// <value> The property value must be string and match the template</value>
-        public string Number
+        public override string Data
         {
             get
             {
@@ -79,7 +79,7 @@ namespace Program
             string[] line = reader.ReadLine().Split(' ');
             if (line.Length == 1)
             {
-                this.Number = line[0];
+                this.Data = line[0];
             }
         }
 
@@ -91,16 +91,7 @@ namespace Program
         public override void Write(StreamWriter writer)
         {
             base.Write(writer);
-            writer.WriteLine($"{this.Number}");
-        }
-
-        /// <summary>
-        /// Return contact information as a string
-        /// </summary>
-        /// <returns>string</returns>
-        public override string GetData()
-        {
-            return this.number;
+            writer.WriteLine($"{this.Data}");
         }
 
         public override bool Equals(object obj)
