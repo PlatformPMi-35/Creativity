@@ -57,18 +57,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Program\Program.csproj">
-      <Project>{d6bda83d-1125-42d3-9ed7-b3b11ec625c0}</Project>
-      <Name>Program</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="MailContactInput.txt" />
     <Content Include="MailContactOutput.txt" />
     <Content Include="PhoneContactInput.txt" />
     <Content Include="PhoneContactOutput.txt" />
     <Content Include="SkypeContactInput.txt" />
     <Content Include="SkypeContactOutput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Program\Program.csproj">
+      <Project>{d6bda83d-1125-42d3-9ed7-b3b11ec625c0}</Project>
+      <Name>Program</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
