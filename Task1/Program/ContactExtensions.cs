@@ -103,7 +103,7 @@ namespace Program
         {
             return (from r in pairs
                        where (r.Value.Count == 1 && r.Value[0] is PhoneContact)
-                       select r.C).ToList();
+                       select r.Value[0]).ToList();
         }
 
         /// <summary>
