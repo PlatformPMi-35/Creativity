@@ -49,10 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactTest.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="FunctionTest.cs" />
+    <Compile Include="ExtensionTest.cs" />
+    <Compile Include="IOManagerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
