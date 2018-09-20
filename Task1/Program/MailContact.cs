@@ -98,7 +98,7 @@ namespace Program
         {
             if (obj is MailContact)
             {
-                return base.Equals(obj) && (obj as MailContact).Email == this.Email;
+                return base.Equals(obj) && (obj as Contact).Data == this.Data;
             }
             return false;
         }

@@ -94,7 +94,20 @@ namespace Program
         public virtual void Write(StreamWriter writer)
         {
             writer.WriteLine($"{this.Name}");
+        }
 
-        
+        public override bool Equals(object obj)
+        {
+            if (obj is Contact)
+            {
+                return this.Name.Equals((obj as Contact).Name);
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

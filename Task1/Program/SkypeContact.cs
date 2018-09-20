@@ -98,7 +98,7 @@ namespace Program
         {
             if (obj is SkypeContact)
             {
-                return base.Equals(obj) && (obj as SkypeContact).Skype == this.Skype;
+                return base.Equals(obj) && (obj as Contact).Data == this.Data;
             }
             return false;
         }

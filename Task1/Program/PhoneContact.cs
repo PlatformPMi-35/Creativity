@@ -98,7 +98,7 @@ namespace Program
         {
             if (obj is PhoneContact)
             {
-                return base.Equals(obj) && (obj as PhoneContact).Number == this.Number;
+                return base.Equals(obj) && (obj as Contact).Data == this.Data;
             }
             return false;
         }
