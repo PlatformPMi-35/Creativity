@@ -16,7 +16,7 @@ namespace Program
     /// <summary>
     /// Contains methods to work with Contact hierarchy
     /// </summary>
-    public static class ContactExtentions
+    public static class ContactExtensions
     {
         /// <summary>
         /// Reads Contacts from file
@@ -24,30 +24,16 @@ namespace Program
         /// <returns>ArrayList of <see cref = "Contact" /></returns>
         /// <exception cref="System.Exception">Thrown when invalid input occurs.</exception>
         /// <exception cref="System.IO.IOException">Thrown when an I/O error occurs.</exception>
-        public static ArrayList ReadFile()
+        public static ArrayList ReadFile(string path)
         {
             ArrayList contacts = new ArrayList();
-            string path = "..//..//ContactsInfo.txt";
-            try
+
+            using (StreamReader stream = new StreamReader(path))
             {
-                using (StreamReader stream = new StreamReader(path))
+                while (stream.EndOfStream == false)
                 {
-                    while (stream.EndOfStream == false)
-                    {
-                        try
-                        {
-                            contacts.Add(ContactIOManager.Read(stream));
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e.Message);
-                        }
-                    }
+                    contacts.Add(ContactIOManager.Read(stream));
                 }
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine(e.Message);
             }
 
             return contacts;
@@ -57,9 +43,9 @@ namespace Program
         /// Saves collection of contacts to file
         /// </summary>
         /// <param name="collection">Collection to save</param>
-        public static void SaveSortedContactsToFile(IEnumerable<Contact> collection)
+        public static void SaveSortedContactsToFile(IEnumerable<Contact> collection, string filepath)
         {
-            using (StreamWriter writer = new StreamWriter("File1.txt"))
+            using (StreamWriter writer = new StreamWriter(filepath))
             {
                 foreach (Contact c in collection)
                 {
@@ -96,9 +82,9 @@ namespace Program
         /// Write contacts to file
         /// </summary>
         /// <param name="pairs">The contact information that will be written to the file</param>
-        public static void WriteToFile(Dictionary<string, List<Contact>> pairs)
+        public static void WriteToFile(Dictionary<string, List<Contact>> pairs, string filepath)
         {
-            using (StreamWriter file = new StreamWriter("File2.txt"))
+            using (StreamWriter file = new StreamWriter(filepath))
             {
                 foreach (var p in pairs)
                 {
@@ -113,18 +99,23 @@ namespace Program
             }
         }
 
+        public static List<Contact> SelectContactsOnlyWithNumber(Dictionary<string, List<Contact>> pairs)
+        {
+            return (from r in pairs
+                       where (r.Value.Count == 1 && r.Value[0] is PhoneContact)
+                       select r.Value[0]).ToList();
+        }
+
         /// <summary>
         /// Find contacts only with the phone number and write them on the screen
         /// </summary>
         /// <param name="pairs">The contact information that will be used to find contacts only with the phone number</param>
         public static void SelectAndWriteContactsOnlyWithNumber(Dictionary<string, List<Contact>> pairs)
         {
-            var cont = from r in pairs
-                       where (r.Value.Count == 1 && r.Value[0] is PhoneContact)
-                       select r;
+            var cont = SelectContactsOnlyWithNumber(pairs);
             foreach (var c in cont)
             {
-                Console.WriteLine(c.Key);
+                Console.WriteLine(c.Name);
             }
         }
 

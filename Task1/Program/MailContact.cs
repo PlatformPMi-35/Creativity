@@ -93,5 +93,19 @@ namespace Program
             base.Write(writer);
             writer.WriteLine($"{this.Data}");
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is MailContact)
+            {
+                return base.Equals(obj) && (obj as Contact).Data == this.Data;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

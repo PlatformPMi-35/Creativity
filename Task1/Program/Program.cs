@@ -18,6 +18,10 @@ namespace Program
     /// </summary>
     public class Program
     {
+        private static readonly string ReadFilePath = "../../ContactsInfo.txt";
+        private static readonly string WriteSortedPath = "../../Task1.txt";
+        private static readonly string RewritePath = "../../Task2.txt";
+        
         /// <summary>
         /// Defines the entry point for application
         /// </summary>
@@ -29,11 +33,11 @@ namespace Program
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("1 - Read the contacts from the file in ArrayList;");
-                Console.WriteLine("2 - Sort collection in alphabetical order and write it to a File1.txt;");
-                Console.WriteLine("3 - Rewrite contacts from ArrayList to the container of pairs and save it in File2.txt;");
+                Console.WriteLine($"1 - Read the contacts from the {ReadFilePath} into ArrayList;");
+                Console.WriteLine($"2 - Sort collection in alphabetical order and write it into {WriteSortedPath};");
+                Console.WriteLine($"3 - Rewrite contacts from ArrayList to the container of pairs and save it into {RewritePath};");
                 Console.WriteLine("4 - Show the names of people who only have phone number;");
-                Console.WriteLine("0 - Вихiд;");
+                Console.WriteLine("0 - Exit;");
                 int choice;
                 do
                 {
@@ -44,7 +48,7 @@ namespace Program
                 {
                     case 1:
                         {
-                            contacts = ContactExtentions.ReadFile();
+                            contacts = ContactExtensions.ReadFile(ReadFilePath);
                             Console.WriteLine("The contacts were recorded in ArrayList;");
                             Console.ReadKey();
                             break;
@@ -54,8 +58,8 @@ namespace Program
                         {
                             if (contacts.Count != 0)
                             {
-                                var sortedContacts = ContactExtentions.Sort(ContactExtentions.TransformContainerToGeneric(contacts));
-                                ContactExtentions.SaveSortedContactsToFile(sortedContacts);
+                                var sortedContacts = ContactExtensions.Sort(ContactExtensions.TransformContainerToGeneric(contacts));
+                                ContactExtensions.SaveSortedContactsToFile(sortedContacts, WriteSortedPath);
                                 Console.WriteLine("The contacts were sorted out and recorded in File1.txt;");
                             }
                             else
@@ -71,8 +75,8 @@ namespace Program
                         {
                             if (contacts.Count != 0)
                             {
-                                pairs = ContactExtentions.CreatePairsOfContacts(contacts);
-                                ContactExtentions.WriteToFile(pairs);
+                                pairs = ContactExtensions.CreatePairsOfContacts(contacts);
+                                ContactExtensions.WriteToFile(pairs, RewritePath);
                                 Console.WriteLine("The contacts were rewritten from ArrayList in Dictionary;");
                             }
                             else
@@ -89,7 +93,7 @@ namespace Program
                             if (contacts.Count != 0)
                             {
                                 Console.WriteLine("Names of people who have only phone number:");
-                                ContactExtentions.SelectAndWriteContactsOnlyWithNumber(pairs);
+                                ContactExtensions.SelectAndWriteContactsOnlyWithNumber(pairs);
                             }
                             else
                             {
