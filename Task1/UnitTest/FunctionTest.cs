@@ -191,7 +191,7 @@ namespace UnitTest
             var uniqueNumberNames = groups
                 .Where(grp => grp.Count() == 1 && grp.First() is PhoneContact)
                 .Select(grp => grp.First().Name).ToList();
-            ContactExtensions.SelectAndWriteContactsOnlyWithNumber(contacts, filepath);
+            //ContactExtensions.SelectAndWriteContactsOnlyWithNumber(contacts);
 
         }
 

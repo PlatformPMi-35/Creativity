@@ -33,7 +33,7 @@ namespace Program
                 Console.WriteLine("2 - Sort collection in alphabetical order and write it to a File1.txt;");
                 Console.WriteLine("3 - Rewrite contacts from ArrayList to the container of pairs and save it in File2.txt;");
                 Console.WriteLine("4 - Show the names of people who only have phone number;");
-                Console.WriteLine("0 - Вихiд;");
+                Console.WriteLine("0 - Exit;");
                 int choice;
                 do
                 {
