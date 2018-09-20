@@ -26,3 +26,10 @@ E:\studing\Creativity\Task1\Program\obj\Debug\Program.pdb
 E:\studing\Creativity\Task1\Program\bin\Debug\Program.exe.config
 E:\studing\Creativity\Task1\Program\bin\Debug\Program.exe
 E:\studing\Creativity\Task1\Program\bin\Debug\Program.pdb
+D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\obj\Debug\Program.csprojAssemblyReference.cache
+D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
+D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\obj\Debug\Program.exe
+D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\obj\Debug\Program.pdb
+D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\bin\Debug\Program.exe.config
+D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\bin\Debug\Program.exe
+D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\bin\Debug\Program.pdb
