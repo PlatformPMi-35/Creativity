@@ -100,6 +100,7 @@ namespace Program
             {
                 return base.Equals(obj) && (obj as Contact).Data == this.Data;
             }
+
             return false;
         }
 

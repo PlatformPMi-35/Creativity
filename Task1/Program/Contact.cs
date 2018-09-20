@@ -102,6 +102,7 @@ namespace Program
             {
                 return this.Name.Equals((obj as Contact).Name);
             }
+
             return false;
         }
 
