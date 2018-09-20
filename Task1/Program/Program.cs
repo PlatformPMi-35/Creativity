@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="ContactIOManager.cs" company="Creativity Team">
-// (c) <T> inc.
+// (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
 using System;

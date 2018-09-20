@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="PhoneContact.cs" company="Creativity Team">
-// (c) <T> inc.
+// (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
 using System;
@@ -94,6 +94,12 @@ namespace Program
             writer.WriteLine($"{this.Data}");
         }
 
+        /// <summary>
+        /// Compares <see cref="MailContact"/> to obj. 
+        /// Checks types, if types coincide - check's fields.
+        /// </summary>
+        /// <param name="obj">Object to compare to</param>
+        /// <returns>True if equal, false otherwise</returns>
         public override bool Equals(object obj)
         {
             if (obj is PhoneContact)
@@ -104,6 +110,10 @@ namespace Program
             return false;
         }
 
+        /// <summary>
+        /// Overrided through <see cref="Contact"/>
+        /// </summary>
+        /// <returns>hash code value</returns>
         public override int GetHashCode()
         {
             return base.GetHashCode();

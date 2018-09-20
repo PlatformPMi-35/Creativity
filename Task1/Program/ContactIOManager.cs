@@ -1,17 +1,17 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="ContactIOManager.cs" company="Creativity Team">
-// (c) <T> inc.
+// (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Program
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     /// <summary>
     /// Provides convenient input and output for derived Contact classes.
     ///  Any new derived class must be added to 'Factories' field in order to use functions of this class.

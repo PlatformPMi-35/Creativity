@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ContactExtentions.cs" company="Creativity Team">
-// (c) <T> inc.
+// <copyright file="ContactExtensions.cs" company="Creativity Team">
+// (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
 using System;
@@ -19,11 +19,12 @@ namespace Program
     public static class ContactExtensions
     {
         /// <summary>
-        /// Reads Contacts from file
+        /// Reads <see cref = "Contact" />s from file located at <paramref name="path"/>. 
         /// </summary>
-        /// <returns>ArrayList of <see cref = "Contact" /></returns>
+        /// <param name="path">File to read from</param>
+        /// <returns>ArrayList of <see cref = "Contact" /> which was read</returns>
         /// <exception cref="System.Exception">Thrown when invalid input occurs.</exception>
-        /// <exception cref="System.IO.IOException">Thrown when an I/O error occurs.</exception>
+        /// <exception cref="System.IO.IOException">Thrown when an I/O error occurs, i.e. file doesn't exist</exception>
         public static ArrayList ReadFile(string path)
         {
             ArrayList contacts = new ArrayList();
@@ -43,6 +44,7 @@ namespace Program
         /// Saves collection of contacts to file
         /// </summary>
         /// <param name="collection">Collection to save</param>
+        /// <param name="filepath">File to write to</param>
         public static void SaveSortedContactsToFile(IEnumerable<Contact> collection, string filepath)
         {
             using (StreamWriter writer = new StreamWriter(filepath))
@@ -79,9 +81,10 @@ namespace Program
         }
 
         /// <summary>
-        /// Write contacts to file
+        /// Writes contact names and associated data to file
         /// </summary>
         /// <param name="pairs">The contact information that will be written to the file</param>
+        /// <param name="filepath">File to write to</param>
         public static void WriteToFile(Dictionary<string, List<Contact>> pairs, string filepath)
         {
             using (StreamWriter file = new StreamWriter(filepath))
@@ -99,6 +102,11 @@ namespace Program
             }
         }
 
+        /// <summary>
+        /// Sseks for all <see cref="Contact"/>s which have only one phone number.
+        /// </summary>
+        /// <param name="pairs"><see cref="Dictionary{TKey, TValue}"/> of names and <see cref="Contact"/>s associated with it</param>
+        /// <returns><see cref="List{T}"/> of <see cref="Contact"/>s which have only phone numbers.</returns>
         public static List<Contact> SelectContactsOnlyWithNumber(Dictionary<string, List<Contact>> pairs)
         {
             return (from r in pairs

@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="Contact.cs" company="Creativity Team">
-// Company copyright tag.
+// (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
 using System;
@@ -96,6 +96,11 @@ namespace Program
             writer.WriteLine($"{this.Name}");
         }
 
+        /// <summary>
+        /// Compares two <see cref = "Contact" />s by their names for equality.
+        /// </summary>
+        /// <param name="obj">Object to compare to.</param>
+        /// <returns>true if objects are equal, false if they're not equal or object is not of type <see cref = "Contact" /></returns>
         public override bool Equals(object obj)
         {
             if (obj is Contact)
@@ -105,10 +110,14 @@ namespace Program
 
             return false;
         }
-
+        
+        /// <summary>
+        /// Uses properties <see cref="Name"/> and <see cref="Data"/> to get get hash code.
+        /// </summary>
+        /// <returns>hash of the object</returns>
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return this.Name.GetHashCode() + this.Data.GetHashCode();
         }
     }
 }

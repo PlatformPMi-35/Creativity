@@ -45,7 +45,7 @@ namespace UnitTest
         public static string GenerateString(int minLength, int maxLength, string source)
         {
             StringBuilder toret = new StringBuilder(random.Next(minLength, maxLength));
-            for(int i = 0; i < toret.Capacity; ++i)
+            for (int i = 0; i < toret.Capacity; ++i)
             {
                 toret.Append(source[random.Next() % source.Length]);
             }
@@ -191,7 +191,7 @@ namespace UnitTest
             var uniqueNumberNames = groups
                 .Where(grp => grp.Count() == 1 && grp.First() is PhoneContact)
                 .Select(grp => grp.First().Name).ToList();
-            //ContactExtensions.SelectAndWriteContactsOnlyWithNumber(contacts);
+            // ContactExtensions.SelectAndWriteContactsOnlyWithNumber(contacts);
 
         }
 
@@ -255,7 +255,7 @@ namespace UnitTest
             {
                 try
                 {
-                    for(int i = 0; i < contacts.Count; ++i)
+                    for (int i = 0; i < contacts.Count; ++i)
                     {
                         Assert.IsTrue(contacts[i].Equals(ContactIOManager.Read(stream)));
                     }
@@ -305,7 +305,7 @@ namespace UnitTest
                         Assert.IsTrue(contacts[i].Equals(ContactIOManager.Read(stream)));
                     }
                 }
-                catch(ArgumentException)
+                catch (ArgumentException)
                 {
                     isIncorrectValueCatched = true;
                 }
