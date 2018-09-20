@@ -27,26 +27,13 @@ namespace Program
         public static ArrayList ReadFile(string path)
         {
             ArrayList contacts = new ArrayList();
-            try
+
+            using (StreamReader stream = new StreamReader(path))
             {
-                using (StreamReader stream = new StreamReader(path))
+                while (stream.EndOfStream == false)
                 {
-                    while (stream.EndOfStream == false)
-                    {
-                        try
-                        {
-                            contacts.Add(ContactIOManager.Read(stream));
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e.Message);
-                        }
-                    }
+                    contacts.Add(ContactIOManager.Read(stream));
                 }
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine(e.Message);
             }
 
             return contacts;
@@ -112,18 +99,23 @@ namespace Program
             }
         }
 
+        public static List<Contact> SelectContactsOnlyWithNumber(Dictionary<string, List<Contact>> pairs)
+        {
+            return (from r in pairs
+                       where (r.Value.Count == 1 && r.Value[0] is PhoneContact)
+                       select r.C).ToList();
+        }
+
         /// <summary>
         /// Find contacts only with the phone number and write them on the screen
         /// </summary>
         /// <param name="pairs">The contact information that will be used to find contacts only with the phone number</param>
         public static void SelectAndWriteContactsOnlyWithNumber(Dictionary<string, List<Contact>> pairs)
         {
-            var cont = from r in pairs
-                       where (r.Value.Count == 1 && r.Value[0] is PhoneContact)
-                       select r;
+            var cont = SelectContactsOnlyWithNumber(pairs);
             foreach (var c in cont)
             {
-                Console.WriteLine(c.Key);
+                Console.WriteLine(c.Name);
             }
         }
 
