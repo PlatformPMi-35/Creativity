@@ -40,3 +40,4 @@ D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\obj\Debug\Program.csprojAssembl
 D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
 D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\obj\Debug\Program.exe
 D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\obj\Debug\Program.pdb
+D:\ProjectC#3C\ПКІС\Creativity\Task1\Program\bin\Debug\Program.xml
