@@ -48,8 +48,15 @@ namespace Program
                 {
                     case 1:
                         {
-                            contacts = ContactExtensions.ReadFile(ReadFilePath);
-                            Console.WriteLine("The contacts were recorded in ArrayList;");
+                            try
+                            {
+                                contacts = ContactExtensions.ReadFile(ReadFilePath);
+                                Console.WriteLine("The contacts were recorded in ArrayList;");
+                            }
+                            catch (Exception mes)
+                            {
+                                Console.WriteLine(mes.Message);
+                            }
                             Console.ReadKey();
                             break;
                         }
@@ -58,9 +65,16 @@ namespace Program
                         {
                             if (contacts.Count != 0)
                             {
-                                var sortedContacts = ContactExtensions.Sort(ContactExtensions.TransformContainerToGeneric(contacts));
-                                ContactExtensions.SaveSortedContactsToFile(sortedContacts, WriteSortedPath);
-                                Console.WriteLine("The contacts were sorted out and recorded in File1.txt;");
+                                try
+                                {
+                                    var sortedContacts = ContactExtensions.Sort(ContactExtensions.TransformContainerToGeneric(contacts));
+                                    ContactExtensions.SaveSortedContactsToFile(sortedContacts, WriteSortedPath);
+                                    Console.WriteLine("The contacts were sorted out and recorded in File1.txt;");
+                                }
+                                catch (Exception mes)
+                                {
+                                    Console.WriteLine(mes.Message);
+                                }
                             }
                             else
                             {
@@ -75,9 +89,15 @@ namespace Program
                         {
                             if (contacts.Count != 0)
                             {
-                                pairs = ContactExtensions.CreatePairsOfContacts(contacts);
-                                ContactExtensions.WriteToFile(pairs, RewritePath);
-                                Console.WriteLine("The contacts were rewritten from ArrayList in Dictionary;");
+                                try {
+                                    pairs = ContactExtensions.CreatePairsOfContacts(contacts);
+                                    ContactExtensions.WriteToFile(pairs, RewritePath);
+                                    Console.WriteLine("The contacts were rewritten from ArrayList in Dictionary;");
+                                }
+                                catch (Exception mes)
+                                {
+                                    Console.WriteLine(mes.Message);
+                                }
                             }
                             else
                             {
@@ -92,8 +112,15 @@ namespace Program
                         {
                             if (contacts.Count != 0)
                             {
-                                Console.WriteLine("Names of people who have only phone number:");
-                                ContactExtensions.SelectAndWriteContactsOnlyWithNumber(pairs);
+                                try
+                                {
+                                    Console.WriteLine("Names of people who have only phone number:");
+                                    ContactExtensions.SelectAndWriteContactsOnlyWithNumber(pairs);
+                                }
+                                catch (Exception mes)
+                                {
+                                    Console.WriteLine(mes.Message);
+                                }
                             }
                             else
                             {

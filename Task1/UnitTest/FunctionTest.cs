@@ -325,6 +325,7 @@ namespace UnitTest
                     Assert.IsTrue(false);
                 }
             }
+
             bool isIncorrectValueCatched = false;
             using (StreamReader stream = new StreamReader(filepath))
             {
@@ -343,9 +344,9 @@ namespace UnitTest
                 {
                     Assert.IsTrue(false);
                 }
+
                 Assert.IsTrue(isIncorrectValueCatched);
             }
         }
     }
-
 }
