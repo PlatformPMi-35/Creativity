@@ -15,6 +15,12 @@
             </MenuItem>
             <MenuItem Header="Shapes"/>
         </Menu>
-        <Canvas x:Name="canvasDrawingArea" Background="#FFFFFE" DockPanel.Dock="Left" MouseLeftButtonDown="canvasDrawingArea_MouseLeftButtonDown" MouseLeftButtonUp="canvasDrawingArea_MouseLeftButtonUp" MouseMove="canvasDrawingArea_MouseMove"/>
+        <Canvas x:Name="canvasDrawingArea" Background="#FFFFFE" DockPanel.Dock="Left">
+            <Canvas.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Menu item 1" />
+                 </ContextMenu>
+            </Canvas.ContextMenu>
+        </Canvas>
     </DockPanel>
 </Window>
