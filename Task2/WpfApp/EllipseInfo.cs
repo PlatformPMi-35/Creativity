@@ -7,13 +7,17 @@ using System.Windows.Shapes;
 
 namespace WpfApp
 {
-    class EllipseInfo
+    public class EllipseInfo
     {
         private Point topLeft;
         private Point botRight;
         private string name;
         private Ellipse shape;
 
+        public EllipseInfo()
+        {
+            shape = new Ellipse();
+        }
         public Point TopLeft
         {
             get
