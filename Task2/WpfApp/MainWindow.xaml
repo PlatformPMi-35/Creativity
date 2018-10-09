@@ -14,6 +14,6 @@
                 <MenuItem Header="Save" Command="{Binding SaveFile}"/>
             </MenuItem>
         </Menu>
-        <Canvas DockPanel.Dock="Left"/>
+        <Canvas x:Name="canvasDrawingArea" Background="#FFFFFE" DockPanel.Dock="Left" MouseLeftButtonDown="canvasDrawingArea_MouseLeftButtonDown" MouseLeftButtonUp="canvasDrawingArea_MouseLeftButtonUp" MouseMove="canvasDrawingArea_MouseMove"/>
     </DockPanel>
 </Window>
