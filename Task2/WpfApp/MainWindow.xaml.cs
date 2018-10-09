@@ -19,13 +19,16 @@ namespace WpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Ellipse> ellipses = new List<Ellipse>();
+        public List<EllipseInfo> ellipses = new List<EllipseInfo>();
 
         private Point a;
         private Point b;
         private Ellipse ellipseTemp;
         private bool isDraw = false;
 
+        /// <summary>
+        /// Initialize main window and components
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -47,16 +50,18 @@ namespace WpfApp
         private void canvasDrawingArea_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             b = e.GetPosition(canvasDrawingArea);
-            Ellipse ellipse = new Ellipse();
-            ellipse.Height=Math.Abs(a.Y-b.Y);
-            ellipse.Width = Math.Abs(a.X-b.X);
-            ellipse.Stroke = Brushes.Red;
-            ellipse.StrokeThickness=1.5;
-            ellipse.Fill = Brushes.AliceBlue;
-            canvasDrawingArea.Children.Add(ellipse);
-            Canvas.SetLeft(ellipse, a.X > b.X ? b.X : a.X);
-            Canvas.SetTop(ellipse, a.Y > b.Y ? b.Y : a.Y);
+            EllipseInfo ellipse = new EllipseInfo();
+            ellipse.Shape.Height=Math.Abs(a.Y-b.Y);
+            ellipse.Shape.Width = Math.Abs(a.X-b.X);
+            ellipse.Shape.Stroke = Brushes.Red;
+            ellipse.Shape.StrokeThickness=1.5;
+            ellipse.Shape.Fill = Brushes.AliceBlue;
+            canvasDrawingArea.Children.Add(ellipse.Shape);
+            ellipse.TopLeft = (new Point(a.X > b.X ? b.X : a.X, a.Y > b.Y ? b.Y : a.Y));
+            Canvas.SetLeft(ellipse.Shape, ellipse.TopLeft.X);
+            Canvas.SetTop(ellipse.Shape, ellipse.TopLeft.Y);
             canvasDrawingArea.Children.Remove(ellipseTemp);
+            ellipses.Add(ellipse);
             isDraw = false;
         }
 
@@ -75,16 +80,18 @@ namespace WpfApp
                 }
                 else
                 {
-                    Ellipse ellipse = new Ellipse();
-                    ellipse.Height = ellipseTemp.Height;
-                    ellipse.Width = ellipseTemp.Width;
-                    ellipse.Stroke = Brushes.Red;
-                    ellipse.StrokeThickness = 1.5;
-                    ellipse.Fill = Brushes.AliceBlue;
-                    canvasDrawingArea.Children.Add(ellipse);
-                    Canvas.SetLeft(ellipse, a.X > b.X ? b.X : a.X);
-                    Canvas.SetTop(ellipse, a.Y > b.Y ? b.Y : a.Y);
+                    EllipseInfo ellipse = new EllipseInfo();
+                    ellipse.Shape.Height = ellipseTemp.Height;
+                    ellipse.Shape.Width = ellipseTemp.Width;
+                    ellipse.Shape.Stroke = Brushes.Red;
+                    ellipse.Shape.StrokeThickness = 1.5;
+                    ellipse.Shape.Fill = Brushes.AliceBlue;
+                    canvasDrawingArea.Children.Add(ellipse.Shape);
+                    ellipse.TopLeft= (new Point(a.X > b.X ? b.X : a.X, a.Y > b.Y ? b.Y : a.Y));
+                    Canvas.SetLeft(ellipse.Shape, ellipse.TopLeft.X);
+                    Canvas.SetTop(ellipse.Shape, ellipse.TopLeft.Y);
                     canvasDrawingArea.Children.Remove(ellipseTemp);
+                    ellipses.Add(ellipse);
                     isDraw = false;
                 }
             }
