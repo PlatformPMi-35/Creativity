@@ -10,7 +10,6 @@ namespace WpfApp
     public class EllipseInfo
     {
         private Point topLeft;
-        private Point botRight;
         private string name;
         private Ellipse shape;
 
@@ -27,17 +26,6 @@ namespace WpfApp
             set
             {
                 topLeft = value;
-            }
-        }
-        public Point BotRight
-        {
-            get
-            {
-                return botRight;
-            }
-            set
-            {
-                botRight = value;
             }
         }
         public string Name
