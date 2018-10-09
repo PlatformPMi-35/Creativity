@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="ApplicationViewModel.cs" />
     <Compile Include="CommandHandler.cs" />
+    <Compile Include="EllipseInfo.cs" />
     <Compile Include="FileOperations.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

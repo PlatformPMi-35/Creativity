@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
+using System.Windows.Shapes;
 
 namespace WpfApp
 {
@@ -11,6 +13,7 @@ namespace WpfApp
         private Point botRight;
         private string name;
         private Ellipse shape;
+
         public Point TopLeft
         {
             get
@@ -44,7 +47,7 @@ namespace WpfApp
                 name = value;
             }
         }
-        public EllipseInfo Shape
+        public Ellipse Shape
         {
             get
             {

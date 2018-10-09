@@ -13,9 +13,7 @@
                 <MenuItem Header="Open" Command="{Binding OpenFile}"/>
                 <MenuItem Header="Save" Command="{Binding SaveFile}"/>
             </MenuItem>
-            <Menu DockPanel.Dock="Top">
-                <MenuItem Header="Shapes"/>
-            </Menu>
+            <MenuItem Header="Shapes"/>
         </Menu>
         <Canvas x:Name="canvasDrawingArea" Background="#FFFFFE" DockPanel.Dock="Left" MouseLeftButtonDown="canvasDrawingArea_MouseLeftButtonDown" MouseLeftButtonUp="canvasDrawingArea_MouseLeftButtonUp" MouseMove="canvasDrawingArea_MouseMove"/>
     </DockPanel>
