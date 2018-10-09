@@ -63,6 +63,8 @@
     </Compile>
     <Compile Include="ApplicationViewModel.cs" />
     <Compile Include="CommandHandler.cs" />
+    <Compile Include="EllipseCanvas.cs" />
+    <Compile Include="EllipseListChangedEventArgs.cs" />
     <Compile Include="EllipseInfo.cs" />
     <Compile Include="FileOperations.cs" />
     <Compile Include="MainWindow.xaml.cs">
