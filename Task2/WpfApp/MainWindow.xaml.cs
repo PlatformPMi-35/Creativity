@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,7 @@ namespace WpfApp
             DataContext = this;
             ellipseCanvas.Canvas = canvasDrawingArea;
             ellipseCanvas.OnEllipseAdded += EllipseCanvas_OnEllipseAdded;
+            canExecute = true;
         }
 
         private ICommand newFile;
@@ -115,25 +117,25 @@ namespace WpfApp
 
         public void SaveFileExecute()
         {
-            //try
-            //{
-            //    if (this.ellipses.Count == 0)
-            //    {
-            //        throw new ArgumentNullException("There aren't shapes on the drawing area");
-            //    }
-            //    SaveFileDialog dialog = new SaveFileDialog
-            //    {
-            //        Filter = "Xml files (*.xml)|*.xml"
-            //    };
-            //    if (dialog.ShowDialog() == true)
-            //    {
-            //        FileOperations.Serialize(this.ellipses, dialog.FileName);
-            //    }
-            //}
-            //catch (ArgumentNullException exp)
-            //{
-            //    MessageBox.Show(exp.ParamName);
-            //}
+            try
+            {
+                if (ellipseCanvas.IsEmpty() == true)
+                {
+                    throw new ArgumentNullException("There aren't shapes on the drawing area");
+                }
+                SaveFileDialog dialog = new SaveFileDialog
+                {
+                    Filter = "Xml files (*.xml)|*.xml"
+                };
+                if (dialog.ShowDialog() == true)
+                {
+                    FileOperations.Serialize(ellipseCanvas.Ellipses, dialog.FileName);
+                }
+            }
+            catch (ArgumentNullException exp)
+            {
+                MessageBox.Show(exp.ParamName);
+            }
         }
 
 

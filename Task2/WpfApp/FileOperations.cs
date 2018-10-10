@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Windows;
 using System.Windows.Shapes;
@@ -12,31 +13,40 @@ namespace WpfApp
 {
     public class FileOperations
     {
-        public static void Serialize(ObservableCollection<Ellipse> ellipses, string path)
+        public static void Serialize(List<EllipseInfo> ellipses, string path)
         {
-            try
+            XmlSerializer xmlFormat = new XmlSerializer(typeof(List<EllipseInfo>));
+            using (Stream stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
             {
-                using (Stream stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
+                try
                 {
-                    XmlSerializer xmlFormat = new XmlSerializer(typeof(ObservableCollection<Ellipse>));
                     xmlFormat.Serialize(stream, ellipses);
                 }
-            }
-            catch (IOException exp)
-            {
-                MessageBox.Show(exp.Message);
+                catch (SerializationException e)
+                {
+                    MessageBox.Show("Failed to serialize. Reason: " + e.Message);
+
+                }
             }
         }
 
-        public static ObservableCollection<Ellipse> Deserialize(string fileName)
+        public static List<EllipseInfo> Deserialize(string fileName)
         {
-            XmlSerializer xmlFormat = new XmlSerializer(typeof(ObservableCollection<Ellipse>));
-            ObservableCollection<Ellipse> ellipses = new ObservableCollection<Ellipse>();
+            XmlSerializer xmlFormat = new XmlSerializer(typeof(List<EllipseInfo>));
+            List<EllipseInfo> ellipses = new List<EllipseInfo>();
             using (Stream stream = File.OpenRead(fileName))
             {
-                ellipses = (ObservableCollection<Ellipse>)xmlFormat.Deserialize(stream);
+                try
+                {
+                    ellipses = (List<EllipseInfo>)xmlFormat.Deserialize(stream);
+                }
+                catch (SerializationException e)
+                {
+                    MessageBox.Show("Failed to deserialize. Reason: " + e.Message);
+
+                }
             }
             return ellipses;
         }
-        }
     }
+}
