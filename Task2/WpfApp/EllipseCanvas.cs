@@ -47,6 +47,13 @@ namespace WpfApp
         }
         
         private List<EllipseInfo> ellipses = new List<EllipseInfo>();
+        public List<EllipseInfo> Ellipses
+        {
+            get
+            {
+                return ellipses;
+            }
+        }
 
         private EllipseInfo currentEllipse;
         public EllipseInfo CurrentEllipse
@@ -259,6 +266,12 @@ namespace WpfApp
         {
             ellipses.Remove(ellipse);
             OnEllipseRemoved?.Invoke(this, new EllipseListChangedEventArgs(ellipse, this));
+        }
+        public bool IsEmpty()
+        {
+            if (ellipses.Count == 0)
+                return true;
+            else return false;
         }
     }
 }
