@@ -1,4 +1,9 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="SetColorTextDialog.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,71 +24,112 @@ namespace WpfApp
     /// </summary>
     public partial class SetTextColorDialog : UserControl
     {
+        /// <summary>
+        /// <see cref = "Brush"/> for contour
+        /// </summary>
         private Brush contour;
-        public Brush Contour {
-            get
-            {
-                return contour;
-            }
 
-            set
-            {
-                contour = value;
-            }
-        }
+        /// <summary>
+        /// <see cref = "Brush"/> for fill
+        /// </summary>
         private Brush fill;
-        public Brush Fill {
-            get
-            {
-                return fill;
-            }
-            set
-            {
-                fill = value;
-            }
-        }
-        public string NameItem { get; set; }
+
+        /// <summary>
+        /// Show color dialog
+        /// </summary>
         public SetTextColorDialog()
         {
-            InitializeComponent();
-            NameItem = "item";
-            txtName.Text = NameItem;
-            Contour = Brushes.Black;
-            btnContour.Background = Contour;
-            Fill = Brushes.White;
-            btnFill.Background = Fill;
+            this.InitializeComponent();
+            this.NameItem = "item";
+            txtName.Text = this.NameItem;
+            this.Contour = Brushes.Black;
+            btnContour.Background = this.Contour;
+            this.Fill = Brushes.White;
+            btnFill.Background = this.Fill;
         }
 
-        private void btnContour_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Gets or sets item name
+        /// </summary>
+        public string NameItem { get; set; }
+
+        /// <summary>
+        /// Gets or sets <see cref = "Brush"/> contour property
+        /// </summary>
+        public Brush Contour
         {
-            System.Windows.Forms.ColorDialog dialog=new System.Windows.Forms.ColorDialog();
-            if(dialog.ShowDialog()== System.Windows.Forms.DialogResult.OK)
+            get
             {
-                System.Drawing.Color a = dialog.Color;
-                SolidColorBrush brush = new SolidColorBrush(Color.FromArgb(a.A,a.R,a.G,a.B));
-                Contour = brush;
-                btnContour.Background = Contour;
+                return this.contour;
+            }
+
+            set
+            {
+                this.contour = value;
             }
         }
 
-        private void btnFill_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Gets or sets <see cref = "Brush"/> fill property
+        /// </summary>
+        public Brush Fill
+        {
+            get
+            {
+                return this.fill;
+            }
+
+            set
+            {
+                this.fill = value;
+            }
+        }
+
+        /// <summary>
+        /// Set contour color
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised the event</param>
+        /// <param name="e">Provides data for the RoutedEventArgs event</param>
+        private void BtnContour_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.ColorDialog dialog = new System.Windows.Forms.ColorDialog();
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 System.Drawing.Color a = dialog.Color;
                 SolidColorBrush brush = new SolidColorBrush(Color.FromArgb(a.A, a.R, a.G, a.B));
-                Fill = brush;
-                btnFill.Background = Fill;
+                this.Contour = brush;
+                btnContour.Background = this.Contour;
             }
         }
 
-        private void btnOk_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Set fill color
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised the event</param>
+        /// <param name="e">Provides data for the RoutedEventArgs event</param>
+        private void BtnFill_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.ColorDialog dialog = new System.Windows.Forms.ColorDialog();
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                System.Drawing.Color a = dialog.Color;
+                SolidColorBrush brush = new SolidColorBrush(Color.FromArgb(a.A, a.R, a.G, a.B));
+                this.Fill = brush;
+                btnFill.Background = this.Fill;
+            }
+        }
+
+        /// <summary>
+        /// Press OK
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised the event</param>
+        /// <param name="e">Provides data for the RoutedEventArgs event</param>
+        private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
             Window window = this.Parent as Window;
-            if (window!=null)
+            if (window != null)
             {
-                NameItem = txtName.Text;
+                this.NameItem = txtName.Text;
                 window.DialogResult = true;
                 window.Close();
             }
