@@ -1,21 +1,11 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="SetColorTextDialog.cs" company="Creativity Team">
+// <copyright file="SetTextColorDialog.xaml.cs" company="Creativity Team">
 // (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfApp
 {
@@ -35,7 +25,7 @@ namespace WpfApp
         private Brush fill;
 
         /// <summary>
-        /// Show color dialog
+        /// Initilizes a new instance of <see cref="SetTextColorDialog"/> class
         /// </summary>
         public SetTextColorDialog()
         {
