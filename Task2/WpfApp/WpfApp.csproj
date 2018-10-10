@@ -61,7 +61,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ApplicationViewModel.cs" />
+    <Compile Include="ChooseEllipseCommand.cs" />
     <Compile Include="CommandHandler.cs" />
     <Compile Include="EllipseCanvas.cs" />
     <Compile Include="EllipseListChangedEventArgs.cs" />
