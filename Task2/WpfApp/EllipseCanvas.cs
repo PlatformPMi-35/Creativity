@@ -191,8 +191,6 @@ namespace WpfApp
             ellipse.Shape.Fill = Brushes.AliceBlue;
             Canvas.Children.Add(ellipse.Shape);
             ellipse.TopLeft = (new Point(a.X > b.X ? b.X : a.X, a.Y > b.Y ? b.Y : a.Y));
-            Canvas.SetLeft(ellipse.Shape, ellipse.TopLeft.X);
-            Canvas.SetTop(ellipse.Shape, ellipse.TopLeft.Y);
             ellipse.Name = ellipse_counter.ToString();
             AddEllipse(ellipse);
             Canvas.Children.Remove(ellipseTemp);
@@ -243,6 +241,8 @@ namespace WpfApp
         {
             this.ellipses.Add(ellipse);
             Canvas.SetZIndex(ellipse.Shape, 0);
+            Canvas.SetLeft(ellipse.Shape, ellipse.TopLeft.X);
+            Canvas.SetTop(ellipse.Shape, ellipse.TopLeft.Y);
             OnEllipseAdded?.Invoke(this, new EllipseListChangedEventArgs( ellipse, this ));
         }
 
