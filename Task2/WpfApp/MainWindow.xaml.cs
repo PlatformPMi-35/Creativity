@@ -83,7 +83,7 @@ namespace WpfApp
             }
         }
 
-      //  public event PropertyChangedEventHandler PropertyChanged;
+        //  public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged(string prop)
         {
@@ -91,28 +91,39 @@ namespace WpfApp
             ////{
             ////    PropertyChanged(this, new PropertyChangedEventArgs(prop));
             ////}
-           // PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+            // PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+
+        private void ClearCanvas()
+        {
+            for (int i = 1; i < menuContext.Items.Count;)
+            {
+                menuContext.Items.RemoveAt(i);
+                menuShapes.Items.RemoveAt(i);
+            }
+            this.ellipseCanvas.Clear();
         }
 
         public void NewFileExecute()
         {
-          //  this.canvasDrawingArea = new Canvas();
-           // this.ellipses.Clear();
+            ClearCanvas();
         }
 
         public void OpenFileExecute()
         {
-            this.canvasDrawingArea = new Canvas();
-          //  this.ellipses.Clear();
-         //   OpenFileDialog dialog = new OpenFileDialog
-        //    {
-         //       Filter = "Xml files (*.xml)|*.xml"
-        //    };
-        //    if (dialog.ShowDialog() == true)
-        //    {
-       //         this.ellipses.Clear();
-        //        this.ellipses = FileOperations.Deserialize(dialog.FileName);
-        //    }
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Filter = "Xml files (*.xml)|*.xml"
+            };
+            if (dialog.ShowDialog() == true)
+            {
+                ClearCanvas();
+                List<EllipseInfo> ellipses = FileOperations.Deserialize(dialog.FileName);
+                foreach (EllipseInfo ellipse in ellipses)
+                {
+                    this.ellipseCanvas.AddEllipse(ellipse);
+                }
+            }
         }
 
         public void SaveFileExecute()

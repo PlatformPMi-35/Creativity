@@ -20,7 +20,6 @@ namespace WpfApp
 {
     public class EllipseCanvas
     {
-        int ellipse_counter = 0;
         private Canvas canvas = new Canvas();
         public Canvas Canvas
         {
@@ -30,7 +29,7 @@ namespace WpfApp
             }
             set
             {
-                if(this.canvas != null)
+                if (this.canvas != null)
                 {
                     this.canvas.MouseLeftButtonDown -= canvasDrawingArea_MouseLeftButtonDown;
                     this.canvas.MouseLeftButtonUp -= canvasDrawingArea_MouseLeftButtonUp;
@@ -45,7 +44,7 @@ namespace WpfApp
                 }
             }
         }
-        
+
         private List<EllipseInfo> ellipses = new List<EllipseInfo>();
         public List<EllipseInfo> Ellipses
         {
@@ -101,7 +100,7 @@ namespace WpfApp
                 }
             }
         }
-        
+
 
         private void MoveEllipse(EllipseInfo ellipse, Point shift)
         {
@@ -109,16 +108,16 @@ namespace WpfApp
             Canvas.SetTop(ellipse.Shape, ellipse.TopLeft.Y);
             Canvas.SetLeft(ellipse.Shape, ellipse.TopLeft.X);
         }
-        
+
         private void Ellipse_KeyDown(object sender, KeyEventArgs e)
         {
             Keyboard.ClearFocus();
             Key k = e.Key;
-            switch(k)
+            switch (k)
             {
                 case Key.Down:
                     {
-                        MoveEllipse(currentEllipse, new Point ( 0.0, 1 ));
+                        MoveEllipse(currentEllipse, new Point(0.0, 1));
                         break;
                     }
                 case Key.Up:
@@ -128,7 +127,7 @@ namespace WpfApp
                     }
                 case Key.Left:
                     {
-                        MoveEllipse(currentEllipse, new Point(-1,0.0));
+                        MoveEllipse(currentEllipse, new Point(-1, 0.0));
                         break;
                     }
                 case Key.Right:
@@ -187,7 +186,6 @@ namespace WpfApp
 
         private void OnEndCreation(MouseEventArgs e)
         {
-            ++ellipse_counter;
             SetTextColorDialog dialog = new SetTextColorDialog();
             Window window = new Window
             {
@@ -206,7 +204,6 @@ namespace WpfApp
                 ellipse.Shape.StrokeThickness = 1.5;
                 ellipse.Shape.Fill = dialog.Fill;
                 ellipse.Name = dialog.NameItem;
-                Canvas.Children.Add(ellipse.Shape);
                 ellipse.TopLeft = (new Point(a.X > b.X ? b.X : a.X, a.Y > b.Y ? b.Y : a.Y));
                 AddEllipse(ellipse);
             }
@@ -260,7 +257,8 @@ namespace WpfApp
             Canvas.SetZIndex(ellipse.Shape, 0);
             Canvas.SetLeft(ellipse.Shape, ellipse.TopLeft.X);
             Canvas.SetTop(ellipse.Shape, ellipse.TopLeft.Y);
-            OnEllipseAdded?.Invoke(this, new EllipseListChangedEventArgs( ellipse, this ));
+            this.Canvas.Children.Add(ellipse.Shape);
+            OnEllipseAdded?.Invoke(this, new EllipseListChangedEventArgs(ellipse, this));
         }
 
         public void Clear()
@@ -269,19 +267,25 @@ namespace WpfApp
             {
                 OnEllipseRemoved?.Invoke(this, new EllipseListChangedEventArgs(ellipse, this));
             }
+            currentEllipse = null;
             ellipses.Clear();
+            Canvas.Children.Clear();
         }
 
         public void RemoveEllipse(EllipseInfo ellipse)
         {
             ellipses.Remove(ellipse);
+            if (ReferenceEquals(this.currentEllipse, ellipse))
+            {
+                currentEllipse = null;
+            }
+            Canvas.Children.Remove(ellipse.Shape);
             OnEllipseRemoved?.Invoke(this, new EllipseListChangedEventArgs(ellipse, this));
         }
+
         public bool IsEmpty()
         {
-            if (ellipses.Count == 0)
-                return true;
-            else return false;
+            return ellipses.Count == 0;
         }
     }
 }
