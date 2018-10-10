@@ -19,12 +19,7 @@ namespace WpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<EllipseInfo> ellipses = new List<EllipseInfo>();
-
-        private Point a;
-        private Point b;
-        private Ellipse ellipseTemp;
-        private bool isDraw = false;
+        EllipseCanvas ellipseCanvas = new EllipseCanvas();
 
         /// <summary>
         /// Initialize main window and components
@@ -32,69 +27,115 @@ namespace WpfApp
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ApplicationViewModel();
-            ellipseTemp = new Ellipse();
-            ellipseTemp.Stroke = Brushes.Green;
-            ellipseTemp.StrokeThickness = 1.5;
+            DataContext = this;
+            ellipseCanvas.Canvas = canvasDrawingArea;
+            ellipseCanvas.OnEllipseAdded += EllipseCanvas_OnEllipseAdded;
         }
 
-        private void canvasDrawingArea_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            a=e.GetPosition(canvasDrawingArea);
-            ellipseTemp.Width = 0;
-            ellipseTemp.Height = 0;
-            canvasDrawingArea.Children.Add(ellipseTemp);
-            isDraw = true;
-        }
+        private ICommand newFile;
+        private ICommand openFile;
+        private ICommand saveFile;
 
-        private void canvasDrawingArea_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        void ResetCurrentEllipse()
         {
-            b = e.GetPosition(canvasDrawingArea);
-            EllipseInfo ellipse = new EllipseInfo();
-            ellipse.Shape.Height=Math.Abs(a.Y-b.Y);
-            ellipse.Shape.Width = Math.Abs(a.X-b.X);
-            ellipse.Shape.Stroke = Brushes.Red;
-            ellipse.Shape.StrokeThickness=1.5;
-            ellipse.Shape.Fill = Brushes.AliceBlue;
-            canvasDrawingArea.Children.Add(ellipse.Shape);
-            ellipse.TopLeft = (new Point(a.X > b.X ? b.X : a.X, a.Y > b.Y ? b.Y : a.Y));
-            Canvas.SetLeft(ellipse.Shape, ellipse.TopLeft.X);
-            Canvas.SetTop(ellipse.Shape, ellipse.TopLeft.Y);
-            canvasDrawingArea.Children.Remove(ellipseTemp);
-            ellipses.Add(ellipse);
-            isDraw = false;
+            this.ellipseCanvas.CurrentEllipse = null;
         }
+        private ICommand resetEllipse;
 
-        private void canvasDrawingArea_MouseMove(object sender, MouseEventArgs e)
+        public ICommand ResetEllipse
         {
-            
-            if (isDraw)
+            get
             {
-                if (e.LeftButton == MouseButtonState.Pressed)
-                {
-                    b = e.GetPosition(canvasDrawingArea);
-                    ellipseTemp.Height = Math.Abs(a.Y - b.Y);
-                    ellipseTemp.Width = Math.Abs(a.X - b.X);
-                    Canvas.SetLeft(ellipseTemp, a.X > b.X ? b.X : a.X);
-                    Canvas.SetTop(ellipseTemp, a.Y > b.Y ? b.Y : a.Y);
-                }
-                else
-                {
-                    EllipseInfo ellipse = new EllipseInfo();
-                    ellipse.Shape.Height = ellipseTemp.Height;
-                    ellipse.Shape.Width = ellipseTemp.Width;
-                    ellipse.Shape.Stroke = Brushes.Red;
-                    ellipse.Shape.StrokeThickness = 1.5;
-                    ellipse.Shape.Fill = Brushes.AliceBlue;
-                    canvasDrawingArea.Children.Add(ellipse.Shape);
-                    ellipse.TopLeft= (new Point(a.X > b.X ? b.X : a.X, a.Y > b.Y ? b.Y : a.Y));
-                    Canvas.SetLeft(ellipse.Shape, ellipse.TopLeft.X);
-                    Canvas.SetTop(ellipse.Shape, ellipse.TopLeft.Y);
-                    canvasDrawingArea.Children.Remove(ellipseTemp);
-                    ellipses.Add(ellipse);
-                    isDraw = false;
-                }
+                return this.resetEllipse ?? (this.resetEllipse = new CommandHandler(() => ResetCurrentEllipse(), true));
             }
         }
+
+        private void EllipseCanvas_OnEllipseAdded(object sender, EllipseListChangedEventArgs args)
+        {
+            ChooseEllipseCommand toadd = new ChooseEllipseCommand { Canvas = this.ellipseCanvas, Ellipse = args.Ellipse };
+            menuShapes.Items.Add(toadd);
+            menuContext.Items.Add(toadd);
+        }
+        private bool canExecute;
+        public ICommand NewFile
+        {
+            get
+            {
+                return this.newFile ?? (this.newFile = new CommandHandler(() => NewFileExecute(), this.canExecute));
+            }
+        }
+
+        public ICommand OpenFile
+        {
+            get
+            {
+                return this.openFile ?? (this.openFile = new CommandHandler(() => OpenFileExecute(), this.canExecute));
+            }
+        }
+
+        public ICommand SaveFile
+        {
+            get
+            {
+                return this.saveFile ?? (this.saveFile = new CommandHandler(() => SaveFileExecute(), this.canExecute));
+            }
+        }
+
+      //  public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string prop)
+        {
+            ////if (PropertyChanged != null)
+            ////{
+            ////    PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            ////}
+           // PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
+
+        public void NewFileExecute()
+        {
+          //  this.canvasDrawingArea = new Canvas();
+           // this.ellipses.Clear();
+        }
+
+        public void OpenFileExecute()
+        {
+            this.canvasDrawingArea = new Canvas();
+          //  this.ellipses.Clear();
+         //   OpenFileDialog dialog = new OpenFileDialog
+        //    {
+         //       Filter = "Xml files (*.xml)|*.xml"
+        //    };
+        //    if (dialog.ShowDialog() == true)
+        //    {
+       //         this.ellipses.Clear();
+        //        this.ellipses = FileOperations.Deserialize(dialog.FileName);
+        //    }
+        }
+
+        public void SaveFileExecute()
+        {
+            //try
+            //{
+            //    if (this.ellipses.Count == 0)
+            //    {
+            //        throw new ArgumentNullException("There aren't shapes on the drawing area");
+            //    }
+            //    SaveFileDialog dialog = new SaveFileDialog
+            //    {
+            //        Filter = "Xml files (*.xml)|*.xml"
+            //    };
+            //    if (dialog.ShowDialog() == true)
+            //    {
+            //        FileOperations.Serialize(this.ellipses, dialog.FileName);
+            //    }
+            //}
+            //catch (ArgumentNullException exp)
+            //{
+            //    MessageBox.Show(exp.ParamName);
+            //}
+        }
+
+
     }
 }
