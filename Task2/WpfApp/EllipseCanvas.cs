@@ -59,7 +59,6 @@ namespace WpfApp
             {
                 if (currentEllipse != null)
                 {
-                    currentEllipse.Shape.Stroke = Brushes.Red;
                     currentEllipse.Shape.StrokeThickness = 1.5;
                     Canvas.SetZIndex(currentEllipse.Shape, 0);
                     currentEllipse.Shape.MouseLeftButtonDown -= Shape_MouseLeftButtonDown;
@@ -77,8 +76,7 @@ namespace WpfApp
                 currentEllipse = value;
                 if (currentEllipse != null)
                 {
-                    currentEllipse.Shape.Stroke = Brushes.Green;
-                    currentEllipse.Shape.StrokeThickness = 2;
+                    currentEllipse.Shape.StrokeThickness = 3;
                     currentEllipse.Shape.MouseLeftButtonDown += Shape_MouseLeftButtonDown;
                     currentEllipse.Shape.MouseLeftButtonUp += Shape_MouseLeftButtonUp;
                     currentEllipse.Shape.MouseMove += Shape_MouseMove;
@@ -183,16 +181,28 @@ namespace WpfApp
         private void OnEndCreation(MouseEventArgs e)
         {
             ++ellipse_counter;
-            EllipseInfo ellipse = new EllipseInfo();
-            ellipse.Shape.Height = Math.Abs(a.Y - b.Y);
-            ellipse.Shape.Width = Math.Abs(a.X - b.X);
-            ellipse.Shape.Stroke = Brushes.Red;
-            ellipse.Shape.StrokeThickness = 1.5;
-            ellipse.Shape.Fill = Brushes.AliceBlue;
-            Canvas.Children.Add(ellipse.Shape);
-            ellipse.TopLeft = (new Point(a.X > b.X ? b.X : a.X, a.Y > b.Y ? b.Y : a.Y));
-            ellipse.Name = ellipse_counter.ToString();
-            AddEllipse(ellipse);
+            SetTextColorDialog dialog = new SetTextColorDialog();
+            Window window = new Window
+            {
+                Title = "Name and color",
+                Content = dialog,
+                SizeToContent = SizeToContent.WidthAndHeight,
+                ResizeMode = ResizeMode.NoResize
+            };
+            if (
+            window.ShowDialog() == true)
+            {
+                EllipseInfo ellipse = new EllipseInfo();
+                ellipse.Shape.Height = Math.Abs(a.Y - b.Y);
+                ellipse.Shape.Width = Math.Abs(a.X - b.X);
+                ellipse.Shape.Stroke = dialog.Contour;
+                ellipse.Shape.StrokeThickness = 1.5;
+                ellipse.Shape.Fill = dialog.Fill;
+                ellipse.Name = dialog.NameItem;
+                Canvas.Children.Add(ellipse.Shape);
+                ellipse.TopLeft = (new Point(a.X > b.X ? b.X : a.X, a.Y > b.Y ? b.Y : a.Y));
+                AddEllipse(ellipse);
+            }
             Canvas.Children.Remove(ellipseTemp);
             isDraw = false;
         }
