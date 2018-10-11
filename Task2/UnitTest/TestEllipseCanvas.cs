@@ -1,35 +1,21 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Windows;
-using WpfApp;
+﻿//-----------------------------------------------------------------------
+// <copyright file="TestEllipseCanvas.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace UnitTest
 {
+    using System.Windows;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using WpfApp;
+
     /// <summary>
     /// Tests class EllipseCanvas
     /// </summary>
     [TestClass]
     public class TestEllipseCanvas
     {
-        /// <summary>
-        /// Convenient method to create ellipse
-        /// </summary>
-        /// <param name="topleft">Top-left coordinate of ellipse's bounding rectangle</param>
-        /// <param name="width">Width of ellipse's bounding rectangle</param>
-        /// <param name="height">Height of ellipse's bounding rectangle</param>
-        /// <param name="name">Name of ellipse</param>
-        /// <returns>Newly created ellipse</returns>
-        private static EllipseInfo CreateEllipse(Point topleft, double width, double height, string name)
-        {
-            return new EllipseInfo
-            {
-                TopLeft = topleft,
-                Width = width,
-                Height = height,
-                Name = name
-            };
-        }
-
         /// <summary>
         /// Tests Clear() method (whether elements count is zero after clearing)
         /// </summary>
@@ -42,6 +28,7 @@ namespace UnitTest
             {
                 canvas.AddEllipse(CreateEllipse(new Point(100 * i, 50 * i), 20 * i, 30 * i, "item"));
             }
+
             canvas.Clear();
             Assert.IsTrue(canvas.IsEmpty());
         }
@@ -82,8 +69,8 @@ namespace UnitTest
                 newbee = CreateEllipse(new Point(100 * i, 50 * i), 20 * i, 30 * i, "item");
                 canvas.AddEllipse(newbee);
                 Assert.IsTrue(canvas.Ellipses.Contains(newbee));
-                
             }
+
             Assert.AreEqual(ellipseCount, canvas.Ellipses.Count);
         }
 
@@ -112,6 +99,25 @@ namespace UnitTest
 
             Assert.AreEqual(ellipseCount, canvas.Ellipses.Count);
             Assert.IsFalse(canvas.Ellipses.Contains(ellipse));
+        }
+
+        /// <summary>
+        /// Convenient method to create ellipse
+        /// </summary>
+        /// <param name="topleft">Top-left coordinate of ellipse's bounding rectangle</param>
+        /// <param name="width">Width of ellipse's bounding rectangle</param>
+        /// <param name="height">Height of ellipse's bounding rectangle</param>
+        /// <param name="name">Name of ellipse</param>
+        /// <returns>Newly created ellipse</returns>
+        private static EllipseInfo CreateEllipse(Point topleft, double width, double height, string name)
+        {
+            return new EllipseInfo
+            {
+                TopLeft = topleft,
+                Width = width,
+                Height = height,
+                Name = name
+            };
         }
     }
 }

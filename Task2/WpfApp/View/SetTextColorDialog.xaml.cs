@@ -3,12 +3,13 @@
 // (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace WpfApp
 {
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Media;
+
     /// <summary>
     /// Interaction logic for SetTextColorDialog.xaml
     /// </summary>
@@ -25,7 +26,7 @@ namespace WpfApp
         private Brush fill;
 
         /// <summary>
-        /// Initilizes a new instance of <see cref="SetTextColorDialog"/> class
+        /// Initializes a new instance of the <see cref="SetTextColorDialog" /> class
         /// </summary>
         public SetTextColorDialog()
         {

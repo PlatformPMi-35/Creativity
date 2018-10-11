@@ -3,14 +3,15 @@
 // (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Windows;
-using System.Xml.Serialization;
 
 namespace WpfApp
 {
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Runtime.Serialization;
+    using System.Windows;
+    using System.Xml.Serialization;
+
     /// <summary>
     /// Performs interaction with files
     /// </summary>

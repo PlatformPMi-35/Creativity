@@ -15,13 +15,13 @@
                 <MenuItem Header="Save" Command="{Binding SaveFile}"/>
             </MenuItem>
             <MenuItem Header="Shapes" Name="menuShapes">
-                <MenuItem Header="Unchoose" Command="{Binding ResetEllipse}"/>
+                <MenuItem Header="Deselect" Command="{Binding ResetEllipse}"/>
             </MenuItem>
         </Menu>
         <Canvas x:Name="canvasDrawingArea" Background="#FFFFFE" DockPanel.Dock="Left">
             <Canvas.ContextMenu>
                 <ContextMenu Name="menuContext">
-                    <MenuItem Header="Unchoose" Command="{Binding ResetEllipse}"/>
+                    <MenuItem Header="Deselect" Command="{Binding ResetEllipse}"/>
                 </ContextMenu>
             </Canvas.ContextMenu>
         </Canvas>

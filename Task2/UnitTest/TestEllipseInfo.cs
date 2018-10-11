@@ -1,11 +1,19 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WpfApp;
-using System.Windows;
-using System.Windows.Media;
+﻿//-----------------------------------------------------------------------
+// <copyright file="TestEllipseInfo.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace UnitTest
 {
+    using System.Windows;
+    using System.Windows.Media;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using WpfApp;
+
+    /// <summary>
+    /// Tests EllipseInfo properties
+    /// </summary>
     [TestClass]
     public class TestEllipseInfo
     {
@@ -18,7 +26,7 @@ namespace UnitTest
             string name = "shape1";
             EllipseInfo ellipse = new EllipseInfo();
             ellipse.Name = name;
-            Assert.AreEqual(ellipse.Name,name);
+            Assert.AreEqual(ellipse.Name, name);
         }
 
         /// <summary>

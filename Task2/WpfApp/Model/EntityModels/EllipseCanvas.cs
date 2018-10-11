@@ -3,17 +3,18 @@
 // (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Shapes;
 
 namespace WpfApp
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Documents;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using System.Windows.Shapes;
+
     /// <summary>
     /// Represents drawing area for ellipses
     /// </summary>
@@ -62,7 +63,7 @@ namespace WpfApp
         {
             this.ellipseTemp = new Ellipse();
             this.ellipseTemp.Stroke = Brushes.Green;
-            this.ellipseTemp.StrokeThickness = 1.5;
+            this.ellipseTemp.StrokeThickness = EllipseInfo.DefaultStrokeThickness;
         }
 
         /// <summary>
@@ -152,7 +153,7 @@ namespace WpfApp
             {
                 if (this.currentEllipse != null)
                 {
-                    this.currentEllipse.Shape.StrokeThickness = 1.5;
+                    this.currentEllipse.Shape.StrokeThickness = EllipseInfo.DefaultStrokeThickness;
                     Canvas.SetZIndex(this.currentEllipse.Shape, 0);
                     this.currentEllipse.Shape.MouseLeftButtonDown -= this.Shape_MouseLeftButtonDown;
                     this.currentEllipse.Shape.MouseLeftButtonUp -= this.Shape_MouseLeftButtonUp;
@@ -170,7 +171,7 @@ namespace WpfApp
                 this.currentEllipse = value;
                 if (this.currentEllipse != null)
                 {
-                    this.currentEllipse.Shape.StrokeThickness = 3;
+                    this.currentEllipse.Shape.StrokeThickness = EllipseInfo.DefaultStrokeThickness * 2;
                     this.currentEllipse.Shape.MouseLeftButtonDown += this.Shape_MouseLeftButtonDown;
                     this.currentEllipse.Shape.MouseLeftButtonUp += this.Shape_MouseLeftButtonUp;
                     this.currentEllipse.Shape.MouseMove += this.Shape_MouseMove;
@@ -358,10 +359,10 @@ namespace WpfApp
                 ellipse.Shape.Height = Math.Abs(this.a.Y - this.b.Y);
                 ellipse.Shape.Width = Math.Abs(this.a.X - this.b.X);
                 ellipse.Shape.Stroke = dialog.Contour;
-                ellipse.Shape.StrokeThickness = 1.5;
+                ellipse.Shape.StrokeThickness = EllipseInfo.DefaultStrokeThickness;
                 ellipse.Shape.Fill = dialog.Fill;
                 ellipse.Name = dialog.NameItem;
-                ellipse.TopLeft = (new Point(this.a.X > this.b.X ? this.b.X : this.a.X, this.a.Y > this.b.Y ? this.b.Y : this.a.Y));
+                ellipse.TopLeft = new Point(this.a.X > this.b.X ? this.b.X : this.a.X, this.a.Y > this.b.Y ? this.b.Y : this.a.Y);
                 this.AddEllipse(ellipse);
             }
 

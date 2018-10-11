@@ -3,11 +3,12 @@
 // (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Windows.Input;
 
 namespace WpfApp
 {
+    using System;
+    using System.Windows.Input;
+
     /// <summary>
     /// Custom command class. Implements <see cref = "ICommand"/> interface
     /// </summary>

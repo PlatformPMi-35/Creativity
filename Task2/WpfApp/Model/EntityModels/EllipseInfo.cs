@@ -3,14 +3,15 @@
 // (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Windows;
-using System.Windows.Media;
-using System.Windows.Shapes;
-using System.Xml.Serialization;
 
 namespace WpfApp
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Media;
+    using System.Windows.Shapes;
+    using System.Xml.Serialization;
+
     /// <summary>
     /// Represents Ellipse with top left point
     /// </summary>
@@ -18,12 +19,18 @@ namespace WpfApp
     public class EllipseInfo
     {
         /// <summary>
+        /// Stroke thickness for ellipse (<see cref="Shape"/> property)
+        /// </summary>
+        public static readonly double DefaultStrokeThickness = 1.5;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref = "EllipseInfo"/> class.
         /// Constructor without parameters
         /// </summary>
         public EllipseInfo()
         {
             this.Shape = new Ellipse();
+            this.Shape.StrokeThickness = DefaultStrokeThickness;
         }
 
         /// <summary>
