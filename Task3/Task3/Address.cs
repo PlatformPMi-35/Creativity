@@ -57,12 +57,10 @@ namespace Task3
             Street = street_;
             HouseNumber = houseNumber_;
         }
-        public void WriteToFile(string path)
+        public string GetString()
         {
-            using (StreamWriter writer = new StreamWriter(path))
-            {
-                writer.Write(street + " str. " + houseNumber + ", " + porch);
-            }
+            return (street + " " + houseNumber + ", " + porch);
+            
         }
     }
 }
