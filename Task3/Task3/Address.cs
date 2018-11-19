@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    class Address
+    public class Address
     {
         private string street;
         private string houseNumber;
@@ -57,9 +57,9 @@ namespace Task3
             Street = street_;
             HouseNumber = houseNumber_;
         }
-        public string GetString()
+        public override string ToString()
         {
-            return (street + " " + houseNumber + ", " + porch);
+            return (street + " " + houseNumber + " " + porch);
             
         }
     }

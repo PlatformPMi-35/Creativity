@@ -65,6 +65,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CollectionOfStreets.cs" />
+    <Compile Include="IDatabaseFacade.cs" />
+    <Compile Include="DatabaseTxt.cs" />
+    <Compile Include="IOrderBuilder.cs" />
+    <Compile Include="IOrderConfiguration.cs" />
+    <Compile Include="IOrderFactory.cs" />
+    <Compile Include="IOrderValidation.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -72,6 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Order.cs" />
+    <Compile Include="OrderBuilder.cs" />
+    <Compile Include="OrderConfiguration.cs" />
+    <Compile Include="OrderFactory.cs" />
+    <Compile Include="OrderValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

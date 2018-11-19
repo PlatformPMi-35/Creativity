@@ -16,7 +16,7 @@ namespace Task3
             StationWagon,
             Driver
         }
-    class Order
+    public class Order
     {
         private string nameOfClient;
         private string phoneNumber;
