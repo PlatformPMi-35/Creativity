@@ -6,20 +6,43 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    public class OrderBuilder:IOrderBuilder
+    public class OrderBuilder : IOrderBuilder
     {
-        public IOrderFactory factory { get; set; }
-        private Order order;
-
-        public void Build()
-        {
-            factory = new OrderFactory();
-            order = factory.CreateOrder();
+        private IOrderFactory factory;
+        public IOrderFactory Factory {
+            get
+            {
+                return factory;
+            }
+            set
+            {
+                factory = value;
+                order = factory.CreateOrder();
+            }
         }
 
-        public Order GetOrder()
+        private Order order;
+
+        public Order Build()
         {
             return order;
+        }
+
+        public void SetAddressOfArrival(string addr)
+        {
+            string[] temp = addr.Split(';');
+            order.AddressOfArrival = new Address(temp[0], temp[1], temp[3]);
+        }
+
+        public void SetAddressOfDeparture(string addr)
+        {
+            string[] temp = addr.Split(';');
+            order.AddressOfDeparture = new Address(temp[0], temp[1], temp[3]);
+        }
+
+        public void SetClassOfTaxi(string classOfCar)
+        {
+            order.ClassOfTheTaxi= (CarClass)Enum.Parse(typeof(CarClass), classOfCar);
         }
 
         public void SetName(string name)
@@ -32,24 +55,9 @@ namespace Task3
             order.PhoneNumber = number;
         }
 
-        public void SetAddressOfDeparture(Address addr)
+        public void SetTimeOfArrival(string date)
         {
-            order.AddressOfDeparture = addr;
-        }
-
-        public void SetAddressOfArrival(Address addr)
-        {
-            order.AddressOfArrival = addr;
-        }
-
-        public void SetTimeOfArrival(DateTime date)
-        {
-            order.TimeOfTheArrivalTaxi = date;
-        }
-
-        public void SetClassOfTaxi(CarClass classOfCar)
-        {
-            order.ClassOfTheTaxi = classOfCar;
+            order.TimeOfTheArrivalTaxi = DateTime.Parse(date);
         }
     }
 }
