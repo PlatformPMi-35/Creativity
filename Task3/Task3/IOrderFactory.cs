@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    interface IOrderFactory
+    public interface IOrderFactory
     {
+        Order CreateOrder();
     }
 }

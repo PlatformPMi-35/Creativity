@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    class OrderFactory:IOrderFactory
+    public class OrderFactory:IOrderFactory
     {
+        public Order CreateOrder()
+        {
+            return new Order();
+        }
     }
 }
