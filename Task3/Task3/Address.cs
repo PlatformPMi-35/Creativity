@@ -46,6 +46,7 @@ namespace Task3
                 porch = value;
             }
         }
+        public Address() { }
         public Address(string street_, string houseNumber_, string porch_)
         {
             Street = street_;

@@ -108,6 +108,13 @@ namespace Task3
                 classOfTheTaxi = value;
             }
         }
+
+        public Order()
+        {
+            addressOfArrival = new Address();
+            addressOfDeparture = new Address();
+        }
+
         public Order(string name, string phone, Address dep, Address arr, DateTime arrTime, CarClass classOfCar)
         {
             NameOfClient = name;
