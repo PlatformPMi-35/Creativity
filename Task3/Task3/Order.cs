@@ -25,6 +25,10 @@ namespace Task3
         private DateTime timeOfTheArrivalTaxi;
         private CarClass classOfTheTaxi;
         
+        public Order()
+        {
+        }
+
         public string NameOfClient
         {
             get

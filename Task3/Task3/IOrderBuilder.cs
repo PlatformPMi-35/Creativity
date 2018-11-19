@@ -8,13 +8,14 @@ namespace Task3
 {
     public interface IOrderBuilder
     {
-        void Build();
-        Order GetOrder();
+        IOrderFactory Factory { set; get; }
+
+        Order Build();
         void SetName(string name);
         void SetPhoneNumber(string number);
-        void SetAddressOfDeparture(Address addr);
-        void SetAddressOfArrival(Address addr);
-        void SetTimeOfArrival(DateTime date);
-        void SetClassOfTaxi(CarClass classOfCar);
+        void SetAddressOfDeparture(string addr);
+        void SetAddressOfArrival(string addr);
+        void SetTimeOfArrival(string date);
+        void SetClassOfTaxi(string classOfCar);
     }
 }
