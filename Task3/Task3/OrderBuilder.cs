@@ -31,13 +31,13 @@ namespace Task3
         public void SetAddressOfArrival(string addr)
         {
             string[] temp = addr.Split(';');
-            order.AddressOfArrival = new Address(temp[0], temp[1], temp[3]);
+            order.AddressOfArrival = new Address(temp[0], temp[1], temp[2]);
         }
 
         public void SetAddressOfDeparture(string addr)
         {
             string[] temp = addr.Split(';');
-            order.AddressOfDeparture = new Address(temp[0], temp[1], temp[3]);
+            order.AddressOfDeparture = new Address(temp[0], temp[1], temp[2]);
         }
 
         public void SetClassOfTaxi(string classOfCar)

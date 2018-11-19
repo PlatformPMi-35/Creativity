@@ -16,7 +16,7 @@ namespace Task3
             filePath = _filePath;
         }
 
-        public void AddOrders(Order order)
+        public void AddOrder(Order order)
         {
             string[] towrite = { order.ToString() };
             File.AppendAllLines(filePath, towrite);
@@ -28,9 +28,9 @@ namespace Task3
             string[] res = File.ReadAllLines(filePath);
             for (int i=0;i<res.Length;++i)
             {
-                string[] parse = res[i].Split(' ');
-                toret.Add(new Order(parse[0], parse[1], new Address(parse[2], parse[3]), 
-                    new Address(parse[4], parse[5]), DateTime.Parse(parse[6]), (CarClass)Enum.Parse(typeof(CarClass),parse[7] )));
+                string[] parse = res[i].Split(';');
+                toret.Add(new Order(parse[0], parse[1], new Address(parse[2], parse[3], parse[4]), 
+                    new Address(parse[5], parse[6], parse[7]), DateTime.Parse(parse[8]), (CarClass)Enum.Parse(typeof(CarClass),parse[9] )));
             }
             return toret;
         }

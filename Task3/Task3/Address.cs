@@ -60,7 +60,7 @@ namespace Task3
         }
         public override string ToString()
         {
-            return (street + " " + houseNumber + " " + porch);
+            return (street + ";" + houseNumber + ";" + porch);
             
         }
     }
