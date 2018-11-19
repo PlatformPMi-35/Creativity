@@ -33,15 +33,7 @@ namespace Task3
             }
             set
             {
-                Regex regex = new Regex(@"^[A-Za-z]+$");
-                if (regex.IsMatch(value))
-                {
-                    nameOfClient = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Name of client: Warning! " + value);
-                }
+                nameOfClient = value;
             }
         }
         public string PhoneNumber
@@ -53,15 +45,8 @@ namespace Task3
 
             set
             {
-                Regex regex = new Regex(@"^\d{10}$");
-                if (regex.IsMatch(value))
-                {
-                    phoneNumber = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Phone number of client: Warning! " + value);
-                }
+                
+                phoneNumber = value;
             }
         }
         public Address AddressOfDeparture
@@ -108,13 +93,6 @@ namespace Task3
                 classOfTheTaxi = value;
             }
         }
-
-        public Order()
-        {
-            addressOfArrival = new Address();
-            addressOfDeparture = new Address();
-        }
-
         public Order(string name, string phone, Address dep, Address arr, DateTime arrTime, CarClass classOfCar)
         {
             NameOfClient = name;
@@ -124,6 +102,5 @@ namespace Task3
             TimeOfTheArrivalTaxi = arrTime;
             ClassOfTheTaxi = classOfCar;
         }
-
     }
 }
