@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Task3
 {
@@ -37,7 +38,15 @@ namespace Task3
         
         public bool ValidateTime(string time)
         {
-            Regex regex = new Regex(@"^\d\d\:\d\d$");
+            try
+            {
+                string[] temp = time.Split(':');
+                int a = int.Parse(temp[0]);
+                int b = int.Parse(temp[1]);
+                return (a >= 0 && b >= 0 && a < 24 && b < 60);
+            }
+            catch
+            { return false; }
         }
         
         public bool ValidateDate(string date)

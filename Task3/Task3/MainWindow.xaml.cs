@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Forms;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -36,65 +35,66 @@ namespace Task3
             validator = configuration.GetValidator();
             database = configuration.GetDatabase();
             builder.Factory =  factory;
+            textBoxClassOfTheTaxi.ItemsSource = Enum.GetNames(typeof(CarClass));
+            textBoxClassOfTheTaxi.SelectedIndex = 0;
         }
         
         private void buttonMakeOrder_Click(object sender, RoutedEventArgs e)
         {
             string message = " is not in correct format.";
             string caption = "Error Detected in Input";
-		    MessageBoxButtons buttons = MessageBoxButtons.OK;
-        
-            string arrivalStreet = comboBoxAddressOfArrivalStreet.SelectedItem.ToString();
-            string arrivalHouse = comboBoxAddressOfArrivalHouseNumber.Text;
-            string arrivalPorch = comboBoxAddressOfArrivalPorch.Text;
-            string departureStreet = comboBoxAddressOfDepartureStreet.SelectedItem.ToString();
-            string departureHouse = comboBoxAddressOfDepartureHouseNumber.Text;
-            string departurePorch = comboBoxAddressOfDeparturePorch.Text;
+            MessageBoxButton buttons = MessageBoxButton.OK;
+            string arrivalStreet = comboBoxAddressOfArrivalStreet.Text;
+            string arrivalHouse = textBoxAddressOfArrivalHouseNumber.Text;
+            string arrivalPorch = textBoxAddressOfArrivalPorch.Text;
+            string departureStreet = comboBoxAddressOfDepartureStreet.Text;
+            string departureHouse = textBoxAddressOfDepartureHouseNumber.Text;
+            string departurePorch = textBoxAddressOfDeparturePorch.Text;
             string name = textBoxNameOfClient.Text;
             string phone = textBoxPhoneNumber.Text;
             string time = textBoxTimeOfTheArrivalTaxi.Text;
             
-            if(!ValidateName(name)) 
+            if(!validator.ValidateName(name)) 
             {
                 MessageBox.Show("Name" + message, caption, buttons);
                 return;
             }
-            else if(!ValidatePhone(phone)) 
+            else if(!validator.ValidatePhone(phone)) 
             {
                 MessageBox.Show("Phone" + message, caption, buttons);
                 return;
             }
-            else if(!ValidateStreet(arrivalStreet)) 
+            else if(!validator.ValidateStreet(arrivalStreet)) 
             {
                 MessageBox.Show("Street" + message, caption, buttons);
                 return;
             }
-            else if(!ValidateHouse(arrivalHouse)) 
+            else if(!validator.ValidateHouse(arrivalHouse)) 
             {
                 MessageBox.Show("House" + message, caption, buttons);
                 return;
             }
-            else if(!ValidatePorch(arrivalPorch)) 
+            else if(!validator.ValidatePorch(arrivalPorch)) 
             {
                 MessageBox.Show("Porch" + message, caption, buttons);
                 return;
             }
-            else if(!ValidateStreet(departureStreet)) 
+            else if(!validator.ValidateStreet(departureStreet)) 
             {
                 MessageBox.Show("Street" + message, caption, buttons);
                 return;
             }
-            else if(!ValidateHouse(departureHouse)) 
+            else if(!validator.ValidateHouse(departureHouse)) 
             {
                 MessageBox.Show("House" + message, caption, buttons);
                 return;
             }
-            else if(!ValidatePorch(departurePorch)) 
+            else if(!validator.ValidatePorch(departurePorch)) 
             {
                 MessageBox.Show("Porch" + message, caption, buttons);
                 return;
             }
-            else if(!ValidateTime(time))
+            else if(!validator.ValidateTime(time))
             {
                 MessageBox.Show("Time" + message, caption, buttons);
                 return;
@@ -102,10 +102,11 @@ namespace Task3
             builder.SetName(name);
             builder.SetPhoneNumber(phone);
             builder.SetAddressOfDeparture($"{arrivalStreet};{arrivalHouse};{arrivalPorch}");
-            builder.SetAddressOfArrival("{departureStreet};{departureHouse};{departurePorch}");
+            builder.SetAddressOfArrival($"{departureStreet};{departureHouse};{departurePorch}");
             builder.SetTimeOfArrival(time);
             builder.SetClassOfTaxi(textBoxClassOfTheTaxi.Text);
             database.AddOrder(builder.Build());
+            MessageBox.Show("Ваше замовлення успішно додано, за вами виїхали");
         }
     }
 }

@@ -106,5 +106,11 @@ namespace Task3
             TimeOfTheArrivalTaxi = arrTime;
             ClassOfTheTaxi = classOfCar;
         }
+
+        public override string ToString()
+        {
+            return NameOfClient+";"+PhoneNumber+";"+AddressOfDeparture.ToString()+";"+addressOfArrival.ToString()+";"+
+                TimeOfTheArrivalTaxi.ToString()+";"+ClassOfTheTaxi.ToString();
+        }
     }
 }

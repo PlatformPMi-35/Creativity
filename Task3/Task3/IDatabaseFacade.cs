@@ -9,6 +9,6 @@ namespace Task3
     public interface IDatabaseFacade
     {
         List<Order> ReadOrders();
-        void AddOrders(Order order);
+        void AddOrder(Order order);
     }
 }
