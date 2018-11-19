@@ -108,7 +108,6 @@ namespace Task3
                 classOfTheTaxi = value;
             }
         }
-
         public Order(string name, string phone, Address dep, Address arr, DateTime arrTime, CarClass classOfCar)
         {
             NameOfClient = name;
@@ -120,7 +119,7 @@ namespace Task3
         }
         public void WriteToFile(string path)
         {
-            using (StreamWriter writer = new StreamWriter(path))
+            using (StreamWriter writer = new StreamWriter(path, append: true))
             {
                 writer.WriteLine(nameOfClient + "; " + phoneNumber + "; "+addressOfDeparture.GetString()+
                     "; "+addressOfArrival.GetString()+ "; " + timeOfTheArrivalTaxi + "; " + classOfTheTaxi);
