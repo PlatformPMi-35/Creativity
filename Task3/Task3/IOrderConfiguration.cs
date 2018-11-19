@@ -8,5 +8,9 @@ namespace Task3
 {
     interface IOrderConfiguration
     {
+        public IOrderFactory GetFactory();
+        public IOrderBuilder GetBuilder();
+        public IOrderValidation GetValidator();
+        public IDatabaseFacade GetDatabase();
     }
 }
