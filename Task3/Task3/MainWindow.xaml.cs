@@ -29,11 +29,16 @@ namespace Task3
         public MainWindow()
         {
             InitializeComponent();
-            configuration = new OrderConfiguration;
+            configuration = new OrderConfiguration();
             factory = configuration.GetFactory();
             builder = configuration.GetBuilder();
             validator = configuration.GetValidator();
             database = configuration.GetDatabase();
+        }
+
+        private void buttonMakeOrder_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

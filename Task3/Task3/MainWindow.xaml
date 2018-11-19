@@ -51,6 +51,6 @@
         <Label Grid.Row= "7" Margin= "0,10,0,0">Клас автомобіля*</Label>
         <ComboBox Name="textBoxClassOfTheTaxi" Grid.Row= "7" Margin= "0,10,0,0" Grid.Column= "1"/>
         
-        <Button x:Name="buttonMakeOrder" Content="Надіслати замовлення" HorizontalAlignment="Left" VerticalAlignment="Top" Width="242" Grid.ColumnSpan="2" Grid.Column="1" Margin="149.667,34.333,0,-70.333" Grid.Row="8" Height="40"/>
+        <Button x:Name="buttonMakeOrder" Content="Надіслати замовлення" HorizontalAlignment="Left" VerticalAlignment="Top" Width="242" Grid.ColumnSpan="2" Grid.Column="1" Margin="149.667,34.333,0,-70.333" Grid.Row="8" Height="40" Click="buttonMakeOrder_Click"/>
     </Grid>
 </Window>

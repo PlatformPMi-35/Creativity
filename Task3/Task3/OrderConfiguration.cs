@@ -10,22 +10,22 @@ namespace Task3
     {
         public IOrderFactory GetFactory()
         {
-            return new OrderFactory;
+            return new OrderFactory();
         }
         
         public IOrderBuilder GetBuilder()
         {
-            return new OrderBuilder;
+            return new OrderBuilder();
         }
         
         public IOrderValidation GetValidator()
         {
-            return new OrderValidation;
+            return new OrderValidation();
         }
         
         public IDatabaseFacade GetDatabase()
         {
-            return new DatabaseTxt;
+            return new DatabaseTxt("database.txt");
         }
     }
 }
