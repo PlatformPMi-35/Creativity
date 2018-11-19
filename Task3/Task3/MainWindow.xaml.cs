@@ -20,9 +20,20 @@ namespace Task3
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IOrderConfiguration configuration;
+        private IOrderFactory factory;
+        private IOrderBuilder builder;
+        private IOrderValidation validator;
+        private IDatabaseFacade database;
+        
         public MainWindow()
         {
             InitializeComponent();
+            configuration = new OrderConfiguration;
+            factory = configuration.GetFactory();
+            builder = configuration.GetBuilder();
+            validator = configuration.GetValidator();
+            database = configuration.GetDatabase();
         }
     }
 }
