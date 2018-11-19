@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 
 namespace Task3
 {
@@ -11,12 +10,12 @@ namespace Task3
     {
         public bool ValidateStreet(string street)
         {
-            return true;
+            return street != string.Empty;
         }
         
         public bool ValidateHouse(string house)
         {
-            return true;
+            return house != string.Empty;
         }
         
         public bool ValidatePorch(string porch)
@@ -38,15 +37,7 @@ namespace Task3
         
         public bool ValidateTime(string time)
         {
-            try
-            {
-                string[] temp = time.Split(':');
-                int a = int.Parse(temp[0]);
-                int b = int.Parse(temp[1]);
-                return (a >= 0 && b >= 0 && a < 24 && b < 60);
-            }
-            catch
-            { return false; }
+            Regex regex = new Regex(@"^\d\d\:\d\d$");
         }
         
         public bool ValidateDate(string date)
