@@ -22,6 +22,10 @@ namespace Task3
             {
                 return streets;
             }
+            set
+            {
+                streets = value;
+            }
         }
 
         public void ReadFromFile(string path)
