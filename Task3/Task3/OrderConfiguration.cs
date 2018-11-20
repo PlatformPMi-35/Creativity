@@ -1,4 +1,9 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="DatabaseTxt.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +14,7 @@ namespace Task3
     /// <summary>
     /// Represents configuretion order
     /// </summary>
-    class OrderConfiguration :IOrderConfiguration
+    class OrderConfiguration : IOrderConfiguration
     {
         /// <summary>
         /// Implementation of the interface.
@@ -50,6 +55,5 @@ namespace Task3
         {
             return new DatabaseTxt("database.txt");
         }
-
     }
 }

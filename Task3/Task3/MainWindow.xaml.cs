@@ -20,25 +20,52 @@ namespace Task3
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Configuration for orders
+        /// </summary>
         private IOrderConfiguration configuration;
+
+        /// <summary>
+        /// Factory for orders
+        /// </summary>
         private IOrderFactory factory;
+
+        /// <summary>
+        /// Builder for orders
+        /// </summary>
         private IOrderBuilder builder;
+
+        /// <summary>
+        /// Validator for orders
+        /// </summary>
         private IOrderValidation validator;
+
+        /// <summary>
+        /// Database for orders
+        /// </summary>
         private IDatabaseFacade database;
-        
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref = "MainWindow"/> class.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-            configuration = new OrderConfiguration();
-            factory = configuration.GetFactory();
-            builder = configuration.GetBuilder();
-            validator = configuration.GetValidator();
-            database = configuration.GetDatabase();
-            builder.Factory =  factory;
-            textBoxClassOfTheTaxi.ItemsSource = Enum.GetNames(typeof(CarClass));
-            textBoxClassOfTheTaxi.SelectedIndex = 0;
+            this.configuration = new OrderConfiguration();
+            this.factory = configuration.GetFactory();
+            this.builder = configuration.GetBuilder();
+            this.validator = configuration.GetValidator();
+            this.database = configuration.GetDatabase();
+            this.builder.Factory =  factory;
+            this.textBoxClassOfTheTaxi.ItemsSource = Enum.GetNames(typeof(CarClass));
+            this.textBoxClassOfTheTaxi.SelectedIndex = 0;
         }
-        
+
+        /// <summary>
+        /// Save inputed order
+        /// </summary>
+        /// <param name="sender">Reference to the object that raised the event</param>
+        /// <param name="e">routed events args</param>
         private void buttonMakeOrder_Click(object sender, RoutedEventArgs e)
         {
             string message = " is not in correct format.";
@@ -53,59 +80,60 @@ namespace Task3
             string name = textBoxNameOfClient.Text;
             string phone = textBoxPhoneNumber.Text;
             string time = textBoxTimeOfTheArrivalTaxi.Text;
-            
-            if(!validator.ValidateName(name)) 
+
+            if (!this.validator.ValidateName(name))
             {
                 MessageBox.Show("Name" + message, caption, buttons);
                 return;
             }
-            else if(!validator.ValidatePhone(phone)) 
+            else if (!this.validator.ValidatePhone(phone))
             {
                 MessageBox.Show("Phone" + message, caption, buttons);
                 return;
             }
-            else if(!validator.ValidateStreet(arrivalStreet)) 
+            else if (!this.validator.ValidateStreet(arrivalStreet))
             {
                 MessageBox.Show("Street" + message, caption, buttons);
                 return;
             }
-            else if(!validator.ValidateHouse(arrivalHouse)) 
+            else if (!this.validator.ValidateHouse(arrivalHouse))
             {
                 MessageBox.Show("House" + message, caption, buttons);
                 return;
             }
-            else if(!validator.ValidatePorch(arrivalPorch)) 
+            else if (!this.validator.ValidatePorch(arrivalPorch))
             {
                 MessageBox.Show("Porch" + message, caption, buttons);
                 return;
             }
-            else if(!validator.ValidateStreet(departureStreet)) 
+            else if (!this.validator.ValidateStreet(departureStreet))
             {
                 MessageBox.Show("Street" + message, caption, buttons);
                 return;
             }
-            else if(!validator.ValidateHouse(departureHouse)) 
+            else if (!this.validator.ValidateHouse(departureHouse))
             {
                 MessageBox.Show("House" + message, caption, buttons);
                 return;
             }
-            else if(!validator.ValidatePorch(departurePorch)) 
+            else if (!this.validator.ValidatePorch(departurePorch))
             {
                 MessageBox.Show("Porch" + message, caption, buttons);
                 return;
             }
-            else if(!validator.ValidateTime(time))
+            else if (!this.validator.ValidateTime(time)) 
             {
                 MessageBox.Show("Time" + message, caption, buttons);
                 return;
             }
-            builder.SetName(name);
-            builder.SetPhoneNumber(phone);
-            builder.SetAddressOfDeparture($"{arrivalStreet};{arrivalHouse};{arrivalPorch}");
-            builder.SetAddressOfArrival($"{departureStreet};{departureHouse};{departurePorch}");
-            builder.SetTimeOfArrival(time);
-            builder.SetClassOfTaxi(textBoxClassOfTheTaxi.Text);
-            database.AddOrder(builder.Build());
+
+            this.builder.SetName(name);
+            this.builder.SetPhoneNumber(phone);
+            this.builder.SetAddressOfDeparture($"{arrivalStreet};{arrivalHouse};{arrivalPorch}");
+            this.builder.SetAddressOfArrival($"{departureStreet};{departureHouse};{departurePorch}");
+            this.builder.SetTimeOfArrival(time);
+            this.builder.SetClassOfTaxi(textBoxClassOfTheTaxi.Text);
+            this.database.AddOrder(this.builder.Build());
             MessageBox.Show("Ваше замовлення успішно додано, за вами виїхали");
         }
     }

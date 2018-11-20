@@ -53,12 +53,10 @@ namespace Task3
             for (int i = 0; i < res.Length; ++i) 
             {
                 string[] parse = res[i].Split(';');
-                toret.Add(new Order(parse[0], parse[1], new Address(parse[2], parse[3], parse[4]), 
-                    new Address(parse[5], parse[6], parse[7]), DateTime.Parse(parse[8]), (CarClass)Enum.Parse(typeof(CarClass),parse[9] )));
+                toret.Add(new Order(parse[0], parse[1], new Address(parse[2], parse[3], parse[4]), new Address(parse[5], parse[6], parse[7]), DateTime.Parse(parse[8]), (CarClass)Enum.Parse(typeof(CarClass), parse[9])));
             }
 
             return toret;
         }
-
     }
 }

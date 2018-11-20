@@ -1,4 +1,9 @@
-﻿using System;
+﻿
+//-----------------------------------------------------------------------
+// <copyright file="DatabaseTxt.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -38,6 +43,10 @@ namespace Task3
         /// </summary>
         Driver
     }
+
+    /// <summary>
+    /// Represents an instance order
+    /// </summary>
     public class Order
     {
         /// <summary>
@@ -71,102 +80,12 @@ namespace Task3
         private CarClass classOfTheTaxi;
 
         /// <summary>
-        /// Gets or sets NameOfClient property
-        /// </summary>
-        public string NameOfClient
-        {
-            get
-            {
-                return nameOfClient;
-            }
-            set
-            {
-                nameOfClient = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets PhoneNumber property
-        /// </summary>
-        public string PhoneNumber
-        {
-            get
-            {
-                return phoneNumber;
-            }
-
-            set
-            {
-                
-                phoneNumber = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets AddressOfDeparture property
-        /// </summary>
-        public Address AddressOfDeparture
-        {
-            get
-            {
-                return addressOfDeparture;
-            }
-            set
-            {
-                addressOfDeparture = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets AddressOfArrival property
-        /// </summary>
-        public Address AddressOfArrival
-        {
-            get
-            {
-                return addressOfArrival;
-            }
-            set
-            {
-                addressOfArrival = value;
-            }
-        }
-
-        /// <summary>
-        ///  Gets or sets TimeOfTheArrivalTaxi property
-        /// </summary>
-        public DateTime TimeOfTheArrivalTaxi
-        {
-            get
-            {
-                return timeOfTheArrivalTaxi;
-            }
-            set
-            {
-                timeOfTheArrivalTaxi = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets ClassOfTheTaxi property
-        /// </summary>
-        public CarClass ClassOfTheTaxi
-        {
-            get
-            {
-                return classOfTheTaxi;
-            }
-            set
-            {
-                classOfTheTaxi = value;
-            }
-        }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref = "Order" /> class.
         /// Сonstructor without parameters
         /// </summary>
-        public Order() { }
+        public Order()
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref = "Order" /> class.
@@ -180,18 +99,117 @@ namespace Task3
         /// <param name="classOfCar">the class of taxi that client wants</param>
         public Order(string name, string phone, Address dep, Address arr, DateTime arrTime, CarClass classOfCar)
         {
-            NameOfClient = name;
-            PhoneNumber = phone;
-            AddressOfDeparture = dep;
-            AddressOfArrival = arr;
-            TimeOfTheArrivalTaxi = arrTime;
-            ClassOfTheTaxi = classOfCar;
+            this.NameOfClient = name;
+            this.PhoneNumber = phone;
+            this.AddressOfDeparture = dep;
+            this.AddressOfArrival = arr;
+            this.TimeOfTheArrivalTaxi = arrTime;
+            this.ClassOfTheTaxi = classOfCar;
         }
 
+        /// <summary>
+        /// Gets or sets NameOfClient property
+        /// </summary>
+        public string NameOfClient
+        {
+            get
+            {
+                return this.nameOfClient;
+            }
+
+            set
+            {
+                this.nameOfClient = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets PhoneNumber property
+        /// </summary>
+        public string PhoneNumber
+        {
+            get
+            {
+                return this.phoneNumber;
+            }
+
+            set
+            {
+                this.phoneNumber = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets AddressOfDeparture property
+        /// </summary>
+        public Address AddressOfDeparture
+        {
+            get
+            {
+                return this.addressOfDeparture;
+            }
+
+            set
+            {
+                this.addressOfDeparture = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets AddressOfArrival property
+        /// </summary>
+        public Address AddressOfArrival
+        {
+            get
+            {
+                return this.addressOfArrival;
+            }
+
+            set
+            {
+                this.addressOfArrival = value;
+            }
+        }
+
+        /// <summary>
+        ///  Gets or sets TimeOfTheArrivalTaxi property
+        /// </summary>
+        public DateTime TimeOfTheArrivalTaxi
+        {
+            get
+            {
+                return this.timeOfTheArrivalTaxi;
+            }
+
+            set
+            {
+                this.timeOfTheArrivalTaxi = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets ClassOfTheTaxi property
+        /// </summary>
+        public CarClass ClassOfTheTaxi
+        {
+            get
+            {
+                return this.classOfTheTaxi;
+            }
+
+            set
+            {
+                this.classOfTheTaxi = value;
+            }
+        }
+
+        /// <summary>
+        /// Override method, that get the string of address 
+        /// </summary>
+        /// <returns>string of order</returns>
         public override string ToString()
         {
-            return NameOfClient+";"+PhoneNumber+";"+AddressOfDeparture.ToString()+";"+addressOfArrival.ToString()+";"+
-                TimeOfTheArrivalTaxi.ToString()+";"+ClassOfTheTaxi.ToString();
+            return this.NameOfClient + ";" + this.PhoneNumber + ";" + this.AddressOfDeparture.ToString() + ";" + this.addressOfArrival.ToString() + ";" + this.TimeOfTheArrivalTaxi.ToString() + ";" + this.ClassOfTheTaxi.ToString();
         }
     }
 }

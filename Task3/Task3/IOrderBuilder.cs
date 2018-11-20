@@ -1,4 +1,9 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="DatabaseTxt.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +16,21 @@ namespace Task3
     /// </summary>
     public interface IOrderBuilder
     {
+        /// <summary>
+        /// Factory for creating new order
+        /// </summary>
         IOrderFactory Factory { set; get; }
 
+        /// <summary>
+        /// Method for creating new order
+        /// </summary>
+        /// <returns>new order</returns>
         Order Build();
+
+        /// <summary>
+        /// Method for setting name of client
+        /// </summary>
+        /// <param name="name">name that will be assigned</param>
         void SetName(string name);
 
         /// <summary>

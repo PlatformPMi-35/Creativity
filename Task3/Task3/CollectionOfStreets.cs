@@ -1,4 +1,9 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="DatabaseTxt.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,7 +28,7 @@ namespace Task3
         /// </summary>
         public CollectionOfStreets()
         {
-            streets = new List<string>();
+            this.streets = new List<string>();
         }
 
         /// <summary>
@@ -33,11 +38,12 @@ namespace Task3
         {
             get
             {
-                return streets;
+                return this.streets;
             }
+
             set
             {
-                streets = value;
+                this.streets = value;
             }
         }
 
@@ -52,10 +58,9 @@ namespace Task3
                 while (stream.EndOfStream == false)
                 {
                     string line = stream.ReadLine();
-                    streets.Add(line);
+                    this.streets.Add(line);
                 }
             }
         }
-
     }
 }

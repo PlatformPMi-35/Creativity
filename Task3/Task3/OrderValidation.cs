@@ -1,4 +1,9 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="DatabaseTxt.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +16,7 @@ namespace Task3
     /// Implementation of the interface
     /// Represents the methods for checking data about order
     /// </summary>
-    class OrderValidation : IOrderValidation
+    public class OrderValidation : IOrderValidation
     {
         /// <summary>
         /// Implementation of the interface

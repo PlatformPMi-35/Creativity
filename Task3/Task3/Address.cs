@@ -1,4 +1,9 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="DatabaseTxt.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,58 +33,12 @@ namespace Task3
         private string porch;
 
         /// <summary>
-        /// Gets or sets Street property
-        /// </summary>
-        public string Street
-        {
-            get
-            {
-                return street;
-            }
-
-            set
-            {
-                street = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets HouseNumber property
-        /// </summary>
-        public string HouseNumber
-        {
-            get
-            {
-                return houseNumber;
-            }
-
-            set
-            {
-                houseNumber = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets Porch property
-        /// </summary>
-        public string Porch
-        {
-            get
-            {
-                return porch;
-            }
-
-            set
-            {
-                porch = value;
-            }
-        }
-
-        /// <summary>
         ///  Initializes a new instance of the <see cref = "Address" /> class.
         /// Сonstructor without parameters
         /// </summary>
-        public Address() { }
+        public Address()
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref = "Address" /> class.
@@ -90,9 +49,9 @@ namespace Task3
         /// <param name="porch_">porch in house number on street of this address</param>
         public Address(string street_, string houseNumber_, string porch_)
         {
-            Street = street_;
-            HouseNumber = houseNumber_;
-            Porch = porch_;
+            this.Street = street_;
+            this.HouseNumber = houseNumber_;
+            this.Porch = porch_;
         }
 
         /// <summary>
@@ -103,19 +62,65 @@ namespace Task3
         /// <param name="houseNumber_">house number on street of this address</param>
         public Address(string street_, string houseNumber_)
         {
-            Street = street_;
-            HouseNumber = houseNumber_;
+            this.Street = street_;
+            this.HouseNumber = houseNumber_;
         }
 
+        /// <summary>
+        /// Gets or sets Street property
+        /// </summary>
+        public string Street
+        {
+            get
+            {
+                return this.street;
+            }
+
+            set
+            {
+                this.street = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets HouseNumber property
+        /// </summary>
+        public string HouseNumber
+        {
+            get
+            {
+                return this.houseNumber;
+            }
+
+            set
+            {
+                this.houseNumber = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets Porch property
+        /// </summary>
+        public string Porch
+        {
+            get
+            {
+                return this.porch;
+            }
+
+            set
+            {
+                this.porch = value;
+            }
+        }
+        
         /// <summary>
         /// Override method, that get the string of address
         /// </summary>
         /// <returns>string of address</returns>
         public override string ToString()
         {
-            return (street + ";" + houseNumber + ";" + porch);
-            
+            return this.street + ";" + this.houseNumber + ";" + this.porch;
         }
-
     }
 }

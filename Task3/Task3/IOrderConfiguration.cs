@@ -1,4 +1,9 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="DatabaseTxt.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +12,7 @@ using System.Threading.Tasks;
 namespace Task3
 {
     /// <summary>
-    /// 
+    /// Represents the methods for create configuration
     /// </summary>
     interface IOrderConfiguration
     {
