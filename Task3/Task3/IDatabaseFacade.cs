@@ -21,6 +21,6 @@ namespace Task3
         /// Add order to details about all other orders
         /// </summary>
         /// <param name="order">Information about order</param>
-        void AddOrders(Order order);
+        void AddOrder(Order order);
     }
 }

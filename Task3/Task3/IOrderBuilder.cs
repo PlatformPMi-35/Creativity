@@ -11,21 +11,9 @@ namespace Task3
     /// </summary>
     public interface IOrderBuilder
     {
-        /// <summary>
-        /// Method for creating new order
-        /// </summary>
-        void Build();
+        IOrderFactory Factory { set; get; }
 
-        /// <summary>
-        /// Method for getting current order
-        /// </summary>
-        /// <returns>current order</returns>
-        Order GetOrder();
-
-        /// <summary>
-        /// Method for setting name of client
-        /// </summary>
-        /// <param name="name">name that will be assigned</param>
+        Order Build();
         void SetName(string name);
 
         /// <summary>
@@ -38,24 +26,24 @@ namespace Task3
         /// Method for setting the address from where the client will go
         /// </summary>
         /// <param name="addr">the address from where the client will go that will be assigned</param>
-        void SetAddressOfDeparture(Address addr);
-
+        void SetAddressOfDeparture(string addr);
+        
         /// <summary>
         /// Method for setting the address where the client will go
         /// </summary>
         /// <param name="addr">the address where the client will go that will be assigned</param>
-        void SetAddressOfArrival(Address addr);
+        void SetAddressOfArrival(string addr);
 
         /// <summary>
         /// Method for setting the time when client wants to go
         /// </summary>
         /// <param name="date">the time when client wants to go that will be assigned</param>
-        void SetTimeOfArrival(DateTime date);
+        void SetTimeOfArrival(string date);
 
         /// <summary>
         /// Method for setting the class of car that client wants
         /// </summary>
         /// <param name="classOfCar">the class of car that client wants that will be assigned</param>
-        void SetClassOfTaxi(CarClass classOfCar);
+        void SetClassOfTaxi(string classOfCar);
     }
 }

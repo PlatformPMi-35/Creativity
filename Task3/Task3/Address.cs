@@ -113,7 +113,7 @@ namespace Task3
         /// <returns>string of address</returns>
         public override string ToString()
         {
-            return (street + " " + houseNumber + " " + porch);
+            return (street + ";" + houseNumber + ";" + porch);
             
         }
 

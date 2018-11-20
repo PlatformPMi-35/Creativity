@@ -188,5 +188,10 @@ namespace Task3
             ClassOfTheTaxi = classOfCar;
         }
 
+        public override string ToString()
+        {
+            return NameOfClient+";"+PhoneNumber+";"+AddressOfDeparture.ToString()+";"+addressOfArrival.ToString()+";"+
+                TimeOfTheArrivalTaxi.ToString()+";"+ClassOfTheTaxi.ToString();
+        }
     }
 }

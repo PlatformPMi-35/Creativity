@@ -21,7 +21,7 @@ namespace Task3
         /// <returns>True if string is correct, false otherwise</returns>
         public bool ValidateStreet(string street)
         {
-            return true;
+            return street != string.Empty;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace Task3
         /// <returns>True if string is correct, false otherwise</returns>
         public bool ValidateHouse(string house)
         {
-            return true;
+            return house != string.Empty;
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Task3
         /// Add order to details about all other orders 
         /// </summary>
         /// <param name="order">The order information that will be written to the file</param>
-        public void AddOrders(Order order)
+        public void AddOrder(Order order)
         {
             string[] towrite = { order.ToString() };
             File.AppendAllLines(this.filePath, towrite);
@@ -52,8 +52,9 @@ namespace Task3
             string[] res = File.ReadAllLines(this.filePath);
             for (int i = 0; i < res.Length; ++i) 
             {
-                string[] parse = res[i].Split(' ');
-                toret.Add(new Order(parse[0], parse[1], new Address(parse[2], parse[3]), new Address(parse[4], parse[5]), DateTime.Parse(parse[6]), (CarClass)Enum.Parse(typeof(CarClass), parse[7])));
+                string[] parse = res[i].Split(';');
+                toret.Add(new Order(parse[0], parse[1], new Address(parse[2], parse[3], parse[4]), 
+                    new Address(parse[5], parse[6], parse[7]), DateTime.Parse(parse[8]), (CarClass)Enum.Parse(typeof(CarClass),parse[9] )));
             }
 
             return toret;

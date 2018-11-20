@@ -11,34 +11,69 @@ namespace Task3
     /// </summary>
     public class OrderBuilder : IOrderBuilder
     {
+        private IOrderFactory factory;
+
+        /// <summary>
+        /// Gets or sets factory of order
+        /// </summary>
+        public IOrderFactory Factory {
+            get
+            {
+                return factory;
+            }
+            set
+            {
+                factory = value;
+                order = factory.CreateOrder();
+            }
+        }
+
         /// <summary>
         /// Represents current order  
         /// </summary>
         private Order order;
-        
-        /// <summary>
-        /// Gets or sets factory of order
-        /// </summary>
-        public IOrderFactory Factory { get; set; }
 
         /// <summary>
         /// Implementation of the interface
         /// Method for creating new order
         /// </summary>
-        public void Build()
+        public Order Build()
         {
-            this.Factory = new OrderFactory();
-            this.order = this.Factory.CreateOrder();
+            return this.order;
         }
 
         /// <summary>
         /// Implementation of the interface.
-        ///  Method for getting current order
+        /// Method for setting the address where the client will go
         /// </summary>
-        /// <returns>current order</returns>
-        public Order GetOrder()
+        /// <param name="addr">the address where the client will go that will be assigned</param>
+
+        public void SetAddressOfArrival(string addr)
         {
-            return this.order;
+            string[] temp = addr.Split(';');
+            order.AddressOfArrival = new Address(temp[0], temp[1], temp[2]);
+        }
+
+        /// <summary>
+        /// Implementation of the interface.
+        /// Method for setting the address from where the client will go
+        /// </summary>
+        /// <param name="addr">the address from where the client will go that will be assigned</param>
+
+        public void SetAddressOfDeparture(string addr)
+        {
+            string[] temp = addr.Split(';');
+            order.AddressOfDeparture = new Address(temp[0], temp[1], temp[2]);
+        }
+
+        /// <summary>
+        /// Implementation of the interface.
+        /// Method for setting the class of car that client wants
+        /// </summary>
+        /// <param name="classOfCar">the class of car that client wants that will be assigned</param>
+        public void SetClassOfTaxi(string classOfCar)
+        {
+            order.ClassOfTheTaxi= (CarClass)Enum.Parse(typeof(CarClass), classOfCar);
         }
 
         /// <summary>
@@ -48,7 +83,7 @@ namespace Task3
         /// <param name="name">name that will be assigned</param>
         public void SetName(string name)
         {
-            this.order.NameOfClient = name;
+            order.NameOfClient = name;
         }
 
         /// <summary>
@@ -58,27 +93,7 @@ namespace Task3
         /// <param name="number">phone number that will be assigned</param>
         public void SetPhoneNumber(string number)
         {
-            this.order.PhoneNumber = number;
-        }
-
-        /// <summary>
-        /// Implementation of the interface.
-        /// Method for setting the address from where the client will go
-        /// </summary>
-        /// <param name="addr">the address from where the client will go that will be assigned</param>
-        public void SetAddressOfDeparture(Address addr)
-        {
-            this.order.AddressOfDeparture = addr;
-        }
-
-        /// <summary>
-        /// Implementation of the interface.
-        /// Method for setting the address where the client will go
-        /// </summary>
-        /// <param name="addr">the address where the client will go that will be assigned</param>
-        public void SetAddressOfArrival(Address addr)
-        {
-            this.order.AddressOfArrival = addr;
+            order.PhoneNumber = number;
         }
 
         /// <summary>
@@ -86,19 +101,10 @@ namespace Task3
         /// Method for setting the time when client wants to go
         /// </summary>
         /// <param name="date">the time when client wants to go that will be assigned</param>
-        public void SetTimeOfArrival(DateTime date)
-        {
-            this.order.TimeOfTheArrivalTaxi = date;
-        }
 
-        /// <summary>
-        /// Implementation of the interface.
-        /// Method for setting the class of car that client wants
-        /// </summary>
-        /// <param name="classOfCar">the class of car that client wants that will be assigned</param>
-        public void SetClassOfTaxi(CarClass classOfCar)
+        public void SetTimeOfArrival(string date)
         {
-            this.order.ClassOfTheTaxi = classOfCar;
+            order.TimeOfTheArrivalTaxi = DateTime.Parse(date);
         }
 
     }
