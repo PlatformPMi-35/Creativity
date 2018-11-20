@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
+    /// <summary>
+    /// Represents creating order
+    /// </summary>
     public interface IOrderFactory
     {
+        /// <summary>
+        /// Represents method for creating order
+        /// </summary>
+        /// <returns>order that was created</returns>
         Order CreateOrder();
     }
 }

@@ -8,23 +8,71 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
+    /// <summary>
+    /// Enumeration of cars class
+    /// </summary>
     public enum CarClass
         {
-            Economy,
-            Comfort,
-            Minibus,
-            StationWagon,
-            Driver
-        }
+        /// <summary>
+        /// Represent economy class car
+        /// </summary>
+        Economy,
+
+        /// <summary>
+        /// Represent comfort class car
+        /// </summary>
+        Comfort,
+
+        /// <summary>
+        /// Represent minibus class car
+        /// </summary>
+        Minibus,
+
+        /// <summary>
+        /// Represent station wagon class car
+        /// </summary>
+        StationWagon,
+
+        /// <summary>
+        /// Represent driver class
+        /// </summary>
+        Driver
+    }
     public class Order
     {
+        /// <summary>
+        /// Represents the name of client
+        /// </summary>
         private string nameOfClient;
+
+        /// <summary>
+        /// Represents the client`s phone number
+        /// </summary>
         private string phoneNumber;
+
+        /// <summary>
+        /// Represents the address from where the client will go
+        /// </summary>
         private Address addressOfDeparture;
+
+        /// <summary>
+        /// Represents the address where the client will go
+        /// </summary>
         private Address addressOfArrival;
+
+        /// <summary>
+        /// Represents the time when client wants to go
+        /// </summary>
         private DateTime timeOfTheArrivalTaxi;
+
+        /// <summary>
+        /// Represents the class of car that client wants
+        /// </summary>
         private CarClass classOfTheTaxi;
-        
+
+        /// <summary>
+        /// Gets or sets NameOfClient property
+        /// </summary>
         public string NameOfClient
         {
             get
@@ -36,6 +84,10 @@ namespace Task3
                 nameOfClient = value;
             }
         }
+
+        /// <summary>
+        /// Gets or sets PhoneNumber property
+        /// </summary>
         public string PhoneNumber
         {
             get
@@ -49,6 +101,10 @@ namespace Task3
                 phoneNumber = value;
             }
         }
+
+        /// <summary>
+        /// Gets or sets AddressOfDeparture property
+        /// </summary>
         public Address AddressOfDeparture
         {
             get
@@ -60,6 +116,10 @@ namespace Task3
                 addressOfDeparture = value;
             }
         }
+
+        /// <summary>
+        /// Gets or sets AddressOfArrival property
+        /// </summary>
         public Address AddressOfArrival
         {
             get
@@ -71,6 +131,10 @@ namespace Task3
                 addressOfArrival = value;
             }
         }
+
+        /// <summary>
+        ///  Gets or sets TimeOfTheArrivalTaxi property
+        /// </summary>
         public DateTime TimeOfTheArrivalTaxi
         {
             get
@@ -82,6 +146,10 @@ namespace Task3
                 timeOfTheArrivalTaxi = value;
             }
         }
+
+        /// <summary>
+        /// Gets or sets ClassOfTheTaxi property
+        /// </summary>
         public CarClass ClassOfTheTaxi
         {
             get
@@ -93,6 +161,23 @@ namespace Task3
                 classOfTheTaxi = value;
             }
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref = "Order" /> class.
+        /// Сonstructor without parameters
+        /// </summary>
+        public Order() { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref = "Order" /> class.
+        /// Сonstructor with parameters
+        /// </summary>
+        /// <param name="name">name of client</param>
+        /// <param name="phone">phone number of client</param>
+        /// <param name="dep">address from where the client will go </param>
+        /// <param name="arr">address where the client will go</param>
+        /// <param name="arrTime">the time when client wants to go</param>
+        /// <param name="classOfCar">the class of taxi that client wants</param>
         public Order(string name, string phone, Address dep, Address arr, DateTime arrTime, CarClass classOfCar)
         {
             NameOfClient = name;
@@ -102,5 +187,6 @@ namespace Task3
             TimeOfTheArrivalTaxi = arrTime;
             ClassOfTheTaxi = classOfCar;
         }
+
     }
 }

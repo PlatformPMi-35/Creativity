@@ -6,11 +6,33 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
+    /// <summary>
+    /// 
+    /// </summary>
     interface IOrderConfiguration
     {
+        /// <summary>
+        ///  Gets factory of orders
+        /// </summary>
+        /// <returns>factory of orders</returns>
         IOrderFactory GetFactory();
+
+        /// <summary>
+        /// Gets builder of orders
+        /// </summary>
+        /// <returns>builder of orders</returns>
         IOrderBuilder GetBuilder();
+
+        /// <summary>
+        /// Gets validator of orders
+        /// </summary>
+        /// <returns>validator of orders</returns>
         IOrderValidation GetValidator();
+
+        /// <summary>
+        /// Gets object of class that interact with file in txt format
+        /// </summary>
+        /// <returns>object of class that interact with file in txt format</returns>
         IDatabaseFacade GetDatabase();
     }
 }

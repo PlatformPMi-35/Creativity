@@ -7,15 +7,28 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
+    /// <summary>
+    /// Represents collection of streets
+    /// </summary>
     public class CollectionOfStreets
     {
+        /// <summary>
+        /// Collections of street
+        /// </summary>
         private List<string> streets;
 
+        /// <summary>
+        /// / Initializes a new instance of the <see cref = "CollectionOfStreets" /> class.
+        /// Сonstructor without parameters
+        /// </summary>
         public CollectionOfStreets()
         {
             streets = new List<string>();
         }
 
+        /// <summary>
+        /// Gets or sets Streets property
+        /// </summary>
         public List<string> Streets
         {
             get
@@ -28,6 +41,10 @@ namespace Task3
             }
         }
 
+        /// <summary>
+        /// Read collection from file
+        /// </summary>
+        /// <param name="path">file path</param>
         public void ReadFromFile(string path)
         {
             using (StreamReader stream = new StreamReader(path))
@@ -39,5 +56,6 @@ namespace Task3
                 }
             }
         }
+
     }
 }
