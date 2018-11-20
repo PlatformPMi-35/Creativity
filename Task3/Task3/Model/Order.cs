@@ -3,7 +3,8 @@
 // <copyright file="DatabaseTxt.cs" company="Creativity Team">
 // (c)reativity inc.
 // </copyright>
-//-----------------------------------------------------------------------using System;
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

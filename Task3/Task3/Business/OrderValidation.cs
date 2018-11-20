@@ -59,7 +59,7 @@ namespace Task3
         /// <returns>True if string is correct, false otherwise</returns>
         public bool ValidateName(string name)
         {
-            Regex regex = new Regex(@"^[A-Za-z]+$");
+            Regex regex = new Regex(@"^\p{L}+$");
             return regex.IsMatch(name);
         }
 
@@ -83,7 +83,17 @@ namespace Task3
         /// <returns>True if string is correct, false otherwise</returns>
         public bool ValidateTime(string time)
         {
-            Regex regex = new Regex(@"^\d\d\:\d\d$");
+            try
+            {
+                string[] temp = time.Split(':');
+                int a = int.Parse(temp[0]);
+                int b = int.Parse(temp[1]);
+                return (a >= 0 && b >= 0 && a < 24 && b < 60);
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>
