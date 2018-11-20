@@ -1,6 +1,6 @@
 ﻿
 //-----------------------------------------------------------------------
-// <copyright file="DatabaseTxt.cs" company="Creativity Team">
+// <copyright file="Order.cs" company="Creativity Team">
 // (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------

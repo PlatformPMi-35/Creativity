@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="DatabaseTxt.cs" company="Creativity Team">
+// <copyright file="IOrderBuilder.cs" company="Creativity Team">
 // (c)reativity inc.
 // </copyright>
 //-----------------------------------------------------------------------
