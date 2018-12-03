@@ -10,7 +10,9 @@ namespace task4
     {
         static void Main(string[] args)
         {
-           
+            Task t = new Task();
+            t.ExecuteTasks();
+            Console.Read();
         }
     }
 }
