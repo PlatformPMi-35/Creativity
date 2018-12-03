@@ -55,11 +55,42 @@ namespace task4
             {
                 for (int i = 0; i < reader.FieldCount; i++)
                 {
-                    Console.Write(reader[i] + " ");
+                    Console.Write( "{0,-20}",reader[i] );
                 }
                 Console.WriteLine();
             }
             reader.Close();
+        }
+
+        //Show the list of first, last names and ages of the employees whose age is greater than 55. The result should be sorted by last name.
+        private void Task4()
+        {
+            string queryDescr = "Show the list of first, last names and ages of the employees whose age is greater than 55. The result should be sorted by last name.";
+            command.CommandText = @"SELECT FirstName, LastName, DATEDIFF(year, BirthDate, GETDATE()) AS Age
+                                                FROM Employees 
+                                                WHERE DATEDIFF(year, BirthDate, GETDATE()) > 55 
+                                                ORDER BY LastName;";
+            ShowResults(command, queryDescr);
+        }
+
+        //Calculate the count of employees from London.
+        private void Task5()
+        {
+            string queryDescr = "Calculate the count of employees from London.";
+            command.CommandText = "SELECT COUNT(*) AS EmployeeQuantity FROM Employees WHERE City='London';";
+            ShowResults(command, queryDescr);
+        }
+
+        //Calculate the greatest, the smallest and the average age among the employees from London
+        private void Task6()
+        {
+            string queryDescr="Calculate the greatest, the smallest and the average age among the employees from London.";
+            command.CommandText = @"SELECT MAX(DATEDIFF(year, BirthDate, GETDATE())) AS MaxYears, 
+                                                       MIN(DATEDIFF(year, BirthDate, GETDATE())) AS MinYears,
+                                                       AVG(DATEDIFF(year, BirthDate, GETDATE())) AS AvgYears 
+                                                FROM Employees 
+                                                WHERE City='London';";
+            ShowResults(command, queryDescr);
         }
 
         //Show the first and last name(s) of the eldest employee(s).
@@ -106,11 +137,47 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
+        //Show first and last names of the employees as well as the count of their orders shipped after required date during the year 1997(use left join).
+        private void Task16()
+        {
+            string queryDescr = "Show first and last names of the employees as well as the count of their orders shipped after required date during the year 1997(use left join).";
+            command.CommandText = @"SELECT Emp.FirstName, Emp.LastName, COUNT(Ord.EmployeeID) AS OrdersAmount 
+                                                FROM Employees AS Emp
+                                                LEFT JOIN Orders AS Ord ON Ord.EmployeeID = Emp.EmployeeID 
+                                                WHERE Ord.ShippedDate > Ord.RequiredDate 
+                                                AND Ord.OrderDate BETWEEN '1997-01-01' AND '1997-12-31' 
+                                                GROUP BY Emp.FirstName, Emp.LastName;";
+            ShowResults(command, queryDescr);
+        }
+
+        //Show the count of orders made by each customer from France.
+        private void Task17()
+        {
+            string queryDescr = "Show the count of orders made by each customer from France.";
+            command.CommandText = @"SELECT C.ContactName, COUNT(Ord.CustomerID) AS OrdersAmount 
+                                                FROM Customers AS C 
+                                                INNER JOIN Orders AS Ord ON Ord.CustomerID = C.CustomerID 
+                                                WHERE C.Country = 'France' 
+                                                GROUP BY C.ContactName;";
+            ShowResults(command, queryDescr);
+        }
+
         //Show the list of french customers’ names who have made more than one order
         private void Task18()
         {
             string queryDescr = "Show the list of french customers’ names who have made more than one order.";
             command.CommandText = "SELECT ContactName FROM Customers, Orders WHERE Country='France' GROUP BY ContactName HAVING COUNT(Orders.CustomerID) > 1;";
+            ShowResults(command, queryDescr);
+        }
+
+        //Show the total ordering sum calculated for each country of customer.
+        private void Task25()
+        {
+            string queryDescr = "Show the total ordering sum calculated for each country of customer.";
+            command.CommandText = @"SELECT Ord.ShipCountry, Sum(Ode.ExtendedPrice) AS TotalPriceSum
+                                    FROM Orders Ord 
+                                    INNER JOIN [Order Details Extended] Ode ON Ode.OrderID = Ord.OrderID
+                                    GROUP BY Ord.ShipCountry;";
             ShowResults(command, queryDescr);
         }
 
@@ -137,12 +204,18 @@ namespace task4
             if (connection != null)
             {
                 command = connection.CreateCommand();
+                Task4();
+                Task5();
+                Task6();
                 Task9();
                 Task10();
                 Task11();
                 Task12();
                 Task13();
+                Task16();
+                Task17();
                 Task18();
+                Task25();
                 Task29();
                 Task30();
                 CloseConnection();
