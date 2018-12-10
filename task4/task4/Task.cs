@@ -60,6 +60,8 @@ namespace task4
                 Console.WriteLine();
             }
             reader.Close();
+            Console.ReadLine();
+
         }
 
         //Show the list of first, last names and ages of the employees whose age is greater than 55. The result should be sorted by last name.
@@ -169,6 +171,15 @@ namespace task4
             command.CommandText = "SELECT ContactName FROM Customers, Orders WHERE Country='France' GROUP BY ContactName HAVING COUNT(Orders.CustomerID) > 1;";
             ShowResults(command, queryDescr);
         }
+        //Show the list of french customers’ names who used to order french products.
+        private void Task24()
+        {
+            string queryDescr = "Show the list of french customers’ names who used to order french products.";
+            command.CommandText = "SELECT DISTINCT c.ContactName FROM Customers AS c, " +
+                "Orders AS o WHERE c.CustomerID=o.CustomerID AND c.Country='France'" +
+                " AND o.ShipCountry='France';";
+            ShowResults(command, queryDescr);
+        }
 
         //Show the total ordering sum calculated for each country of customer.
         private void Task25()
@@ -178,6 +189,37 @@ namespace task4
                                     FROM Orders Ord 
                                     INNER JOIN [Order Details Extended] Ode ON Ode.OrderID = Ord.OrderID
                                     GROUP BY Ord.ShipCountry;";
+            ShowResults(command, queryDescr);
+        }
+
+        //Show the total ordering sums calculated for each customer’s country for domestic and non-domestic 
+        //products separately (e.g.: “France – French products ordered – Non-french products ordered” and so 
+        //on for each country).
+        private void Task26()
+        {
+            string queryDescr = "Show the total ordering sums calculated for each customer’s country for domestic " +
+                "and non-domestic products separately (e.g.: “France – French products ordered – Non-french products " +
+                "ordered” and so on for each country).";
+            command.CommandText = @"SELECT D1.Country, D1.Domestic, D2.NonDomestic 
+                FROM 
+                (SELECT C.Country, COUNT (P.ProductID) AS Domestic 
+                FROM Customers AS C 
+                LEFT JOIN Orders AS Ord ON C.CustomerID = Ord.CustomerID 
+                LEFT JOIN [Order Details] AS OD ON Ord.OrderID = OD.OrderID 
+                LEFT JOIN [Products] AS P ON OD.ProductID = P.ProductID 
+                LEFT JOIN [Suppliers] AS S ON P.SupplierID = S.SupplierID 
+                WHERE S.country = C.Country 
+                GROUP BY C.Country) AS D1 
+                LEFT JOIN 
+                (SELECT C.Country, COUNT (P.ProductID) AS NonDomestic 
+                FROM Customers AS C 
+                LEFT JOIN Orders AS Ord ON C.CustomerID = Ord.CustomerID 
+                LEFT JOIN [Order Details] AS OD ON Ord.OrderID = OD.OrderID 
+                LEFT JOIN [Products] AS P ON OD.ProductID = P.ProductID 
+                LEFT JOIN [Suppliers] AS S ON P.SupplierID = S.SupplierID 
+                WHERE S.country <> C.Country 
+                GROUP BY C.Country) AS D2 
+                ON D1.Country = D2.Country;";
             ShowResults(command, queryDescr);
         }
 
@@ -220,6 +262,16 @@ namespace task4
             Console.WriteLine("\n\nInserted 5 employees");
         }
 
+        //Change the City field in one of your records using the UPDATE statement
+        private void Task33()
+        {
+
+            command.CommandText = "UPDATE Employees " +
+                                  "SET City = 'Kyiv' " +
+                                  "WHERE LastName = 'Romaniv' OR LastName='Romanko';";
+            Console.WriteLine("\n\nUpdate {0} row(s)", command.ExecuteNonQuery());
+        }
+
         public void ExecuteTasks()
         {
             OpenConnection();
@@ -237,10 +289,13 @@ namespace task4
                 Task16();
                 Task17();
                 Task18();
+                Task24();
                 Task25();
+                Task26();
                 Task29();
                 Task30();
                 Task31();
+                Task33();
                 CloseConnection();
             }
             else
