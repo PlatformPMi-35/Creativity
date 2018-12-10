@@ -198,6 +198,28 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
+        //Insert 5 new records into Employees table. Fill in the following  fields:
+        //LastName, FirstName, BirthDate, HireDate, Address, City, Country, Notes. The Notes field should contain your own name.
+        private void Task31()
+        {
+            command.CommandText = "INSERT INTO Employees(LastName, FirstName, BirthDate, HireDate, Address, City, Country, Notes)" +
+                " VALUES ('Boyko', 'Danylo',  '1998-01-18', '2018-12-1', 'Shevchenka 5', 'Lviv', 'Ukraine', 'Kamila');";
+            command.ExecuteNonQuery();
+            command.CommandText = "INSERT INTO Employees(LastName, FirstName, BirthDate, HireDate, Address, City, Country, Notes)" +
+                " VALUES ('Tarasenko', 'Vika',  '1999-09-11', '2018-12-6', 'Ozerna 15', 'Lviv', 'Ukraine', 'Kamila');";
+            command.ExecuteNonQuery();
+            command.CommandText = "INSERT INTO Employees(LastName, FirstName, BirthDate, HireDate, Address, City, Country, Notes)" +
+               " VALUES ('Romanko', 'Diana',  '1992-12-12', '2018-12-6', 'Lychakivska 111', 'Lviv', 'Ukraine', 'Kamila');";
+            command.ExecuteNonQuery();
+            command.CommandText = "INSERT INTO Employees(LastName, FirstName, BirthDate, HireDate, Address, City, Country, Notes)" +
+               " VALUES ('Kobak', 'Viktor',  '1995-09-11', '2018-12-6', 'Kotlyarevskoho 200', 'Lviv', 'Ukraine', 'Kamila');";
+            command.ExecuteNonQuery();
+            command.CommandText = "INSERT INTO Employees(LastName, FirstName, BirthDate, HireDate, Address, City, Country, Notes)" +
+               " VALUES ('Romaniv', 'Petro',  '1992-01-11', '2018-12-6', 'Stryjska 25', 'Lviv', 'Ukraine', 'Kamila');";
+            command.ExecuteNonQuery();
+            Console.WriteLine("\n\nInserted 5 employees");
+        }
+
         public void ExecuteTasks()
         {
             OpenConnection();
@@ -218,6 +240,7 @@ namespace task4
                 Task25();
                 Task29();
                 Task30();
+                Task31();
                 CloseConnection();
             }
             else
