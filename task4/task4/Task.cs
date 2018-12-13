@@ -1,19 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Task.cs" company="Creativity Team">
+// (c)reativity inc.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace task4
 {
+    /// <summary>
+    /// Performs executing of queries
+    /// </summary>
     public class Task
     {
-        readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\NORTHWND.MDF;Integrated Security=True;Connect Timeout=30";
+        /// <summary>
+        /// Connection string to Northwind database
+        /// </summary>
+        readonly string connectionString = System.Configuration.ConfigurationManager.
+            ConnectionStrings["NORTHWNDConnectionString"].ConnectionString;
+
+        /// <summary>
+        /// Represents a unique session to a SQL Server data source.
+        /// </summary>
         SqlConnection connection;
+
+        /// <summary>
+        /// Allows to query and send commands to a database
+        /// </summary>
         SqlCommand command;
+
+        /// <summary>
+        /// Is used to read data from a data source
+        /// </summary>
         SqlDataReader reader;
 
+        /// <summary>
+        /// Opens connection to database
+        /// </summary>
         private void OpenConnection()
         {
             try
@@ -31,6 +54,9 @@ namespace task4
             }
         }
 
+        /// <summary>
+        /// Closes connection to database
+        /// </summary>
         private void CloseConnection()
         {
             try
@@ -47,6 +73,11 @@ namespace task4
             }
         }
 
+        /// <summary>
+        /// Shows results of query
+        /// </summary>
+        /// <param name="command">Command to execute</param>
+        /// <param name="queryDescription">Describes what query is doing</param>
         private void ShowResults(SqlCommand command, string queryDescription)
         {
             Console.WriteLine("\n\n" + queryDescription);
@@ -95,7 +126,9 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
-        //Show the first and last name(s) of the eldest employee(s).
+        /// <summary>
+        /// Query to show the first and last name(s) of the eldest employee(s).
+        /// </summary>
         private void Task9()
         {
             string queryDescr = "Show the first and last name(s) of the eldest employee(s).";
@@ -103,7 +136,9 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
-        //Show first, last names and ages of 3 eldest employees.
+        /// <summary>
+        /// Query to show first, last names and ages of 3 eldest employees.
+        /// </summary>
         private void Task10()
         {
             string queryDescr = "Show first, last names and ages of 3 eldest employees.";
@@ -115,7 +150,9 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
-        //Show the list of all cities where the employees are from.
+        /// <summary>
+        /// Query to show the list of all cities where the employees are from.
+        /// </summary>
         private void Task11()
         {
             string queryDescr = "Show the list of all cities where the employees are from.";
@@ -123,7 +160,9 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
-        //Show first, last names and dates of birth of the employees who celebrate their birthdays this month.
+        /// <summary>
+        /// Query to show first, last names and dates of birth of the employees who celebrate their birthdays this month.
+        /// </summary>
         private void Task12()
         {
             string queryDescr = "Show first, last names and dates of birth of the employees who celebrate their birthdays this month.";
@@ -131,7 +170,9 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
-        //Show first and last names of the employees who used to serve orders shipped to Madrid.
+        /// <summary>
+        /// Query to show first and last names of the employees who used to serve orders shipped to Madrid.
+        /// </summary>
         private void Task13()
         {
             string queryDescr = "Show first and last names of the employees who used to serve orders shipped to Madrid.";
@@ -164,7 +205,9 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
-        //Show the list of french customers’ names who have made more than one order
+        /// <summary>
+        /// Query to show the list of french customers’ names who have made more than one order
+        /// </summary>
         private void Task18()
         {
             string queryDescr = "Show the list of french customers’ names who have made more than one order.";
@@ -223,7 +266,9 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
-        //Show the list of employees’ names along with names of their chiefs.
+        /// <summary>
+        /// Query to show the list of employees’ names along with names of their chiefs.
+        /// </summary>
         private void Task29()
         {
             string queryDescr = "Show the list of employees’ names along with names of their chiefs.";
@@ -231,7 +276,9 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
-        //Show the list of cities where employees and customers are from and where orders have been made to.Duplicates should be eliminated.
+        /// <summary>
+        /// Query to show the list of cities where employees and customers are from and where orders have been made to. Duplicates are eliminated.
+        /// </summary>
         private void Task30()
         {
             string queryDescr = "Show the list of cities where employees and customers are from and where\n" +
@@ -240,8 +287,10 @@ namespace task4
             ShowResults(command, queryDescr);
         }
 
-        //Insert 5 new records into Employees table. Fill in the following  fields:
-        //LastName, FirstName, BirthDate, HireDate, Address, City, Country, Notes. The Notes field should contain your own name.
+        /// <summary>
+        /// Query to Insert 5 new records into Employees table. Fills in the following  fields:
+        /// LastName, FirstName, BirthDate, HireDate, Address, City, Country, Notes. The Notes field contains your own name.
+        /// </summary>
         private void Task31()
         {
             command.CommandText = "INSERT INTO Employees(LastName, FirstName, BirthDate, HireDate, Address, City, Country, Notes)" +
