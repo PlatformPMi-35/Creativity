@@ -10,10 +10,10 @@ namespace Task3.Model
 {
     public class OrderContext:DbContext
     {
-        public DbSet<OrderBuilder> Orders { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<Address> Addresses { get; set; }
 
-        public OrderContext() : base("name=OrderContext")
+        public OrderContext() : base("OrderContext")
         {
 
         }
