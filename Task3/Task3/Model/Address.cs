@@ -33,6 +33,11 @@ namespace Task3
         private string porch;
 
         /// <summary>
+        /// Represents an id of address
+        /// </summary>
+        private int id;
+
+        /// <summary>
         ///  Initializes a new instance of the <see cref = "Address" /> class.
         /// Сonstructor without parameters
         /// </summary>
@@ -64,6 +69,22 @@ namespace Task3
         {
             this.Street = street_;
             this.HouseNumber = houseNumber_;
+        }
+
+        /// <summary>
+        /// Gets or sets Id property
+        /// </summary>
+        public int Id
+        {
+            get
+            {
+                return this.id;
+            }
+
+            set
+            {
+                this.id = value;
+            }
         }
 
         /// <summary>

@@ -51,6 +51,11 @@ namespace Task3
     public class Order
     {
         /// <summary>
+        /// Represents an id of address
+        /// </summary>
+        private int id;
+
+        /// <summary>
         /// Represents the name of client
         /// </summary>
         private string nameOfClient;
@@ -106,6 +111,22 @@ namespace Task3
             this.AddressOfArrival = arr;
             this.TimeOfTheArrivalTaxi = arrTime;
             this.ClassOfTheTaxi = classOfCar;
+        }
+
+        /// <summary>
+        /// Gets or sets Id property
+        /// </summary>
+        public int Id
+        {
+            get
+            {
+                return this.id;
+            }
+
+            set
+            {
+                this.id = value;
+            }
         }
 
         /// <summary>
