@@ -10,7 +10,7 @@ namespace Task3.UnitOfWork
 {
     public interface IUnitOfWork
     {
-        GenericRepository<Address> DepartmentRepository { get; }
-        GenericRepository<Order> CourseRepository { get; }
+        GenericRepository<Address> AddressRepository { get; }
+        GenericRepository<Order> OrderRepository { get; }
     }
 }
