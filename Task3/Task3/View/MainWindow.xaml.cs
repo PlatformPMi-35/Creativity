@@ -17,7 +17,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Task3.Model;
+using Task3.UnitOfWork;
 namespace Task3
 {
     /// <summary>
@@ -139,7 +140,12 @@ namespace Task3
             this.builder.SetTimeOfArrival(time);
             this.builder.SetClassOfTaxi(textBoxClassOfTheTaxi.Text);
             this.database.AddOrder(this.builder.Build());
-            MessageBox.Show("Ваше замовлення успішно додано, за вами виїхали");
+            using (var cont=new OrderContext())
+            {
+                cont.Orders.Add(this.builder.Build());
+                cont.SaveChanges();
+            }
+                MessageBox.Show("Ваше замовлення успішно додано, за вами виїхали");
         }
     }
 }

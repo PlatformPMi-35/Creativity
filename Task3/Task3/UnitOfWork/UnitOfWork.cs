@@ -8,7 +8,7 @@ using Task3.Repository;
 
 namespace Task3.UnitOfWork
 {
-    public class UnitOfWork: IUnitOfWork
+    public class UnitOfWork: IUnitOfWork,IDisposable
     {
         private OrderContext context = new OrderContext();
         GenericRepository<Address> addressRepository;
