@@ -53,37 +53,37 @@ namespace Task3
         /// <summary>
         /// Represents an id of address
         /// </summary>
-        private int id;
+        public int OrderId { get; set; }
 
         /// <summary>
         /// Represents the name of client
         /// </summary>
-        private string nameOfClient;
+        public string NameOfClient { get; set; }
 
         /// <summary>
         /// Represents the client`s phone number
         /// </summary>
-        private string phoneNumber;
+        public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Represents the address from where the client will go
         /// </summary>
-        private Address addressOfDeparture;
+        public Address AddressOfDeparture { get; set; }
 
         /// <summary>
         /// Represents the address where the client will go
         /// </summary>
-        private Address addressOfArrival;
+        public Address AddressOfArrival { get; set; }
 
         /// <summary>
         /// Represents the time when client wants to go
         /// </summary>
-        private DateTime timeOfTheArrivalTaxi;
+        public DateTime TimeOfTheArrivalTaxi { get; set; }
 
         /// <summary>
         /// Represents the class of car that client wants
         /// </summary>
-        private CarClass classOfTheTaxi;
+        public CarClass ClassOfTheTaxi { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref = "Order" /> class.
@@ -113,117 +113,6 @@ namespace Task3
             this.ClassOfTheTaxi = classOfCar;
         }
 
-        /// <summary>
-        /// Gets or sets Id property
-        /// </summary>
-        public int Id
-        {
-            get
-            {
-                return this.id;
-            }
-
-            set
-            {
-                this.id = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets NameOfClient property
-        /// </summary>
-        public string NameOfClient
-        {
-            get
-            {
-                return this.nameOfClient;
-            }
-
-            set
-            {
-                this.nameOfClient = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets PhoneNumber property
-        /// </summary>
-        public string PhoneNumber
-        {
-            get
-            {
-                return this.phoneNumber;
-            }
-
-            set
-            {
-                this.phoneNumber = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets AddressOfDeparture property
-        /// </summary>
-        public Address AddressOfDeparture
-        {
-            get
-            {
-                return this.addressOfDeparture;
-            }
-
-            set
-            {
-                this.addressOfDeparture = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets AddressOfArrival property
-        /// </summary>
-        public Address AddressOfArrival
-        {
-            get
-            {
-                return this.addressOfArrival;
-            }
-
-            set
-            {
-                this.addressOfArrival = value;
-            }
-        }
-
-        /// <summary>
-        ///  Gets or sets TimeOfTheArrivalTaxi property
-        /// </summary>
-        public DateTime TimeOfTheArrivalTaxi
-        {
-            get
-            {
-                return this.timeOfTheArrivalTaxi;
-            }
-
-            set
-            {
-                this.timeOfTheArrivalTaxi = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets ClassOfTheTaxi property
-        /// </summary>
-        public CarClass ClassOfTheTaxi
-        {
-            get
-            {
-                return this.classOfTheTaxi;
-            }
-
-            set
-            {
-                this.classOfTheTaxi = value;
-            }
-        }
 
         /// <summary>
         /// Override method, that get the string of address 
@@ -231,7 +120,7 @@ namespace Task3
         /// <returns>string of order</returns>
         public override string ToString()
         {
-            return this.NameOfClient + ";" + this.PhoneNumber + ";" + this.AddressOfDeparture.ToString() + ";" + this.addressOfArrival.ToString() + ";" + this.TimeOfTheArrivalTaxi.ToString() + ";" + this.ClassOfTheTaxi.ToString();
+            return this.NameOfClient + ";" + this.PhoneNumber + ";" + this.AddressOfDeparture.ToString() + ";" + this.AddressOfArrival.ToString() + ";" + this.TimeOfTheArrivalTaxi.ToString() + ";" + this.ClassOfTheTaxi.ToString();
         }
     }
 }
